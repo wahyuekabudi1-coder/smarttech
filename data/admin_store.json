@@ -1,0 +1,1864 @@
+{
+  "consultations": [
+    {
+      "id": "CNS-2026-008",
+      "name": "Dr. Hendra Gunawan",
+      "email": "hendra@meditech.id",
+      "phone": "+62 811-9988-7766",
+      "company": "PT Medika Inovasi Digital",
+      "category": "webapp",
+      "categoryName": "Aplikasi Bisnis / Internal Tool",
+      "budget": "15-30",
+      "budgetRange": "Rp 40.000.000 – Rp 60.000.000",
+      "message": "Sistem rekam medis terpadu & antrean poli terintegrasi BPJS.",
+      "priority": "Tinggi",
+      "status": "Proyek Dimulai",
+      "consultationNotes": "",
+      "assignedTo": "Aditya Pratama (Technical Lead)",
+      "createdAt": "2026-10-13T12:56:37.801Z",
+      "updatedAt": "2026-10-13T12:56:37.828Z",
+      "history": [
+        {
+          "date": "2026-10-13T12:56:37.801Z",
+          "user": "Website Visitor",
+          "status": "Baru Masuk",
+          "note": "Permintaan konsultasi berhasil didaftarkan ke sistem."
+        }
+      ],
+      "proposalId": "PROP-2026-006",
+      "projectId": "PRJ-2026-04"
+    },
+    {
+      "id": "CNS-2026-007",
+      "name": "Dr. Hendra Gunawan",
+      "email": "hendra@meditech.id",
+      "phone": "+62 811-9988-7766",
+      "company": "PT Medika Inovasi Digital",
+      "category": "webapp",
+      "categoryName": "Aplikasi Bisnis / Internal Tool",
+      "budget": "15-30",
+      "budgetRange": "Rp 40.000.000 – Rp 60.000.000",
+      "message": "Sistem rekam medis terpadu & antrean poli terintegrasi BPJS.",
+      "priority": "Tinggi",
+      "status": "Proyek Dimulai",
+      "consultationNotes": "",
+      "assignedTo": "Aditya Pratama (Technical Lead)",
+      "createdAt": "2026-10-13T12:56:18.165Z",
+      "updatedAt": "2026-10-13T12:56:18.186Z",
+      "history": [
+        {
+          "date": "2026-10-13T12:56:18.165Z",
+          "user": "Website Visitor",
+          "status": "Baru Masuk",
+          "note": "Permintaan konsultasi berhasil didaftarkan ke sistem."
+        }
+      ],
+      "proposalId": "PROP-2026-005",
+      "projectId": "PRJ-2026-03"
+    },
+    {
+      "id": "CNS-2026-006",
+      "name": "Dr. Hendra Gunawan",
+      "email": "hendra@meditech.id",
+      "phone": "+62 811-9988-7766",
+      "company": "PT Medika Inovasi Digital",
+      "category": "webapp",
+      "categoryName": "Aplikasi Bisnis / Internal Tool",
+      "budget": "15-30",
+      "budgetRange": "Rp 40.000.000 – Rp 60.000.000",
+      "message": "Sistem rekam medis terpadu & antrean poli terintegrasi BPJS.",
+      "priority": "Tinggi",
+      "status": "Proposal Dibuat",
+      "consultationNotes": "",
+      "assignedTo": "Aditya Pratama (Technical Lead)",
+      "createdAt": "2026-10-13T12:54:02.158Z",
+      "updatedAt": "2026-10-13T12:54:02.161Z",
+      "history": [
+        {
+          "date": "2026-10-13T12:54:02.158Z",
+          "user": "Website Visitor",
+          "status": "Baru Masuk",
+          "note": "Permintaan konsultasi berhasil didaftarkan ke sistem."
+        }
+      ],
+      "proposalId": "PROP-2026-004"
+    },
+    {
+      "id": "CNS-2026-005",
+      "name": "Dewi Lestari",
+      "email": "dewi@techindo.com",
+      "phone": "+62 813-1122-3344",
+      "company": "PT Tech Indo Solusi",
+      "category": "website",
+      "categoryName": "Aplikasi Bisnis / Internal Tool",
+      "budget": "15-30",
+      "budgetRange": "Rp 30.000.000 – Rp 50.000.000",
+      "message": "Perlu sistem tracking supply chain",
+      "priority": "Tinggi",
+      "status": "Proyek Dimulai",
+      "consultationDate": "2026-11-01 14:00 WIB",
+      "consultationNotes": "",
+      "assignedTo": "Aditya Pratama (Technical Lead)",
+      "createdAt": "2026-10-13T12:45:58.835Z",
+      "updatedAt": "2026-10-13T12:45:58.967Z",
+      "history": [
+        {
+          "date": "2026-10-13T12:45:58.838Z",
+          "user": "Admin",
+          "status": "Jadwal Konsultasi",
+          "note": "Status diubah dari \"Dihubungi\" menjadi \"Jadwal Konsultasi\""
+        },
+        {
+          "date": "2026-10-13T12:45:58.837Z",
+          "user": "Admin",
+          "status": "Dihubungi",
+          "note": "Status diubah dari \"Ditinjau\" menjadi \"Dihubungi\""
+        },
+        {
+          "date": "2026-10-13T12:45:58.837Z",
+          "user": "Admin",
+          "status": "Ditinjau",
+          "note": "Status diubah dari \"Baru Masuk\" menjadi \"Ditinjau\""
+        },
+        {
+          "date": "2026-10-13T12:45:58.835Z",
+          "user": "Website",
+          "status": "Baru Masuk",
+          "note": "Permintaan konsultasi berhasil didaftarkan ke sistem."
+        }
+      ],
+      "proposalId": "PROP-2026-003",
+      "projectId": "PRJ-2026-02"
+    },
+    {
+      "id": "CNS-2026-001",
+      "name": "Budi Santoso",
+      "email": "budi@nusantaragroup.id",
+      "phone": "+62 812-9876-5432",
+      "company": "PT Nusantara Retailindo",
+      "category": "ecommerce",
+      "categoryName": "Toko Online & E-Commerce",
+      "budget": "15-30",
+      "budgetRange": "Rp 25.000.000 – Rp 35.000.000",
+      "message": "Membutuhkan platform OmniCommerce headless dengan integrasi payment gateway dan WhatsApp order notification.",
+      "priority": "Tinggi",
+      "status": "Proyek Dimulai",
+      "consultationDate": "2026-10-04T10:00:00Z",
+      "consultationNotes": "Diskusi requirement FSD berjalan lancar. Klien menyetujui proposal arsitektur headless.",
+      "assignedTo": "Aditya Pratama (Technical Lead)",
+      "clientId": "CLI-001",
+      "proposalId": "PROP-2026-001",
+      "projectId": "PRJ-2026-01",
+      "createdAt": "2026-10-01T12:45:29.682Z",
+      "updatedAt": "2026-10-11T12:45:29.682Z",
+      "history": [
+        {
+          "date": "2026-10-01T12:45:29.682Z",
+          "user": "Sistem",
+          "status": "Baru Masuk",
+          "note": "Permintaan konsultasi diterima dari website publik."
+        },
+        {
+          "date": "2026-10-02T12:45:29.682Z",
+          "user": "Aditya Pratama",
+          "status": "Ditinjau",
+          "note": "Kebutuhan teknis masuk dalam spesifikasi arsitektur enterprise."
+        },
+        {
+          "date": "2026-10-04T12:45:29.682Z",
+          "user": "Aditya Pratama",
+          "status": "Jadwal Konsultasi",
+          "note": "Discovery call meeting teknis dijadwalkan via Google Meet."
+        },
+        {
+          "date": "2026-10-07T12:45:29.682Z",
+          "user": "Aditya Pratama",
+          "status": "Proposal Dibuat",
+          "note": "Proposal PROP-2026-001 berhasil dikirim ke klien."
+        },
+        {
+          "date": "2026-10-10T12:45:29.682Z",
+          "user": "Budi Santoso (Klien)",
+          "status": "Kesepakatan",
+          "note": "Proposal disetujui, invoice DP diterbitkan."
+        },
+        {
+          "date": "2026-10-11T12:45:29.682Z",
+          "user": "Aditya Pratama",
+          "status": "Proyek Dimulai",
+          "note": "DP telah diverifikasi, sprint kickoff fase 1 dimulai."
+        }
+      ]
+    },
+    {
+      "id": "CNS-2026-002",
+      "name": "Siti Rahmawati",
+      "email": "siti@karyacreative.com",
+      "phone": "+62 856-7890-1234",
+      "company": "Karya Creative Agency",
+      "category": "webapp",
+      "categoryName": "Aplikasi Bisnis / Internal Tool",
+      "budget": "15-30",
+      "budgetRange": "Rp 15.000.000 – Rp 25.000.000",
+      "message": "Perlu dashboard sistem approval manajemen aset kreatif, tracking deadline revisi, dan portal kolaborasi vendor.",
+      "priority": "Tinggi",
+      "status": "Menunggu Persetujuan",
+      "consultationDate": "2026-10-11T14:00:00Z",
+      "consultationNotes": "Proposal penawaran v1.0 sudah dikirimkan via email & WhatsApp. Klien sedang mengkaji klausul SLA.",
+      "assignedTo": "Aditya Pratama (Technical Lead)",
+      "clientId": "CLI-002",
+      "proposalId": "PROP-2026-002",
+      "createdAt": "2026-10-09T12:45:29.682Z",
+      "updatedAt": "2026-10-12T12:45:29.682Z",
+      "history": [
+        {
+          "date": "2026-10-09T12:45:29.682Z",
+          "user": "Sistem",
+          "status": "Baru Masuk",
+          "note": "Permintaan masuk dari formulir konsultasi."
+        },
+        {
+          "date": "2026-10-10T12:45:29.682Z",
+          "user": "Aditya Pratama",
+          "status": "Dihubungi",
+          "note": "Follow up via WhatsApp resmi."
+        },
+        {
+          "date": "2026-10-12T12:45:29.682Z",
+          "user": "Aditya Pratama",
+          "status": "Menunggu Persetujuan",
+          "note": "Proposal PROP-2026-002 dikirimkan ke PIC."
+        }
+      ]
+    },
+    {
+      "id": "CNS-2026-003",
+      "name": "Hendrawan Pratama",
+      "email": "hendra@megaprolog.co.id",
+      "phone": "+62 813-1122-3344",
+      "company": "PT Megaprolog Logistik",
+      "category": "marketplace",
+      "categoryName": "Booking & Marketplace",
+      "budget": "30-50",
+      "budgetRange": "Rp 35.000.000 – Rp 50.000.000+",
+      "message": "Membutuhkan platform marketplace armada truk logistik dengan dispatch realtime, pelacakan GPS, dan otomasi invoice.",
+      "priority": "Tinggi",
+      "status": "Ditinjau",
+      "consultationDate": "2026-10-15T13:30:00Z",
+      "consultationNotes": "Skala enterprise, membutuhkan arsitektur event-driven dan cloud auto-scaling.",
+      "assignedTo": "Rangga Prawira (Cloud Architect)",
+      "createdAt": "2026-10-13T06:45:29.682Z",
+      "updatedAt": "2026-10-13T10:45:29.682Z",
+      "history": [
+        {
+          "date": "2026-10-13T06:45:29.682Z",
+          "user": "Sistem",
+          "status": "Baru Masuk",
+          "note": "Inquiry diterima via form landing page."
+        },
+        {
+          "date": "2026-10-13T10:45:29.682Z",
+          "user": "Aditya Pratama",
+          "status": "Ditinjau",
+          "note": "Ditugaskan ke Cloud Architect untuk analisis arsitektur armada."
+        }
+      ]
+    },
+    {
+      "id": "CNS-2026-004",
+      "name": "dr. Melinda Kusuma",
+      "email": "melinda@kliniksehatprima.id",
+      "phone": "+62 818-4455-6677",
+      "company": "Klinik Sehat Prima",
+      "category": "website",
+      "categoryName": "Website (Landing Page / Company Profile)",
+      "budget": "5-15",
+      "budgetRange": "Rp 6.000.000 – Rp 12.000.000",
+      "message": "Website profil klinik spesialis dengan sistem booking janji temu dokter dokter dan integrasi WhatsApp.",
+      "priority": "Sedang",
+      "status": "Baru Masuk",
+      "assignedTo": "Sarah Lestari (Product Lead)",
+      "createdAt": "2026-10-13T10:45:29.682Z",
+      "updatedAt": "2026-10-13T10:45:29.682Z",
+      "history": [
+        {
+          "date": "2026-10-13T10:45:29.682Z",
+          "user": "Sistem",
+          "status": "Baru Masuk",
+          "note": "Inquiry baru menunggu peninjauan awal Technical Lead."
+        }
+      ]
+    }
+  ],
+  "clients": [
+    {
+      "id": "CLI-005",
+      "name": "Dr. Hendra Gunawan",
+      "company": "PT Medika Inovasi Digital",
+      "email": "hendra@meditech.id",
+      "phone": "+62 811-9988-7766",
+      "industry": "Kesehatan & Farmasi",
+      "type": "Klien Aktif",
+      "address": "Jakarta, Indonesia",
+      "portalAccessCode": "PT -8667",
+      "totalValue": 50000000,
+      "projectsCount": 1,
+      "notes": "",
+      "meetings": [],
+      "createdAt": "2026-10-13T12:56:37.802Z",
+      "updatedAt": "2026-10-13T12:56:37.828Z"
+    },
+    {
+      "id": "CLI-004",
+      "name": "Dr. Hendra Gunawan",
+      "company": "PT Medika Inovasi Digital",
+      "email": "hendra@meditech.id",
+      "phone": "+62 811-9988-7766",
+      "industry": "Kesehatan & Farmasi",
+      "type": "Klien Aktif",
+      "address": "Jakarta, Indonesia",
+      "portalAccessCode": "PT -2890",
+      "totalValue": 50000000,
+      "projectsCount": 1,
+      "notes": "",
+      "meetings": [],
+      "createdAt": "2026-10-13T12:56:18.166Z",
+      "updatedAt": "2026-10-13T12:56:18.186Z"
+    },
+    {
+      "id": "CLI-003",
+      "name": "Dr. Hendra Gunawan",
+      "company": "PT Medika Inovasi Digital",
+      "email": "hendra@meditech.id",
+      "phone": "+62 811-9988-7766",
+      "industry": "Kesehatan & Farmasi",
+      "type": "Calon Klien",
+      "address": "Jakarta, Indonesia",
+      "portalAccessCode": "PT -6134",
+      "totalValue": 0,
+      "projectsCount": 0,
+      "notes": "",
+      "meetings": [],
+      "createdAt": "2026-10-13T12:54:02.160Z",
+      "updatedAt": "2026-10-13T12:54:02.160Z"
+    },
+    {
+      "id": "CLI-001",
+      "name": "Budi Santoso",
+      "company": "PT Nusantara Retailindo",
+      "email": "budi@nusantaragroup.id",
+      "phone": "+62 812-9876-5432",
+      "industry": "Retail & Consumer Goods",
+      "type": "Klien Aktif",
+      "address": "Gedung Menara Batavia Lt. 15, Jl. KH Mas Mansyur, Jakarta Pusat",
+      "portalAccessCode": "NTR-2026",
+      "totalValue": 70000000,
+      "projectsCount": 2,
+      "notes": "Klien prioritas skala retail enterprise. Komunikasi utama melalui WhatsApp dan Zoom koordinasi mingguan.",
+      "meetings": [
+        {
+          "id": "M-1",
+          "date": "2026-10-04",
+          "title": "Discovery & Requirement Analysis FSD",
+          "notes": "Menyepakati spesifikasi arsitektur headless eCommerce.",
+          "pic": "Aditya Pratama"
+        },
+        {
+          "id": "M-2",
+          "date": "2026-10-11",
+          "title": "Review UI/UX Design System Figma",
+          "notes": "Design disetujui tanpa revisi mayor, langsung lanjut sprint coding.",
+          "pic": "Sarah Lestari"
+        }
+      ],
+      "createdAt": "2026-10-01T08:00:00Z",
+      "updatedAt": "2026-10-13T12:45:58.967Z"
+    },
+    {
+      "id": "CLI-002",
+      "name": "Siti Rahmawati",
+      "company": "Karya Creative Agency",
+      "email": "siti@karyacreative.com",
+      "phone": "+62 856-7890-1234",
+      "industry": "Media & Digital Agency",
+      "type": "Calon Klien",
+      "address": "Ruko Golden Plaza Blok C-12, Fatmawati, Jakarta Selatan",
+      "portalAccessCode": "KRY-7788",
+      "totalValue": 18000000,
+      "projectsCount": 0,
+      "notes": "Menunggu persetujuan dewan direksi untuk proposal sistem approval aset kreatif.",
+      "meetings": [
+        {
+          "id": "M-3",
+          "date": "2026-10-10",
+          "title": "Presentasi Solusi Dashboard Internal",
+          "notes": "Demo arsitektur RBAC dan workflow persetujuan.",
+          "pic": "Aditya Pratama"
+        }
+      ],
+      "createdAt": "2026-10-08T09:00:00Z",
+      "updatedAt": "2026-10-11T16:00:00Z"
+    }
+  ],
+  "proposals": [
+    {
+      "id": "PROP-2026-006",
+      "consultationId": "CNS-2026-008",
+      "clientId": "CLI-005",
+      "clientName": "Dr. Hendra Gunawan",
+      "clientCompany": "PT Medika Inovasi Digital",
+      "title": "Hospital Information & Telemedicine Platform",
+      "summary": "Dokumen penawaran resmi rancangan software dan infrastruktur sistem.",
+      "scopeOfWork": [
+        "FSD Rekam Medis",
+        "UI/UX Portal Dokter & Pasien",
+        "Core Telemedicine Engine",
+        "Integrasi BPJS & QA"
+      ],
+      "deliverables": [
+        "Dokumen FSD v1.0",
+        "Source Code Git",
+        "Cloud Deployment"
+      ],
+      "techStack": [
+        "Next.js 15",
+        "TypeScript",
+        "PostgreSQL",
+        "Tailwind CSS",
+        "Docker"
+      ],
+      "totalPrice": 50000000,
+      "paymentTerms": {
+        "dpPercentage": 50,
+        "dpAmount": 25000000,
+        "terminPercentage": 0,
+        "terminAmount": 0,
+        "settlementPercentage": 50,
+        "settlementAmount": 25000000,
+        "description": "DP 50% saat kickoff, Pelunasan 50% saat serah terima proyek."
+      },
+      "timeline": "8 Minggu",
+      "estimatedStartDate": "2026-10-13",
+      "status": "Dikonversi ke Proyek",
+      "revisionsCount": 0,
+      "revisionsHistory": [
+        {
+          "version": 1,
+          "date": "2026-10-13T12:56:37.804Z",
+          "changeNote": "Inisialisasi dokumen penawaran resmi v1.0",
+          "price": 50000000,
+          "user": "Admin"
+        }
+      ],
+      "createdAt": "2026-10-13T12:56:37.804Z",
+      "updatedAt": "2026-10-13T12:56:37.828Z",
+      "approvedAt": "2026-10-13T12:56:37.828Z"
+    },
+    {
+      "id": "PROP-2026-005",
+      "consultationId": "CNS-2026-007",
+      "clientId": "CLI-004",
+      "clientName": "Dr. Hendra Gunawan",
+      "clientCompany": "PT Medika Inovasi Digital",
+      "title": "Hospital Information & Telemedicine Platform",
+      "summary": "Dokumen penawaran resmi rancangan software dan infrastruktur sistem.",
+      "scopeOfWork": [
+        "FSD Rekam Medis",
+        "UI/UX Portal Dokter & Pasien",
+        "Core Telemedicine Engine",
+        "Integrasi BPJS & QA"
+      ],
+      "deliverables": [
+        "Dokumen FSD v1.0",
+        "Source Code Git",
+        "Cloud Deployment"
+      ],
+      "techStack": [
+        "Next.js 15",
+        "TypeScript",
+        "PostgreSQL",
+        "Tailwind CSS",
+        "Docker"
+      ],
+      "totalPrice": 50000000,
+      "paymentTerms": {
+        "dpPercentage": 50,
+        "dpAmount": 25000000,
+        "terminPercentage": 0,
+        "terminAmount": 0,
+        "settlementPercentage": 50,
+        "settlementAmount": 25000000,
+        "description": "DP 50% saat kickoff, Pelunasan 50% saat serah terima proyek."
+      },
+      "timeline": "8 Minggu",
+      "estimatedStartDate": "2026-10-13",
+      "status": "Dikonversi ke Proyek",
+      "revisionsCount": 0,
+      "revisionsHistory": [
+        {
+          "version": 1,
+          "date": "2026-10-13T12:56:18.167Z",
+          "changeNote": "Inisialisasi dokumen penawaran resmi v1.0",
+          "price": 50000000,
+          "user": "Admin"
+        }
+      ],
+      "createdAt": "2026-10-13T12:56:18.167Z",
+      "updatedAt": "2026-10-13T12:56:18.186Z",
+      "approvedAt": "2026-10-13T12:56:18.186Z"
+    },
+    {
+      "id": "PROP-2026-004",
+      "consultationId": "CNS-2026-006",
+      "clientId": "CLI-003",
+      "clientName": "Dr. Hendra Gunawan",
+      "clientCompany": "PT Medika Inovasi Digital",
+      "title": "Hospital Information & Telemedicine Platform",
+      "summary": "Dokumen penawaran resmi rancangan software dan infrastruktur sistem.",
+      "scopeOfWork": [
+        "FSD Rekam Medis",
+        "UI/UX Portal Dokter & Pasien",
+        "Core Telemedicine Engine",
+        "Integrasi BPJS & QA"
+      ],
+      "deliverables": [
+        "Dokumen FSD v1.0",
+        "Source Code Git",
+        "Cloud Deployment"
+      ],
+      "techStack": [
+        "Next.js 15",
+        "TypeScript",
+        "PostgreSQL",
+        "Tailwind CSS",
+        "Docker"
+      ],
+      "totalPrice": 50000000,
+      "paymentTerms": {
+        "dpPercentage": 50,
+        "dpAmount": 25000000,
+        "terminPercentage": 0,
+        "terminAmount": 0,
+        "settlementPercentage": 50,
+        "settlementAmount": 25000000,
+        "description": "DP 50% saat kickoff, Pelunasan 50% saat serah terima proyek."
+      },
+      "timeline": "8 Minggu",
+      "estimatedStartDate": "2026-10-13",
+      "status": "Draft",
+      "revisionsCount": 0,
+      "revisionsHistory": [
+        {
+          "version": 1,
+          "date": "2026-10-13T12:54:02.160Z",
+          "changeNote": "Inisialisasi dokumen penawaran resmi v1.0",
+          "price": 50000000,
+          "user": "Admin"
+        }
+      ],
+      "createdAt": "2026-10-13T12:54:02.160Z",
+      "updatedAt": "2026-10-13T12:54:02.160Z"
+    },
+    {
+      "id": "PROP-2026-003",
+      "consultationId": "CNS-2026-005",
+      "clientId": "CLI-001",
+      "clientName": "Dewi Lestari",
+      "clientCompany": "PT Tech Indo Solusi",
+      "title": "Supply Chain Tracking Platform",
+      "summary": "Dokumen penawaran resmi rancangan software dan infrastruktur sistem.",
+      "scopeOfWork": [
+        "FSD System Architecture",
+        "UI/UX Dashboard",
+        "Real-time Tracking Engine",
+        "Deployment & Handover"
+      ],
+      "deliverables": [
+        "Aplikasi Web Responsif (Desktop & Mobile)",
+        "Dashboard Admin & Role-based Access Control",
+        "Dokumentasi API Swagger & Manual Book",
+        "Repository Git & Konfigurasi Server Cloud"
+      ],
+      "techStack": [
+        "Next.js 15",
+        "TypeScript",
+        "PostgreSQL",
+        "Tailwind CSS",
+        "Docker"
+      ],
+      "totalPrice": 45000000,
+      "paymentTerms": {
+        "dpPercentage": 50,
+        "dpAmount": 22500000,
+        "terminPercentage": 0,
+        "terminAmount": 0,
+        "settlementPercentage": 50,
+        "settlementAmount": 22500000,
+        "description": "DP 50% saat kickoff, Pelunasan 50% saat serah terima proyek."
+      },
+      "timeline": "8 Minggu",
+      "estimatedStartDate": "2026-10-13",
+      "status": "Disetujui",
+      "revisionsCount": 0,
+      "revisionsHistory": [
+        {
+          "version": 1,
+          "date": "2026-10-13T12:45:58.839Z",
+          "changeNote": "Inisialisasi dokumen penawaran resmi v1.0",
+          "price": 45000000,
+          "user": "Admin"
+        }
+      ],
+      "createdAt": "2026-10-13T12:45:58.839Z",
+      "updatedAt": "2026-10-13T12:45:58.966Z",
+      "approvedAt": "2026-10-13T12:45:58.966Z"
+    },
+    {
+      "id": "PROP-2026-001",
+      "consultationId": "CNS-2026-001",
+      "clientId": "CLI-001",
+      "clientName": "Budi Santoso",
+      "clientCompany": "PT Nusantara Retailindo",
+      "title": "Pengembangan OmniCommerce Headless Platform",
+      "summary": "Pembangunan platform e-commerce enterprise dengan arsitektur headless, payment gateway ArtoPay, dan otomasi omnichannel.",
+      "scopeOfWork": [
+        "Arsitektur Headless Next.js 15 & PostgreSQL RLS",
+        "UI/UX Design System Figma & Responsive Prototype",
+        "Integrasi ArtoPay Gateway Webhook (QRIS, VA, Kartu)",
+        "Kalkulator Ongkir Kurir Terpadu (JNE, SiCepat, J&T)",
+        "Dashboard Manajemen Pesanan & Notifikasi WhatsApp Realtime",
+        "Deployment Cloud Production & Garansi Bug 90 Hari"
+      ],
+      "deliverables": [
+        "Web Aplikasi Toko Online Responsif",
+        "Admin Dashboard Manajemen Produk & Transaksi",
+        "Dokumentasi API Swagger & Manual Book Penggunaan",
+        "100% Hak Milik Repository Git Source Code"
+      ],
+      "techStack": [
+        "Next.js 15",
+        "TypeScript",
+        "Tailwind CSS",
+        "PostgreSQL",
+        "Docker",
+        "ArtoPay"
+      ],
+      "totalPrice": 25000000,
+      "paymentTerms": {
+        "dpPercentage": 50,
+        "dpAmount": 12500000,
+        "terminPercentage": 30,
+        "terminAmount": 7500000,
+        "settlementPercentage": 20,
+        "settlementAmount": 5000000,
+        "description": "DP 50% saat kickoff, Termin 30% setelah prototype disetujui, Pelunasan 20% saat serah terima."
+      },
+      "timeline": "6 – 8 Minggu Kerja",
+      "estimatedStartDate": "2026-10-04",
+      "status": "Disetujui",
+      "revisionsCount": 1,
+      "revisionsHistory": [
+        {
+          "version": 1,
+          "date": "2026-10-05T08:00:00Z",
+          "changeNote": "Draft awal penawaran eCommerce",
+          "price": 28000000,
+          "user": "Aditya Pratama"
+        },
+        {
+          "version": 2,
+          "date": "2026-10-06T14:00:00Z",
+          "changeNote": "Penyesuaian termin pembayaran dan diskon kemitraan",
+          "price": 25000000,
+          "user": "Aditya Pratama"
+        }
+      ],
+      "approvedAt": "2026-10-06T17:00:00Z",
+      "createdAt": "2026-10-05T08:00:00Z",
+      "updatedAt": "2026-10-06T17:00:00Z"
+    },
+    {
+      "id": "PROP-2026-002",
+      "consultationId": "CNS-2026-002",
+      "clientId": "CLI-002",
+      "clientName": "Siti Rahmawati",
+      "clientCompany": "Karya Creative Agency",
+      "title": "Pengembangan Custom SaaS Dashboard & Asset Approval",
+      "summary": "Sistem operasional internal untuk manajemen antrean produksi kreatif, approval aset multi-level, dan audit trail.",
+      "scopeOfWork": [
+        "Perancangan Role-Based Access Control (Admin, Desainer, Klien)",
+        "Modul Kanban Approval Asset & Komentar Revisi Realtime",
+        "Integrasi Notifikasi Bot WhatsApp & Email Dispatch",
+        "Fitur Ekspor Laporan KPI Kinerja Tim (PDF & Excel)"
+      ],
+      "deliverables": [
+        "Aplikasi Dashboard Web Kustom",
+        "Portal Khusus Review Klien Eksternal",
+        "Full Source Code & Database Setup"
+      ],
+      "techStack": [
+        "React",
+        "TypeScript",
+        "Node.js",
+        "PostgreSQL",
+        "Tailwind CSS"
+      ],
+      "totalPrice": 18000000,
+      "paymentTerms": {
+        "dpPercentage": 50,
+        "dpAmount": 9000000,
+        "terminPercentage": 0,
+        "terminAmount": 0,
+        "settlementPercentage": 50,
+        "settlementAmount": 9000000,
+        "description": "DP 50% di awal kontrak, Pelunasan 50% saat serah terima."
+      },
+      "timeline": "4 – 5 Minggu Kerja",
+      "estimatedStartDate": "2026-10-20",
+      "status": "Terkirim",
+      "revisionsCount": 0,
+      "revisionsHistory": [
+        {
+          "version": 1,
+          "date": "2026-10-11T10:00:00Z",
+          "changeNote": "Penyusunan penawaran sistem approval",
+          "price": 18000000,
+          "user": "Aditya Pratama"
+        }
+      ],
+      "createdAt": "2026-10-11T10:00:00Z",
+      "updatedAt": "2026-10-11T10:00:00Z"
+    }
+  ],
+  "projects": [
+    {
+      "id": "PRJ-2026-04",
+      "name": "Hospital Information & Telemedicine Platform",
+      "clientId": "CLI-005",
+      "clientName": "Dr. Hendra Gunawan",
+      "clientEmail": "hendra@meditech.id",
+      "proposalId": "PROP-2026-006",
+      "pic": "Aditya Pratama (Technical Lead)",
+      "teamMembers": [
+        {
+          "name": "Aditya Pratama",
+          "role": "Lead Architect"
+        },
+        {
+          "name": "Sarah Lestari",
+          "role": "Lead UI/UX"
+        },
+        {
+          "name": "Dimas Wicaksono",
+          "role": "Fullstack Engineer"
+        }
+      ],
+      "startDate": "2026-10-13",
+      "deadline": "28 November 2026",
+      "progressPercentage": 100,
+      "status": "Selesai",
+      "milestones": [
+        {
+          "id": "PRJ-2026-04-M1",
+          "title": "Discovery & Requirement Analysis (FSD)",
+          "phase": 1,
+          "status": "Selesai",
+          "dueDate": "2026-10-20",
+          "desc": "Penyusunan arsitektur data & scope deliverables disetujui bersama klien.",
+          "deliverables": [
+            "Dokumen FSD v1.0",
+            "Diagram ERD Database",
+            "Wireframe Flow"
+          ],
+          "approvedByClient": true
+        },
+        {
+          "id": "PRJ-2026-04-M2",
+          "title": "UI/UX Design System & Prototype Interaktif",
+          "phase": 2,
+          "status": "Menunggu",
+          "dueDate": "2026-10-31",
+          "desc": "Penyusunan desain UI/UX interaktif Figma untuk desktop dan mobile.",
+          "deliverables": [
+            "Design System",
+            "Figma Prototype Siap Uji"
+          ]
+        },
+        {
+          "id": "PRJ-2026-04-M3",
+          "title": "Core Development & Integrasi Gateway Payment",
+          "phase": 3,
+          "status": "Menunggu",
+          "dueDate": "2026-11-17",
+          "desc": "Pengerjaan kode modul inti, autentikasi, database, dan webhook payment gateway.",
+          "deliverables": [
+            "Backend API Endpoint",
+            "Frontend Interactive",
+            "Integrasi Gateway"
+          ]
+        },
+        {
+          "id": "PRJ-2026-04-M4",
+          "title": "Quality Assurance, Load Test & Serah Terima Final",
+          "phase": 4,
+          "status": "Menunggu",
+          "dueDate": "2026-11-27",
+          "desc": "Audit performa Core Web Vitals, pengujian keamanan, dan serah terima 100% hak milik kode.",
+          "deliverables": [
+            "Laporan Uji QA",
+            "Akses Repo Git Penuh",
+            "Deployment Cloud Berjalan"
+          ]
+        }
+      ],
+      "tasks": [
+        {
+          "id": "TSK-1",
+          "milestoneId": "PRJ-2026-04-M1",
+          "title": "Kickoff Meeting Teknis",
+          "assignee": "Aditya Pratama",
+          "status": "Done",
+          "priority": "Tinggi",
+          "dueDate": "2026-10-13"
+        },
+        {
+          "id": "TSK-2",
+          "milestoneId": "PRJ-2026-04-M1",
+          "title": "Finalisasi FSD & Scope Deliverables",
+          "assignee": "Aditya Pratama",
+          "status": "In Progress",
+          "priority": "Tinggi",
+          "dueDate": "2026-10-16"
+        },
+        {
+          "id": "TSK-3",
+          "milestoneId": "PRJ-2026-04-M2",
+          "title": "Penyusunan Desain UI/UX Figma",
+          "assignee": "Sarah Lestari",
+          "status": "To Do",
+          "priority": "Sedang",
+          "dueDate": "2026-10-27"
+        }
+      ],
+      "revisions": [],
+      "files": [
+        {
+          "id": "FIL-01",
+          "name": "FSD_Hospital_Information_&_Telemedicine_Platform_v1.0.pdf",
+          "category": "FSD / Spec",
+          "size": "1.8 MB",
+          "url": "/public/images/smart-tech-logo.png",
+          "uploadedAt": "2026-10-13",
+          "allowedForClient": true
+        }
+      ],
+      "activityLog": [
+        {
+          "date": "2026-10-13T12:56:37.833Z",
+          "user": "Admin",
+          "action": "Perubahan Status Proyek",
+          "note": "Status proyek diubah dari \"Pengerjaan\" menjadi \"Selesai\"."
+        },
+        {
+          "date": "2026-10-13T12:56:37.828Z",
+          "user": "Admin",
+          "action": "Proyek Resmi Dimulai",
+          "note": "Dikonversi dari proposal PROP-2026-006 yang telah disetujui."
+        }
+      ],
+      "createdAt": "2026-10-13T12:56:37.828Z",
+      "updatedAt": "2026-10-13T12:56:37.833Z"
+    },
+    {
+      "id": "PRJ-2026-03",
+      "name": "Hospital Information & Telemedicine Platform",
+      "clientId": "CLI-004",
+      "clientName": "Dr. Hendra Gunawan",
+      "clientEmail": "hendra@meditech.id",
+      "proposalId": "PROP-2026-005",
+      "pic": "Aditya Pratama (Technical Lead)",
+      "teamMembers": [
+        {
+          "name": "Aditya Pratama",
+          "role": "Lead Architect"
+        },
+        {
+          "name": "Sarah Lestari",
+          "role": "Lead UI/UX"
+        },
+        {
+          "name": "Dimas Wicaksono",
+          "role": "Fullstack Engineer"
+        }
+      ],
+      "startDate": "2026-10-13",
+      "deadline": "28 November 2026",
+      "progressPercentage": 100,
+      "status": "Selesai",
+      "milestones": [
+        {
+          "id": "PRJ-2026-03-M1",
+          "title": "Discovery & Requirement Analysis (FSD)",
+          "phase": 1,
+          "status": "Selesai",
+          "dueDate": "2026-10-20",
+          "desc": "Penyusunan arsitektur data & scope deliverables disetujui bersama klien.",
+          "deliverables": [
+            "Dokumen FSD v1.0",
+            "Diagram ERD Database",
+            "Wireframe Flow"
+          ],
+          "approvedByClient": true
+        },
+        {
+          "id": "PRJ-2026-03-M2",
+          "title": "UI/UX Design System & Prototype Interaktif",
+          "phase": 2,
+          "status": "Menunggu",
+          "dueDate": "2026-10-31",
+          "desc": "Penyusunan desain UI/UX interaktif Figma untuk desktop dan mobile.",
+          "deliverables": [
+            "Design System",
+            "Figma Prototype Siap Uji"
+          ]
+        },
+        {
+          "id": "PRJ-2026-03-M3",
+          "title": "Core Development & Integrasi Gateway Payment",
+          "phase": 3,
+          "status": "Menunggu",
+          "dueDate": "2026-11-17",
+          "desc": "Pengerjaan kode modul inti, autentikasi, database, dan webhook payment gateway.",
+          "deliverables": [
+            "Backend API Endpoint",
+            "Frontend Interactive",
+            "Integrasi Gateway"
+          ]
+        },
+        {
+          "id": "PRJ-2026-03-M4",
+          "title": "Quality Assurance, Load Test & Serah Terima Final",
+          "phase": 4,
+          "status": "Menunggu",
+          "dueDate": "2026-11-27",
+          "desc": "Audit performa Core Web Vitals, pengujian keamanan, dan serah terima 100% hak milik kode.",
+          "deliverables": [
+            "Laporan Uji QA",
+            "Akses Repo Git Penuh",
+            "Deployment Cloud Berjalan"
+          ]
+        }
+      ],
+      "tasks": [
+        {
+          "id": "TSK-1",
+          "milestoneId": "PRJ-2026-03-M1",
+          "title": "Kickoff Meeting Teknis",
+          "assignee": "Aditya Pratama",
+          "status": "Done",
+          "priority": "Tinggi",
+          "dueDate": "2026-10-13"
+        },
+        {
+          "id": "TSK-2",
+          "milestoneId": "PRJ-2026-03-M1",
+          "title": "Finalisasi FSD & Scope Deliverables",
+          "assignee": "Aditya Pratama",
+          "status": "In Progress",
+          "priority": "Tinggi",
+          "dueDate": "2026-10-16"
+        },
+        {
+          "id": "TSK-3",
+          "milestoneId": "PRJ-2026-03-M2",
+          "title": "Penyusunan Desain UI/UX Figma",
+          "assignee": "Sarah Lestari",
+          "status": "To Do",
+          "priority": "Sedang",
+          "dueDate": "2026-10-27"
+        }
+      ],
+      "revisions": [],
+      "files": [
+        {
+          "id": "FIL-01",
+          "name": "FSD_Hospital_Information_&_Telemedicine_Platform_v1.0.pdf",
+          "category": "FSD / Spec",
+          "size": "1.8 MB",
+          "url": "/public/images/smart-tech-logo.png",
+          "uploadedAt": "2026-10-13",
+          "allowedForClient": true
+        }
+      ],
+      "activityLog": [
+        {
+          "date": "2026-10-13T12:56:18.190Z",
+          "user": "Admin",
+          "action": "Perubahan Status Proyek",
+          "note": "Status proyek diubah dari \"Pengerjaan\" menjadi \"Selesai\"."
+        },
+        {
+          "date": "2026-10-13T12:56:18.186Z",
+          "user": "Admin",
+          "action": "Proyek Resmi Dimulai",
+          "note": "Dikonversi dari proposal PROP-2026-005 yang telah disetujui."
+        }
+      ],
+      "createdAt": "2026-10-13T12:56:18.186Z",
+      "updatedAt": "2026-10-13T12:56:18.190Z"
+    },
+    {
+      "id": "PRJ-2026-02",
+      "name": "Supply Chain Tracking Platform",
+      "clientId": "CLI-001",
+      "clientName": "Dewi Lestari",
+      "clientEmail": "budi@nusantaragroup.id",
+      "proposalId": "PROP-2026-003",
+      "pic": "Aditya Pratama (Technical Lead)",
+      "teamMembers": [
+        {
+          "name": "Aditya Pratama",
+          "role": "Lead Architect"
+        },
+        {
+          "name": "Sarah Lestari",
+          "role": "Lead UI/UX"
+        },
+        {
+          "name": "Dimas Wicaksono",
+          "role": "Fullstack Engineer"
+        }
+      ],
+      "startDate": "2026-10-13",
+      "deadline": "28 November 2026",
+      "progressPercentage": 15,
+      "status": "Revisi",
+      "milestones": [
+        {
+          "id": "PRJ-2026-02-M1",
+          "title": "Discovery & Requirement Analysis (FSD)",
+          "phase": 1,
+          "status": "Sedang Berjalan",
+          "dueDate": "2026-10-20",
+          "desc": "Penyusunan arsitektur data & scope deliverables disetujui bersama klien.",
+          "deliverables": [
+            "Dokumen FSD v1.0",
+            "Diagram ERD Database",
+            "Wireframe Flow"
+          ]
+        },
+        {
+          "id": "PRJ-2026-02-M2",
+          "title": "UI/UX Design System & Prototype Interaktif",
+          "phase": 2,
+          "status": "Menunggu",
+          "dueDate": "2026-10-31",
+          "desc": "Penyusunan desain UI/UX interaktif Figma untuk desktop dan mobile.",
+          "deliverables": [
+            "Design System",
+            "Figma Prototype Siap Uji"
+          ]
+        },
+        {
+          "id": "PRJ-2026-02-M3",
+          "title": "Core Development & Integrasi Gateway Payment",
+          "phase": 3,
+          "status": "Menunggu",
+          "dueDate": "2026-11-17",
+          "desc": "Pengerjaan kode modul inti, autentikasi, database, dan webhook payment gateway.",
+          "deliverables": [
+            "Backend API Endpoint",
+            "Frontend Interactive",
+            "Integrasi Gateway"
+          ]
+        },
+        {
+          "id": "PRJ-2026-02-M4",
+          "title": "Quality Assurance, Load Test & Serah Terima Final",
+          "phase": 4,
+          "status": "Menunggu",
+          "dueDate": "2026-11-27",
+          "desc": "Audit performa Core Web Vitals, pengujian keamanan, dan serah terima 100% hak milik kode.",
+          "deliverables": [
+            "Laporan Uji QA",
+            "Akses Repo Git Penuh",
+            "Deployment Cloud Berjalan"
+          ]
+        }
+      ],
+      "tasks": [
+        {
+          "id": "TSK-1",
+          "milestoneId": "PRJ-2026-02-M1",
+          "title": "Kickoff Meeting Teknis",
+          "assignee": "Aditya Pratama",
+          "status": "Done",
+          "priority": "Tinggi",
+          "dueDate": "2026-10-13"
+        },
+        {
+          "id": "TSK-2",
+          "milestoneId": "PRJ-2026-02-M1",
+          "title": "Finalisasi FSD & Scope Deliverables",
+          "assignee": "Aditya Pratama",
+          "status": "In Progress",
+          "priority": "Tinggi",
+          "dueDate": "2026-10-16"
+        },
+        {
+          "id": "TSK-3",
+          "milestoneId": "PRJ-2026-02-M2",
+          "title": "Penyusunan Desain UI/UX Figma",
+          "assignee": "Sarah Lestari",
+          "status": "To Do",
+          "priority": "Sedang",
+          "dueDate": "2026-10-27"
+        }
+      ],
+      "revisions": [
+        {
+          "id": "REV-1",
+          "submittedDate": "2026-10-13",
+          "requestedBy": "Dewi Lestari (Klien)",
+          "title": "Penyesuaian visual status pengiriman",
+          "description": "Mohon icon status pengiriman diubah ke warna hijau cerah.",
+          "status": "Open"
+        }
+      ],
+      "files": [
+        {
+          "id": "FIL-01",
+          "name": "FSD_Supply_Chain_Tracking_Platform_v1.0.pdf",
+          "category": "FSD / Spec",
+          "size": "1.8 MB",
+          "url": "/public/images/smart-tech-logo.png",
+          "uploadedAt": "2026-10-13",
+          "allowedForClient": true
+        }
+      ],
+      "activityLog": [
+        {
+          "date": "2026-10-13T12:45:58.968Z",
+          "user": "Dewi Lestari (Klien)",
+          "action": "Pengajuan Revisi",
+          "note": "Revisi baru diajukan: \"Penyesuaian visual status pengiriman\""
+        },
+        {
+          "date": "2026-10-13T12:45:58.966Z",
+          "user": "Admin",
+          "action": "Proyek Resmi Dimulai",
+          "note": "Dikonversi dari proposal PROP-2026-003 yang telah disetujui."
+        }
+      ],
+      "createdAt": "2026-10-13T12:45:58.966Z",
+      "updatedAt": "2026-10-13T12:45:58.968Z"
+    },
+    {
+      "id": "PRJ-2026-01",
+      "name": "OmniCommerce Headless Platform",
+      "clientId": "CLI-001",
+      "clientName": "PT Nusantara Retailindo",
+      "clientEmail": "budi@nusantaragroup.id",
+      "proposalId": "PROP-2026-001",
+      "pic": "Aditya Pratama (Technical Lead)",
+      "teamMembers": [
+        {
+          "name": "Aditya Pratama",
+          "role": "Lead Architect"
+        },
+        {
+          "name": "Sarah Lestari",
+          "role": "Lead UI/UX"
+        },
+        {
+          "name": "Dimas Wicaksono",
+          "role": "Senior Engineer"
+        }
+      ],
+      "startDate": "2026-10-04",
+      "deadline": "2026-11-28",
+      "progressPercentage": 75,
+      "status": "Pengerjaan",
+      "milestones": [
+        {
+          "id": "PRJ-01-M1",
+          "title": "Discovery & Requirement Analysis (FSD)",
+          "phase": 1,
+          "status": "Selesai",
+          "dueDate": "2026-10-08",
+          "desc": "Penyusunan arsitektur data & scope deliverables disetujui bersama klien.",
+          "deliverables": [
+            "Dokumen FSD v1.2",
+            "Database Schema Diagram"
+          ],
+          "approvedByClient": true
+        },
+        {
+          "id": "PRJ-01-M2",
+          "title": "UI/UX Design System & Interactive Prototype",
+          "phase": 2,
+          "status": "Selesai",
+          "dueDate": "2026-10-18",
+          "desc": "Design system Figma disetujui untuk tampilan desktop dan mobile.",
+          "deliverables": [
+            "Figma Prototype",
+            "Komponen UI Design System"
+          ],
+          "approvedByClient": true
+        },
+        {
+          "id": "PRJ-01-M3",
+          "title": "Core Development & ArtoPay Gateway Integration",
+          "phase": 3,
+          "status": "Sedang Berjalan",
+          "dueDate": "2026-11-08",
+          "desc": "Integrasi webhook ArtoPay, keranjang belanja, checkout QRIS/VA, dan database order.",
+          "deliverables": [
+            "Engine Checkout",
+            "Webhook Gateway",
+            "Portal Admin Produk"
+          ]
+        },
+        {
+          "id": "PRJ-01-M4",
+          "title": "Quality Assurance, Load Test & Cloud Deployment",
+          "phase": 4,
+          "status": "Menunggu",
+          "dueDate": "2026-11-28",
+          "desc": "Audit performa Core Web Vitals, pengujian keamanan, dan serah terima 100% hak milik kode.",
+          "deliverables": [
+            "Laporan QA 99.9% Uptime",
+            "Akses Repo Git Penuh",
+            "Handover BAST"
+          ]
+        }
+      ],
+      "tasks": [
+        {
+          "id": "T-01",
+          "milestoneId": "PRJ-01-M3",
+          "title": "Implementasi Webhook Signature Validator ArtoPay",
+          "assignee": "Aditya Pratama",
+          "status": "Done",
+          "priority": "Tinggi",
+          "dueDate": "2026-10-14"
+        },
+        {
+          "id": "T-02",
+          "milestoneId": "PRJ-01-M3",
+          "title": "Pengembangan Filter Kategori & Search Realtime",
+          "assignee": "Dimas Wicaksono",
+          "status": "In Progress",
+          "priority": "Sedang",
+          "dueDate": "2026-10-22"
+        },
+        {
+          "id": "T-03",
+          "milestoneId": "PRJ-01-M3",
+          "title": "Integrasi WhatsApp Order Confirmation Gateway",
+          "assignee": "Dimas Wicaksono",
+          "status": "In Progress",
+          "priority": "Sedang",
+          "dueDate": "2026-10-25"
+        },
+        {
+          "id": "T-04",
+          "milestoneId": "PRJ-01-M4",
+          "title": "Load Testing Simulasi 1000 Transaksi Konkuren",
+          "assignee": "Aditya Pratama",
+          "status": "To Do",
+          "priority": "Tinggi",
+          "dueDate": "2026-11-15"
+        }
+      ],
+      "revisions": [
+        {
+          "id": "REV-01",
+          "submittedDate": "2026-10-12",
+          "requestedBy": "Budi Santoso (Klien)",
+          "title": "Penambahan Kolom Nomor Resi Otomatis pada Email Pelanggan",
+          "description": "Klien meminta format template email konfirmasi pengiriman menyertakan tombol lacak langsung ke kurir.",
+          "status": "Resolved",
+          "resolutionNote": "Sudah diimplementasikan pada sprint 2 dan telah disetujui klien."
+        }
+      ],
+      "files": [
+        {
+          "id": "F-01",
+          "name": "FSD_OmniCommerce_v1.2.pdf",
+          "category": "FSD / Spec",
+          "size": "2.4 MB",
+          "url": "/public/images/smart-tech-logo.png",
+          "uploadedAt": "2026-10-06",
+          "allowedForClient": true
+        },
+        {
+          "id": "F-02",
+          "name": "Database_Schema_PostgreSQL.sql",
+          "category": "Source / Deployment",
+          "size": "145 KB",
+          "url": "/public/images/smart-tech-logo.png",
+          "uploadedAt": "2026-10-12",
+          "allowedForClient": true
+        },
+        {
+          "id": "F-03",
+          "name": "API_Documentation_Swagger.json",
+          "category": "FSD / Spec",
+          "size": "68 KB",
+          "url": "/public/images/smart-tech-logo.png",
+          "uploadedAt": "2026-10-15",
+          "allowedForClient": true
+        }
+      ],
+      "activityLog": [
+        {
+          "date": "2026-10-04T09:00:00Z",
+          "user": "Aditya Pratama",
+          "action": "Proyek Resmi Dimulai",
+          "note": "Kickoff meeting dan alokasi tim engineer."
+        },
+        {
+          "date": "2026-10-08T16:00:00Z",
+          "user": "Sarah Lestari",
+          "action": "Milestone 1 Selesai",
+          "note": "Dokumen FSD v1.2 disetujui klien."
+        },
+        {
+          "date": "2026-10-18T14:00:00Z",
+          "user": "Sarah Lestari",
+          "action": "Milestone 2 Selesai",
+          "note": "Design system dan prototype Figma 100% tervalidasi."
+        }
+      ],
+      "createdAt": "2026-10-04T08:00:00Z",
+      "updatedAt": "2026-10-18T14:00:00Z"
+    }
+  ],
+  "invoices": [
+    {
+      "id": "INV-2026-008",
+      "invoiceNumber": "INV-2026-008",
+      "projectId": "PRJ-2026-04",
+      "projectName": "Hospital Information & Telemedicine Platform",
+      "clientId": "CLI-005",
+      "clientName": "Dr. Hendra Gunawan",
+      "clientEmail": "hendra@meditech.id",
+      "title": "Pelunasan Akhir (50%) & BAST Serah Terima",
+      "type": "Pelunasan Akhir",
+      "amount": 25000000,
+      "dueDate": "2026-11-28",
+      "status": "Lunas",
+      "paymentUrl": "https://checkout-sandbox.artopay.id/pay/INV-2026-008",
+      "notes": "",
+      "createdAt": "2026-10-13T12:56:37.831Z",
+      "updatedAt": "2026-10-13T12:56:37.832Z",
+      "paidAt": "2026-10-13T12:56:37.832Z"
+    },
+    {
+      "id": "INV-2026-007",
+      "invoiceNumber": "INV-2026-007",
+      "projectId": "PRJ-2026-04",
+      "projectName": "Hospital Information & Telemedicine Platform",
+      "clientId": "CLI-005",
+      "clientName": "Dr. Hendra Gunawan",
+      "clientEmail": "hendra@meditech.id",
+      "title": "DP 50% - Kickoff Proyek Hospital Information & Telemedicine Platform",
+      "type": "DP (Uang Muka)",
+      "amount": 25000000,
+      "dueDate": "2026-10-20",
+      "status": "Menunggu Pembayaran",
+      "paymentUrl": "https://checkout-sandbox.artopay.id/pay/INV-2026-007",
+      "createdAt": "2026-10-13T12:56:37.828Z",
+      "updatedAt": "2026-10-13T12:56:37.828Z",
+      "notes": "Invoice pembayaran tahap 1 uang muka (DP) sesuai kontrak proposal PROP-2026-006."
+    },
+    {
+      "id": "INV-2026-006",
+      "invoiceNumber": "INV-2026-006",
+      "projectId": "PRJ-2026-03",
+      "projectName": "Hospital Information & Telemedicine Platform",
+      "clientId": "CLI-004",
+      "clientName": "Dr. Hendra Gunawan",
+      "clientEmail": "hendra@meditech.id",
+      "title": "Pelunasan Akhir (50%) & BAST Serah Terima",
+      "type": "Pelunasan Akhir",
+      "amount": 25000000,
+      "dueDate": "2026-11-28",
+      "status": "Lunas",
+      "paymentUrl": "https://checkout-sandbox.artopay.id/pay/INV-2026-006",
+      "notes": "",
+      "createdAt": "2026-10-13T12:56:18.188Z",
+      "updatedAt": "2026-10-13T12:56:18.189Z",
+      "paidAt": "2026-10-13T12:56:18.189Z"
+    },
+    {
+      "id": "INV-2026-005",
+      "invoiceNumber": "INV-2026-005",
+      "projectId": "PRJ-2026-03",
+      "projectName": "Hospital Information & Telemedicine Platform",
+      "clientId": "CLI-004",
+      "clientName": "Dr. Hendra Gunawan",
+      "clientEmail": "hendra@meditech.id",
+      "title": "DP 50% - Kickoff Proyek Hospital Information & Telemedicine Platform",
+      "type": "DP (Uang Muka)",
+      "amount": 25000000,
+      "dueDate": "2026-10-20",
+      "status": "Menunggu Pembayaran",
+      "paymentUrl": "https://checkout-sandbox.artopay.id/pay/INV-2026-005",
+      "createdAt": "2026-10-13T12:56:18.186Z",
+      "updatedAt": "2026-10-13T12:56:18.186Z",
+      "notes": "Invoice pembayaran tahap 1 uang muka (DP) sesuai kontrak proposal PROP-2026-005."
+    },
+    {
+      "id": "INV-2026-004",
+      "invoiceNumber": "INV-2026-004",
+      "projectId": "PRJ-2026-02",
+      "projectName": "Supply Chain Tracking Platform",
+      "clientId": "CLI-001",
+      "clientName": "Dewi Lestari",
+      "clientEmail": "budi@nusantaragroup.id",
+      "title": "DP 50% - Kickoff Proyek Supply Chain Tracking Platform",
+      "type": "DP (Uang Muka)",
+      "amount": 22500000,
+      "dueDate": "2026-10-20",
+      "status": "Menunggu Pembayaran",
+      "paymentUrl": "https://checkout-sandbox.artopay.id/pay/INV-2026-004",
+      "createdAt": "2026-10-13T12:45:58.967Z",
+      "updatedAt": "2026-10-13T12:45:58.967Z",
+      "notes": "Invoice pembayaran tahap 1 uang muka (DP) sesuai kontrak proposal PROP-2026-003."
+    },
+    {
+      "id": "INV-2026-001",
+      "invoiceNumber": "INV-2026-001",
+      "projectId": "PRJ-2026-01",
+      "projectName": "OmniCommerce Headless Platform",
+      "clientId": "CLI-001",
+      "clientName": "PT Nusantara Retailindo",
+      "clientEmail": "budi@nusantaragroup.id",
+      "title": "DP Tahap 1 (50%) - Kickoff Pengembangan",
+      "type": "DP (Uang Muka)",
+      "amount": 12500000,
+      "dueDate": "2026-10-07",
+      "status": "Lunas",
+      "paymentUrl": "https://checkout-sandbox.artopay.id/pay/INV-2026-001",
+      "paymentMethod": "BCA Virtual Account (ArtoPay)",
+      "paidAt": "2026-10-06T15:30:00Z",
+      "notes": "Pembayaran DP uang muka proyek telah terverifikasi otomatis.",
+      "createdAt": "2026-10-04T09:00:00Z",
+      "updatedAt": "2026-10-06T15:30:00Z"
+    },
+    {
+      "id": "INV-2026-002",
+      "invoiceNumber": "INV-2026-002",
+      "projectId": "PRJ-2026-01",
+      "projectName": "OmniCommerce Headless Platform",
+      "clientId": "CLI-001",
+      "clientName": "PT Nusantara Retailindo",
+      "clientEmail": "budi@nusantaragroup.id",
+      "title": "Termin 2 (30%) - Progress Prototype & Core Engine",
+      "type": "Termin Berkala",
+      "amount": 7500000,
+      "dueDate": "2026-10-21",
+      "status": "Lunas",
+      "paymentUrl": "https://checkout-sandbox.artopay.id/pay/INV-2026-002",
+      "paymentMethod": "QRIS Dinamis (ArtoPay)",
+      "paidAt": "2026-10-18T10:15:00Z",
+      "notes": "Pembayaran termin kedua progress pembangunan sistem.",
+      "createdAt": "2026-10-14T11:00:00Z",
+      "updatedAt": "2026-10-18T10:15:00Z"
+    },
+    {
+      "id": "INV-2026-003",
+      "invoiceNumber": "INV-2026-003",
+      "projectId": "PRJ-2026-01",
+      "projectName": "OmniCommerce Headless Platform",
+      "clientId": "CLI-001",
+      "clientName": "PT Nusantara Retailindo",
+      "clientEmail": "budi@nusantaragroup.id",
+      "title": "Pelunasan Akhir (20%) - Handover & Go-Live",
+      "type": "Pelunasan Akhir",
+      "amount": 5000000,
+      "dueDate": "2026-11-28",
+      "status": "Menunggu Pembayaran",
+      "paymentUrl": "https://checkout-sandbox.artopay.id/pay/INV-2026-003",
+      "notes": "Tagihan pelunasan akhir sebelum penyerahan hak akses server production.",
+      "createdAt": "2026-10-18T11:00:00Z",
+      "updatedAt": "2026-10-18T11:00:00Z"
+    }
+  ],
+  "calendarEvents": [
+    {
+      "id": "EVT-01",
+      "title": "Discovery Meeting Teknis: PT Nusantara Retailindo",
+      "type": "Konsultasi",
+      "date": "2026-10-14",
+      "time": "10:00 – 11:30 WIB",
+      "clientName": "Budi Santoso",
+      "relatedId": "CNS-2026-001",
+      "relatedType": "consultation",
+      "status": "Selesai",
+      "location": "Google Meet (meet.google.com/smt-tech-demo)"
+    },
+    {
+      "id": "EVT-02",
+      "title": "Presentasi Proposal: Karya Creative Agency",
+      "type": "Review Klien",
+      "date": "2026-10-16",
+      "time": "14:00 – 15:00 WIB",
+      "clientName": "Siti Rahmawati",
+      "relatedId": "PROP-2026-002",
+      "relatedType": "consultation",
+      "status": "Terkonfirmasi",
+      "location": "Office Meeting / Hybrid"
+    },
+    {
+      "id": "EVT-03",
+      "title": "Demo Mingguan Milestone 3: OmniCommerce Headless",
+      "type": "Milestone",
+      "date": "2026-10-24",
+      "time": "15:30 – 16:30 WIB",
+      "clientName": "PT Nusantara Retailindo",
+      "relatedId": "PRJ-2026-01",
+      "relatedType": "project",
+      "status": "Terkonfirmasi",
+      "location": "Staging Server Demo"
+    },
+    {
+      "id": "EVT-04",
+      "title": "Target Go-Live & Serah Terima: OmniCommerce Platform",
+      "type": "Deadline",
+      "date": "2026-11-28",
+      "time": "09:00 – 17:00 WIB",
+      "clientName": "PT Nusantara Retailindo",
+      "relatedId": "PRJ-2026-01",
+      "relatedType": "project",
+      "status": "Menunggu",
+      "location": "Cloud Production Deployment"
+    }
+  ],
+  "documents": [
+    {
+      "id": "DOC-001",
+      "title": "Kontrak_Kemitraan_Pengembangan_Software_PT_Nusantara.pdf",
+      "type": "Kontrak Resmi",
+      "relatedProject": "OmniCommerce Headless Platform",
+      "relatedClient": "PT Nusantara Retailindo",
+      "fileSize": "3.1 MB",
+      "accessLevel": "Dibagikan ke Klien",
+      "url": "/public/images/smart-tech-logo.png",
+      "updatedAt": "2026-10-06"
+    },
+    {
+      "id": "DOC-002",
+      "title": "Functional_Specification_Document_FSD_v1.2.pdf",
+      "type": "FSD Spesifikasi",
+      "relatedProject": "OmniCommerce Headless Platform",
+      "relatedClient": "PT Nusantara Retailindo",
+      "fileSize": "2.4 MB",
+      "accessLevel": "Dibagikan ke Klien",
+      "url": "/public/images/smart-tech-logo.png",
+      "updatedAt": "2026-10-08"
+    },
+    {
+      "id": "DOC-003",
+      "title": "Proposal_Penawaran_Resmi_PROP-2026-002.pdf",
+      "type": "Kontrak Resmi",
+      "relatedProject": "Custom SaaS Dashboard",
+      "relatedClient": "Karya Creative Agency",
+      "fileSize": "1.9 MB",
+      "accessLevel": "Dibagikan ke Klien",
+      "url": "/public/images/smart-tech-logo.png",
+      "updatedAt": "2026-10-11"
+    },
+    {
+      "id": "DOC-004",
+      "title": "Standard_Operating_Procedure_Security_Audit.pdf",
+      "type": "SRS Teknis",
+      "relatedProject": "Internal Smart Tech",
+      "relatedClient": "Smart Tech Studio",
+      "fileSize": "840 KB",
+      "accessLevel": "Internal Admin",
+      "url": "/public/images/smart-tech-logo.png",
+      "updatedAt": "2026-10-13"
+    }
+  ],
+  "activityLogs": [
+    {
+      "id": "LOG-mv6oqb49-mdve",
+      "timestamp": "2026-10-13T12:56:37.833Z",
+      "user": "Admin",
+      "module": "Project",
+      "action": "Update Proyek",
+      "details": "PRJ-2026-04: Hospital Information & Telemedicine Platform (Selesai)"
+    },
+    {
+      "id": "LOG-mv6oqb48-hbyc",
+      "timestamp": "2026-10-13T12:56:37.832Z",
+      "user": "Admin",
+      "module": "Invoice",
+      "action": "Update Tagihan",
+      "details": "INV-2026-008: Status Lunas"
+    },
+    {
+      "id": "LOG-mv6oqb47-6r7t",
+      "timestamp": "2026-10-13T12:56:37.831Z",
+      "user": "Admin",
+      "module": "Invoice",
+      "action": "Buat Tagihan Baru",
+      "details": "INV-2026-008: Pelunasan Akhir (50%) & BAST Serah Terima (Rp 25.000.000)"
+    },
+    {
+      "id": "LOG-mv6oqb45-4hlb",
+      "timestamp": "2026-10-13T12:56:37.829Z",
+      "user": "Admin",
+      "module": "Project",
+      "action": "Update Proyek",
+      "details": "PRJ-2026-04: Hospital Information & Telemedicine Platform (Pengerjaan)"
+    },
+    {
+      "id": "LOG-mv6oqb44-l682",
+      "timestamp": "2026-10-13T12:56:37.828Z",
+      "user": "Admin",
+      "module": "Project",
+      "action": "Proyek Dibuat dari Proposal",
+      "details": "Proposal PROP-2026-006 -> Proyek PRJ-2026-04 & Invoice INV-2026-007"
+    },
+    {
+      "id": "LOG-mv6oqb42-gavi",
+      "timestamp": "2026-10-13T12:56:37.827Z",
+      "user": "Admin",
+      "module": "Proposal",
+      "action": "Buat Proposal Baru",
+      "details": "PROP-2026-006: Hospital Information & Telemedicine Platform (Rp 50.000.000)"
+    },
+    {
+      "id": "LOG-mv6oqb3e-4ebv",
+      "timestamp": "2026-10-13T12:56:37.802Z",
+      "user": "Admin",
+      "module": "Client",
+      "action": "Tambah Klien Baru",
+      "details": "CLI-005: Dr. Hendra Gunawan (PT Medika Inovasi Digital)"
+    },
+    {
+      "id": "LOG-mv6oqb3d-wx0x",
+      "timestamp": "2026-10-13T12:56:37.801Z",
+      "user": "Website Visitor",
+      "module": "Consultation",
+      "action": "Buat Konsultasi Baru",
+      "details": "CNS-2026-008: Dr. Hendra Gunawan (Aplikasi Bisnis / Internal Tool)"
+    },
+    {
+      "id": "LOG-mv6opvym-qd3i",
+      "timestamp": "2026-10-13T12:56:18.190Z",
+      "user": "Admin",
+      "module": "Project",
+      "action": "Update Proyek",
+      "details": "PRJ-2026-03: Hospital Information & Telemedicine Platform (Selesai)"
+    },
+    {
+      "id": "LOG-mv6opvyl-hk2e",
+      "timestamp": "2026-10-13T12:56:18.189Z",
+      "user": "Admin",
+      "module": "Invoice",
+      "action": "Update Tagihan",
+      "details": "INV-2026-006: Status Lunas"
+    },
+    {
+      "id": "LOG-mv6opvyk-89ul",
+      "timestamp": "2026-10-13T12:56:18.188Z",
+      "user": "Admin",
+      "module": "Invoice",
+      "action": "Buat Tagihan Baru",
+      "details": "INV-2026-006: Pelunasan Akhir (50%) & BAST Serah Terima (Rp 25.000.000)"
+    },
+    {
+      "id": "LOG-mv6opvyj-172n",
+      "timestamp": "2026-10-13T12:56:18.187Z",
+      "user": "Admin",
+      "module": "Project",
+      "action": "Update Proyek",
+      "details": "PRJ-2026-03: Hospital Information & Telemedicine Platform (Pengerjaan)"
+    },
+    {
+      "id": "LOG-mv6opvyi-o6eb",
+      "timestamp": "2026-10-13T12:56:18.186Z",
+      "user": "Admin",
+      "module": "Project",
+      "action": "Proyek Dibuat dari Proposal",
+      "details": "Proposal PROP-2026-005 -> Proyek PRJ-2026-03 & Invoice INV-2026-005"
+    },
+    {
+      "id": "LOG-mv6opvyg-0bmb",
+      "timestamp": "2026-10-13T12:56:18.184Z",
+      "user": "Admin",
+      "module": "Proposal",
+      "action": "Buat Proposal Baru",
+      "details": "PROP-2026-005: Hospital Information & Telemedicine Platform (Rp 50.000.000)"
+    },
+    {
+      "id": "LOG-mv6opvxy-grm9",
+      "timestamp": "2026-10-13T12:56:18.166Z",
+      "user": "Admin",
+      "module": "Client",
+      "action": "Tambah Klien Baru",
+      "details": "CLI-004: Dr. Hendra Gunawan (PT Medika Inovasi Digital)"
+    },
+    {
+      "id": "LOG-mv6opvxx-nbxp",
+      "timestamp": "2026-10-13T12:56:18.165Z",
+      "user": "Website Visitor",
+      "module": "Consultation",
+      "action": "Buat Konsultasi Baru",
+      "details": "CNS-2026-007: Dr. Hendra Gunawan (Aplikasi Bisnis / Internal Tool)"
+    },
+    {
+      "id": "LOG-mv6omz2a-i6f5",
+      "timestamp": "2026-10-13T12:54:02.242Z",
+      "user": "Admin",
+      "module": "Proposal",
+      "action": "Buat Proposal Baru",
+      "details": "PROP-2026-004: Hospital Information & Telemedicine Platform (Rp 50.000.000)"
+    },
+    {
+      "id": "LOG-mv6omz00-0usk",
+      "timestamp": "2026-10-13T12:54:02.160Z",
+      "user": "Admin",
+      "module": "Client",
+      "action": "Tambah Klien Baru",
+      "details": "CLI-003: Dr. Hendra Gunawan (PT Medika Inovasi Digital)"
+    },
+    {
+      "id": "LOG-mv6omyzy-wmoy",
+      "timestamp": "2026-10-13T12:54:02.158Z",
+      "user": "Website Visitor",
+      "module": "Consultation",
+      "action": "Buat Konsultasi Baru",
+      "details": "CNS-2026-006: Dr. Hendra Gunawan (Aplikasi Bisnis / Internal Tool)"
+    },
+    {
+      "id": "LOG-mv6ocm60-4f8n",
+      "timestamp": "2026-10-13T12:45:58.968Z",
+      "user": "Dewi Lestari (Klien)",
+      "module": "Project",
+      "action": "Pengajuan Revisi",
+      "details": "PRJ-2026-02: Penyesuaian visual status pengiriman"
+    },
+    {
+      "id": "LOG-mv6ocm5z-a1ou",
+      "timestamp": "2026-10-13T12:45:58.967Z",
+      "user": "Admin",
+      "module": "Project",
+      "action": "Proyek Dibuat dari Proposal",
+      "details": "Proposal PROP-2026-003 -> Proyek PRJ-2026-02 & Invoice INV-2026-004"
+    },
+    {
+      "id": "LOG-mv6ocm5w-nd36",
+      "timestamp": "2026-10-13T12:45:58.964Z",
+      "user": "Admin",
+      "module": "Proposal",
+      "action": "Buat Proposal Baru",
+      "details": "PROP-2026-003: Supply Chain Tracking Platform (Rp 45.000.000)"
+    },
+    {
+      "id": "LOG-mv6ocm2e-myh2",
+      "timestamp": "2026-10-13T12:45:58.838Z",
+      "user": "Admin",
+      "module": "Consultation",
+      "action": "Update Konsultasi",
+      "details": "CNS-2026-005: Status Jadwal Konsultasi"
+    },
+    {
+      "id": "LOG-mv6ocm2d-xscj",
+      "timestamp": "2026-10-13T12:45:58.837Z",
+      "user": "Admin",
+      "module": "Consultation",
+      "action": "Update Konsultasi",
+      "details": "CNS-2026-005: Status Dihubungi"
+    },
+    {
+      "id": "LOG-mv6ocm2d-6ker",
+      "timestamp": "2026-10-13T12:45:58.837Z",
+      "user": "Admin",
+      "module": "Consultation",
+      "action": "Update Konsultasi",
+      "details": "CNS-2026-005: Status Ditinjau"
+    },
+    {
+      "id": "LOG-mv6ocm2b-7p0m",
+      "timestamp": "2026-10-13T12:45:58.835Z",
+      "user": "Website",
+      "module": "Consultation",
+      "action": "Buat Konsultasi Baru",
+      "details": "CNS-2026-005: Dewi Lestari (Aplikasi Bisnis / Internal Tool)"
+    },
+    {
+      "id": "LOG-001",
+      "timestamp": "2026-10-13T10:45:29.682Z",
+      "user": "Aditya Pratama (Admin)",
+      "module": "Consultation",
+      "action": "Tinjau Inquiry",
+      "details": "Menugaskan inquiry dr. Melinda Kusuma ke Product Lead."
+    },
+    {
+      "id": "LOG-002",
+      "timestamp": "2026-10-13T07:45:29.682Z",
+      "user": "Sistem Gateway",
+      "module": "Invoice",
+      "action": "Verifikasi Pembayaran",
+      "details": "Invoice INV-2026-002 sebesar Rp 7.500.000 terverifikasi LUNAS via QRIS ArtoPay."
+    },
+    {
+      "id": "LOG-003",
+      "timestamp": "2026-10-12T18:45:29.682Z",
+      "user": "Sarah Lestari (Designer)",
+      "module": "Project",
+      "action": "Update Milestone",
+      "details": "Milestone 2 (UI/UX Design System) ditandai Selesai."
+    },
+    {
+      "id": "LOG-004",
+      "timestamp": "2026-10-11T12:45:29.682Z",
+      "user": "Budi Santoso (Klien)",
+      "module": "Portal",
+      "action": "Akses Client Portal",
+      "details": "Klien login ke portal dengan kode akses NTR-2026."
+    }
+  ],
+  "settings": {
+    "studioName": "Smart Tech",
+    "studioEmail": "hello@smarttech.id",
+    "studioPhone": "+62 812-3456-7890",
+    "studioAddress": "Equity Tower Lt. 22, SCBD, Jl. Jend. Sudirman Kav. 52-53, Jakarta Selatan",
+    "websiteUrl": "https://smarttech.id",
+    "bankInfo": {
+      "bankName": "Bank Central Asia (BCA)",
+      "accountNo": "8820-192-881",
+      "accountName": "PT SMART TECH REKAYASA DIGITAL"
+    },
+    "artopaySandbox": true,
+    "defaultDpPercentage": 50,
+    "teamMembers": [
+      {
+        "name": "Aditya Pratama",
+        "role": "Head of Engineering / Technical Lead",
+        "email": "aditya@smarttech.id"
+      },
+      {
+        "name": "Sarah Lestari",
+        "role": "Lead UI/UX Product Designer",
+        "email": "sarah@smarttech.id"
+      },
+      {
+        "name": "Dimas Wicaksono",
+        "role": "Senior Fullstack Engineer",
+        "email": "dimas@smarttech.id"
+      },
+      {
+        "name": "Rangga Prawira",
+        "role": "DevOps & Cloud Architect",
+        "email": "rangga@smarttech.id"
+      }
+    ]
+  }
+}

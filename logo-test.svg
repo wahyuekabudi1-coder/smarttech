@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 750" width="1000" height="750">
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@800;900&amp;family=Orbitron:wght@800;900&amp;display=swap');
+      .smart-text {
+        font-family: 'Orbitron', 'Montserrat', 'Plus Jakarta Sans', sans-serif;
+        font-weight: 900;
+        font-size: 58px;
+        letter-spacing: 5px;
+        fill: #00D2D3;
+      }
+      .tech-text {
+        font-family: 'Orbitron', 'Montserrat', 'Plus Jakarta Sans', sans-serif;
+        font-weight: 900;
+        font-size: 58px;
+        letter-spacing: 5px;
+        fill: #FFFFFF;
+      }
+    </style>
+  </defs>
+
+  <!-- Top Hexagonal S Symbol -->
+  <g id="hex-symbol">
+    <!-- Top Piece of S in Hexagon -->
+    <path d="M 500,165 
+             L 600,222.7 
+             L 600,285 
+             L 548,255 
+             L 548,295 
+             L 450,238 
+             L 400,267 
+             L 400,222.7 
+             Z" 
+          fill="#2F70F2" />
+          
+    <!-- Bottom Piece of S in Hexagon -->
+    <path d="M 600,315 
+             L 600,359.3 
+             L 500,417 
+             L 400,359.3 
+             L 400,297 
+             L 452,327 
+             L 452,287 
+             L 550,344 
+             Z" 
+          fill="#2F70F2" />
+  </g>
+
+  <!-- Brand Typography -->
+  <g id="brand-text" transform="translate(0, 530)">
+    <!-- SMART in Cyan -->
+    <text x="240" y="0" class="smart-text">SMART</text>
+    
+    <!-- TECH in White -->
+    <text x="545" y="0" class="tech-text">TECH</text>
+    
+    <!-- Curved Cyan Arc Swoosh under TECH -->
+    <path d="M 520, -50 
+             C 525, 45 660, 115 780, 20" 
+          fill="none" 
+          stroke="#00D2D3" 
+          stroke-width="12" 
+          stroke-linecap="round" />
+  </g>
+</svg>

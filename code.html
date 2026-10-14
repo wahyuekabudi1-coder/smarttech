@@ -1,0 +1,1139 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_standard" name="shell-type"/><title>Smart Tech — Software Engineering &amp; Product Design</title><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=JetBrains+Mono:wght@400;500&amp;family=Plus+Jakarta+Sans:wght@600;700;800&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{"colors":{"surface-container":"#152031","on-error-container":"#ffdad6","surface-container-low":"#111c2d","primary-container":"#7c8cff","on-primary-container":"#001892","tertiary-fixed":"#dee1f9","secondary-container":"#265045","on-primary-fixed-variant":"#2839aa","on-background":"#d8e3fb","on-primary-fixed":"#000c60","inverse-on-surface":"#263143","outline-variant":"#454653","secondary-fixed-dim":"#a3d0c1","on-tertiary-fixed":"#161b2b","inverse-surface":"#d8e3fb","tertiary-container":"#9195aa","primary-fixed-dim":"#bcc3ff","on-tertiary-container":"#292e3f","surface-tint":"#bcc3ff","surface-dim":"#081425","error-container":"#93000a","background":"#081425","on-secondary-container":"#95c2b3","primary-fixed":"#dfe0ff","on-secondary-fixed":"#002019","on-surface":"#d8e3fb","tertiary":"#c1c5dc","on-error":"#690005","surface-container-lowest":"#040e1f","surface-variant":"#2a3548","tertiary-fixed-dim":"#c1c5dc","secondary-fixed":"#bfecdc","on-secondary-fixed-variant":"#244e43","surface":"#081425","surface-container-high":"#1f2a3c","surface-container-highest":"#2a3548","error":"#ffb4ab","on-tertiary":"#2b3041","on-surface-variant":"#c6c5d5","primary":"#bcc3ff","inverse-primary":"#4353c3","on-tertiary-fixed-variant":"#414658","surface-bright":"#2f3a4c","on-secondary":"#08372d","secondary":"#a3d0c1","outline":"#8f8f9f","on-primary":"#041c94"},"borderRadius":{"DEFAULT":"0.25rem","lg":"0.5rem","xl":"0.75rem","full":"9999px"},"spacing":{"margin-mobile":"1.25rem","space-xs":"0.25rem","space-lg":"1.5rem","space-xl":"2.5rem","gutter-mobile":"1rem","gutter":"1.5rem","space-md":"1rem","margin":"3rem","space-sm":"0.5rem"},"fontFamily":{"body-sm":["Inter"],"display-xl-mobile":["Plus Jakarta Sans"],"label-md":["Inter"],"headline-lg":["Plus Jakarta Sans"],"headline-md":["Plus Jakarta Sans"],"headline-lg-mobile":["Plus Jakarta Sans"],"body-md":["Inter"],"label-code":["JetBrains Mono"],"headline-sm":["Plus Jakarta Sans"],"body-lg":["Inter"],"display-xl":["Plus Jakarta Sans"]},"fontSize":{"body-sm":["13px",{"lineHeight":"20px","letterSpacing":"0em","fontWeight":"400"}],"display-xl-mobile":["40px",{"lineHeight":"48px","letterSpacing":"-0.025em","fontWeight":"800"}],"label-md":["14px",{"lineHeight":"20px","letterSpacing":"0em","fontWeight":"500"}],"headline-lg":["40px",{"lineHeight":"48px","letterSpacing":"-0.025em","fontWeight":"700"}],"headline-md":["28px",{"lineHeight":"36px","letterSpacing":"-0.02em","fontWeight":"600"}],"headline-lg-mobile":["28px",{"lineHeight":"36px","letterSpacing":"-0.02em","fontWeight":"700"}],"body-md":["15px",{"lineHeight":"24px","letterSpacing":"0em","fontWeight":"400"}],"label-code":["12px",{"lineHeight":"16px","letterSpacing":"0.02em","fontWeight":"500"}],"headline-sm":["20px",{"lineHeight":"28px","letterSpacing":"-0.015em","fontWeight":"600"}],"body-lg":["18px",{"lineHeight":"28px","letterSpacing":"-0.01em","fontWeight":"400"}],"display-xl":["64px",{"lineHeight":"72px","letterSpacing":"-0.03em","fontWeight":"800"}]}}}};</script></head><body class="bg-surface font-body-md text-on-surface antialiased selection:bg-primary-container selection:text-on-primary-container min-h-screen"><header class="fixed top-0 left-0 right-0 w-full z-50 bg-surface/80 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-20 max-w-[1440px] mx-auto px-margin-mobile md:px-margin flex items-center justify-between gap-space-md"><div class="flex items-center gap-space-lg"><a class="flex items-center gap-space-sm group" data-path="services" href="#"><img alt="Smart Tech Logo" class="h-8 w-auto object-contain" src="/public/images/smart-tech-logo.png"/><div class="flex flex-col"><span class="font-headline-sm text-headline-sm tracking-tight text-on-surface group-hover:text-primary transition-colors">Smart Tech</span><span class="font-label-code text-label-code text-outline tracking-wider uppercase">Engineering &amp; Design</span></div></a><nav class="hidden xl:flex items-center gap-space-md ml-space-sm" data-active-classes="text-primary font-bold"><a aria-current="page" class="transition-colors py-space-xs text-primary font-bold" data-path="services" href="#">Services</a><a class="font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-colors py-space-xs" data-path="solutions" href="#">Solutions</a><a class="font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-colors py-space-xs" data-path="portfolio" href="#">Portfolio</a><a class="font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-colors py-space-xs" data-path="about" href="#">About</a><a class="font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-colors py-space-xs" data-path="process" href="#">Process</a><a class="font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-colors py-space-xs" data-path="pricing" href="#">Pricing</a><a class="font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-colors py-space-xs" data-path="insights" href="#">Insights</a><a class="font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-colors py-space-xs" data-path="contact" href="#">Contact</a></nav></div><div class="flex items-center gap-space-sm md:gap-space-md"><div class="inline-flex items-center bg-surface-container rounded-full p-space-xs"><button class="px-space-sm py-0.5 rounded-full bg-surface-bright text-on-surface font-label-code text-label-code" type="button">EN</button><button class="px-space-sm py-0.5 rounded-full text-on-surface-variant hover:text-on-surface font-label-code text-label-code transition-colors" type="button">ID</button></div><a class="hidden sm:inline-flex items-center font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-colors px-space-sm py-space-xs" data-path="client-portal" href="#">Client Portal</a><a class="inline-flex items-center justify-center bg-primary-container hover:bg-primary text-on-primary-container font-label-md text-label-md px-space-md py-space-sm rounded-lg shadow-[0_0_24px_-4px_rgba(124,140,255,0.35)] transition-all hover:scale-[1.02]" data-path="start-a-project" href="#">Start a Project</a><div class="flex items-center pl-space-xs border-l border-outline-variant/30"><img alt="Profile" class="w-8 h-8 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB5C3RXTjdQK3UnsDomi2A23ga6owm2uOPQGxj7ZA3rRUlbaNSOZ_H2WNp0-hVRP7CAGvvZl6texF76IwybQhQBQferlirym7VijaN4N8JCS2G5nc0xw_nTm21LDH6q2Cxotc7KLDjKVlj6glxHEMDY0avhLfXEutWu2STVGwvLm7MZ6h6PREahEe5uQJvyCfTH1cOVQnrCpNUzK0A_jTK3jlXesP-6H7SpUehtuBp11TLoaT8k2lzf0g"/></div></div></div></header><main class="w-full pt-20 bg-surface min-h-[calc(100vh-80px)]"><div class="flex flex-col w-full text-on-surface">
+<!-- =========================================================================
+       1. HERO SECTION: Cinematic Asymmetric Composition
+       ========================================================================= -->
+<section class="relative w-full overflow-hidden">
+<!-- Ambient Depth Background Glows -->
+<div class="absolute -top-32 left-1/4 w-96 h-96 bg-primary-container/10 rounded-full blur-[140px] pointer-events-none"></div>
+<div class="absolute top-1/3 -right-20 w-[420px] h-[420px] bg-secondary-container/20 rounded-full blur-[160px] pointer-events-none"></div>
+<div class="max-w-[1440px] mx-auto px-margin-mobile md:px-margin pt-space-xl pb-space-xl">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter items-center">
+<!-- Left Column: Manifesto & Value Proposition (7 cols) -->
+<div class="lg:col-span-7 flex flex-col gap-space-md z-10">
+<!-- Bilingual Status Tag -->
+<div class="inline-flex items-center gap-space-xs self-start px-space-md py-1.5 rounded-full bg-surface-container-high text-on-surface shadow-sm">
+<span class="inline-block w-2 h-2 rounded-full bg-secondary animate-pulse"></span>
+<span class="font-label-code text-label-code text-secondary tracking-wide uppercase">ID • EN</span>
+<span class="text-outline-variant font-label-code text-label-code">/</span>
+<span class="font-label-code text-label-code text-on-surface-variant font-medium">Solusi Software &amp; Desain Skala Enterprise | Global Delivery</span>
+</div>
+<!-- Grand Editorial Display Headline -->
+<h1 class="font-display-xl text-headline-lg lg:text-display-xl tracking-tight text-on-surface font-extrabold max-w-3xl">
+            Kami merancang dan membangun website, aplikasi, dan solusi software yang <span class="bg-gradient-to-r from-primary via-primary-fixed to-secondary-fixed-dim bg-clip-text text-transparent">membantu bisnis berkembang.</span>
+</h1>
+<!-- Bilingual Precision Subheadline -->
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl font-normal leading-relaxed">
+            We engineer mission-critical digital products, high-load web architectures, custom backend ecosystems, and automated business workflows adhering to rigorous international software standards.
+          </p>
+<!-- Dual CTAs & Conversion Actions -->
+<div class="flex flex-wrap items-center gap-space-md pt-space-sm">
+<a class="inline-flex items-center justify-center gap-space-sm bg-primary-container text-on-primary-container hover:bg-primary font-label-md text-label-md px-space-xl py-3.5 rounded-lg shadow-xl shadow-primary-container/20 hover:scale-[1.02] transition-all" href="#quick-consultation">
+<span>Konsultasi Proyek • Start a Project</span>
+<span class="material-symbols-outlined text-sm">arrow_forward</span>
+</a>
+<a class="inline-flex items-center justify-center gap-space-sm bg-surface-container hover:bg-surface-container-high text-on-surface font-label-md text-label-md px-space-lg py-3.5 rounded-lg transition-all shadow-sm" href="#case-studies">
+<span class="material-symbols-outlined text-secondary text-base">play_circle</span>
+<span>Lihat Case Studies &amp; Arsitektur</span>
+</a>
+</div>
+<!-- Micro Footnote Trust Marker -->
+<div class="flex items-center gap-space-lg pt-space-xs text-outline font-label-code text-label-code">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-secondary text-sm">verified_user</span>
+<span>100% Full Code Ownership</span>
+</div>
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-primary text-sm">schedule</span>
+<span>Sprint Delivery • Weekly Releases</span>
+</div>
+</div>
+</div>
+<!-- Right Column: Interactive Architectural Telemetry Mockup (5 cols) -->
+<div class="lg:col-span-5 relative mt-space-lg lg:mt-0">
+<!-- Glass Card Terminal Window -->
+<div class="bg-surface-container-low rounded-xl shadow-2xl overflow-hidden backdrop-blur-xl">
+<!-- Window Bar -->
+<div class="bg-surface-container px-space-md py-space-sm flex items-center justify-between">
+<div class="flex items-center gap-1.5">
+<span class="w-3 h-3 rounded-full bg-error-container"></span>
+<span class="w-3 h-3 rounded-full bg-surface-bright"></span>
+<span class="w-3 h-3 rounded-full bg-secondary-container"></span>
+<span class="ml-2 font-label-code text-label-code text-outline">cluster-prod-ap-southeast-3.sys</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="inline-flex items-center px-2 py-0.5 rounded font-label-code text-label-code bg-secondary-container text-on-secondary-container">
+                  READY • 99.98%
+                </span>
+</div>
+</div>
+<!-- Terminal Dashboard Sub-grid -->
+<div class="p-space-lg flex flex-col gap-space-md">
+<!-- Metrics Ribbon -->
+<div class="grid grid-cols-3 gap-space-xs bg-surface-container-lowest p-space-sm rounded-lg">
+<div class="flex flex-col">
+<span class="font-label-code text-label-code text-outline">LATENCY</span>
+<span class="font-headline-sm text-headline-sm font-bold text-secondary">24ms</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-code text-label-code text-outline">THROUGHPUT</span>
+<span class="font-headline-sm text-headline-sm font-bold text-on-surface">14.8k <span class="font-label-code text-xs text-outline">req/s</span></span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-code text-label-code text-outline">COMPLIANCE</span>
+<span class="font-headline-sm text-headline-sm font-bold text-primary">ISO-27001</span>
+</div>
+</div>
+<!-- Interactive Node Topology Preview -->
+<div class="bg-surface-container p-space-md rounded-lg flex flex-col gap-space-sm">
+<div class="flex items-center justify-between">
+<span class="font-label-code text-label-code text-on-surface uppercase font-semibold">Active Service Topology</span>
+<span class="font-label-code text-label-code text-outline">Next.js • Edge Engine</span>
+</div>
+<!-- Telemetry SVG Chart Visualization -->
+<div class="h-28 w-full bg-surface-container-lowest rounded flex items-end px-3 py-2 gap-2 relative overflow-hidden">
+<svg class="w-full h-full text-primary" fill="none" preserveaspectratio="none" viewbox="0 0 300 70">
+<path d="M0,55 C30,50 45,20 75,25 C105,30 120,60 150,40 C180,20 195,10 225,18 C255,26 270,5 300,12" stroke="currentColor" stroke-linecap="round" stroke-width="2.5"></path>
+<path d="M0,55 C30,50 45,20 75,25 C105,30 120,60 150,40 C180,20 195,10 225,18 C255,26 270,5 300,12 L300,70 L0,70 Z" fill="currentColor" fill-opacity="0.12"></path>
+</svg>
+<div class="absolute top-2 left-3 font-label-code text-label-code text-secondary flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+<span>Edge Worker Cache Hit 98.4%</span>
+</div>
+</div>
+</div>
+<!-- Live Code Blueprint Snippet -->
+<div class="bg-surface-container-lowest p-space-md rounded-lg font-label-code text-label-code leading-relaxed text-on-surface-variant flex flex-col gap-1">
+<div class="flex items-center justify-between text-outline text-xs pb-1">
+<span>schema.telemetry.ts</span>
+<span class="text-secondary">Typechecked</span>
+</div>
+<div class="text-tertiary">
+<span class="text-primary">export interface</span> <span class="text-on-surface font-semibold">SystemStack</span> {
+                </div>
+<div class="pl-4 text-outline">
+                  framework: <span class="text-secondary-fixed">"Next.js 15 App Router"</span>;
+                </div>
+<div class="pl-4 text-outline">
+                  database: <span class="text-secondary-fixed">"PostgreSQL + Supabase RLS"</span>;
+                </div>
+<div class="pl-4 text-outline">
+                  concurrency: <span class="text-primary-container">AdaptiveLoadBalancer</span>;
+                </div>
+<div class="text-tertiary">}</div>
+</div>
+<!-- Security Footprint Status -->
+<div class="flex items-center justify-between pt-1">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-sm">lock_open</span>
+<span class="font-label-code text-label-code text-on-surface">Zero Trust RBAC Layer</span>
+</div>
+<span class="font-label-code text-label-code text-outline">SSL/TLS 1.3 Strict</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- =========================================================================
+       2. TRUST & VERIFIED ENGINEERING COMPETENCY
+       ========================================================================= -->
+<section class="w-full bg-surface-container-lowest py-space-xl">
+<div class="max-w-[1440px] mx-auto px-margin-mobile md:px-margin">
+<div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-space-md pb-space-lg">
+<div>
+<span class="font-label-code text-label-code text-primary uppercase tracking-widest font-semibold block mb-1">Stack Standar Industri</span>
+<h2 class="font-headline-md text-headline-md text-on-surface font-bold">Infrastruktur &amp; Framework Pilihan</h2>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-md">
+          Semua proyek dibangun menggunakan arsitektur modern berkinerja tinggi, tanpa template usang, menjamin skalabilitas hingga jutaan traffic.
+        </p>
+</div>
+<!-- Modern Tech Monogram Grid -->
+<div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 lg:grid-cols-9 gap-space-xs">
+<div class="bg-surface-container-low p-space-md rounded-lg flex flex-col items-center justify-center gap-1.5 text-center group hover:bg-surface-container transition-all">
+<span class="font-label-code text-label-code font-bold text-on-surface">Next.js 15</span>
+<span class="font-label-code text-label-code text-outline text-[11px]">React Framework</span>
+</div>
+<div class="bg-surface-container-low p-space-md rounded-lg flex flex-col items-center justify-center gap-1.5 text-center group hover:bg-surface-container transition-all">
+<span class="font-label-code text-label-code font-bold text-on-surface">TypeScript</span>
+<span class="font-label-code text-label-code text-outline text-[11px]">Type Strict</span>
+</div>
+<div class="bg-surface-container-low p-space-md rounded-lg flex flex-col items-center justify-center gap-1.5 text-center group hover:bg-surface-container transition-all">
+<span class="font-label-code text-label-code font-bold text-on-surface">PostgreSQL</span>
+<span class="font-label-code text-label-code text-outline text-[11px]">ACID Engine</span>
+</div>
+<div class="bg-surface-container-low p-space-md rounded-lg flex flex-col items-center justify-center gap-1.5 text-center group hover:bg-surface-container transition-all">
+<span class="font-label-code text-label-code font-bold text-on-surface">Supabase</span>
+<span class="font-label-code text-label-code text-outline text-[11px]">Realtime &amp; RLS</span>
+</div>
+<div class="bg-surface-container-low p-space-md rounded-lg flex flex-col items-center justify-center gap-1.5 text-center group hover:bg-surface-container transition-all">
+<span class="font-label-code text-label-code font-bold text-on-surface">Docker</span>
+<span class="font-label-code text-label-code text-outline text-[11px]">Containerization</span>
+</div>
+<div class="bg-surface-container-low p-space-md rounded-lg flex flex-col items-center justify-center gap-1.5 text-center group hover:bg-surface-container transition-all">
+<span class="font-label-code text-label-code font-bold text-on-surface">Vercel</span>
+<span class="font-label-code text-label-code text-outline text-[11px]">Edge Network</span>
+</div>
+<div class="bg-surface-container-low p-space-md rounded-lg flex flex-col items-center justify-center gap-1.5 text-center group hover:bg-surface-container transition-all">
+<span class="font-label-code text-label-code font-bold text-on-surface">Node.js</span>
+<span class="font-label-code text-label-code text-outline text-[11px]">Async Runtime</span>
+</div>
+<div class="bg-surface-container-low p-space-md rounded-lg flex flex-col items-center justify-center gap-1.5 text-center group hover:bg-surface-container transition-all">
+<span class="font-label-code text-label-code font-bold text-on-surface">Python</span>
+<span class="font-label-code text-label-code text-outline text-[11px]">AI / Automation</span>
+</div>
+<div class="bg-surface-container-low p-space-md rounded-lg flex flex-col items-center justify-center gap-1.5 text-center group hover:bg-surface-container transition-all">
+<span class="font-label-code text-label-code font-bold text-on-surface">Tailwind</span>
+<span class="font-label-code text-label-code text-outline text-[11px]">Design System</span>
+</div>
+</div>
+<!-- Core Quality Guarantees Bar -->
+<div class="mt-space-lg grid grid-cols-1 md:grid-cols-4 gap-space-md pt-space-md">
+<div class="flex items-center gap-space-sm bg-surface-container p-space-md rounded-lg">
+<span class="material-symbols-outlined text-primary text-2xl">verified</span>
+<div>
+<span class="font-headline-sm text-headline-sm text-on-surface block font-semibold">100% Clean Code</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Linted, typed, &amp; modular</span>
+</div>
+</div>
+<div class="flex items-center gap-space-sm bg-surface-container p-space-md rounded-lg">
+<span class="material-symbols-outlined text-secondary text-2xl">speed</span>
+<div>
+<span class="font-headline-sm text-headline-sm text-on-surface block font-semibold">Core Web Vitals 95+</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Lighthouse score target</span>
+</div>
+</div>
+<div class="flex items-center gap-space-sm bg-surface-container p-space-md rounded-lg">
+<span class="material-symbols-outlined text-primary-fixed text-2xl">shield</span>
+<div>
+<span class="font-headline-sm text-headline-sm text-on-surface block font-semibold">Enterprise Security</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">OWASP Top 10 &amp; RBAC</span>
+</div>
+</div>
+<div class="flex items-center gap-space-sm bg-surface-container p-space-md rounded-lg">
+<span class="material-symbols-outlined text-secondary-fixed-dim text-2xl">sync_alt</span>
+<div>
+<span class="font-headline-sm text-headline-sm text-on-surface block font-semibold">Automated CI/CD</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Continuous zero-downtime deploy</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- =========================================================================
+       3. SERVICES CATALOG OVERVIEW (Transparent Rates & Categorized)
+       ========================================================================= -->
+<section class="w-full py-space-xl" id="services-catalog">
+<div class="max-w-[1440px] mx-auto px-margin-mobile md:px-margin">
+<!-- Section Header with Overline -->
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-space-md mb-space-xl">
+<div class="max-w-2xl">
+<div class="inline-flex items-center gap-2 px-3 py-1 rounded bg-surface-container text-primary font-label-code text-label-code uppercase tracking-wider mb-space-xs font-semibold">
+            01 • Kategori Layanan Komprehensif
+          </div>
+<h2 class="font-headline-lg text-headline-lg font-bold text-on-surface tracking-tight">
+            Spektrum Rekayasa Software &amp; Produk Digital
+          </h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant mt-space-xs">
+            Estimasi biaya yang transparan dengan garansi arsitektur modular, dokumentasi API lengkap, dan hak kepemilikan kode tanpa retensi tersembunyi.
+          </p>
+</div>
+<a class="inline-flex items-center gap-space-xs text-primary hover:text-primary-fixed font-label-md text-label-md group transition-colors" href="#quick-consultation">
+<span>Lihat Semua 35+ Spesifikasi Layanan</span>
+<span class="material-symbols-outlined text-sm group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</a>
+</div>
+<!-- 4 Pillars Service Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-gutter">
+<!-- Pillar 1: Website Development -->
+<div class="bg-surface-container-low hover:bg-surface-container rounded-xl p-space-lg flex flex-col justify-between transition-all group shadow-sm">
+<div class="flex flex-col gap-space-md">
+<div class="flex items-center justify-between">
+<span class="w-12 h-12 rounded-lg bg-surface-container-high flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-2xl">language</span>
+</span>
+<span class="font-label-code text-label-code bg-surface-container px-2 py-1 rounded text-on-surface-variant">Pillar A</span>
+</div>
+<div>
+<h3 class="font-headline-sm text-headline-sm font-bold text-on-surface">Website Development</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">Solusi website representatif berkinerja tinggi, SEO teknis teroptimasi, dan responsif paripurna.</p>
+</div>
+<ul class="flex flex-col gap-2 font-body-sm text-body-sm text-on-surface-variant pt-2">
+<li class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-sm">check</span>
+<span>Landing Page Konversi Tinggi</span>
+</li>
+<li class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-sm">check</span>
+<span>Company Profile Korporat</span>
+</li>
+<li class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-sm">check</span>
+<span>Portal Berita &amp; Publikasi</span>
+</li>
+<li class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-sm">check</span>
+<span>Website Multi-Bahasa Global</span>
+</li>
+</ul>
+</div>
+<div class="pt-space-lg mt-space-md bg-surface-container-lowest/50 p-space-md rounded-lg">
+<span class="font-label-code text-label-code text-outline block">INVESTASI MULAI</span>
+<div class="font-headline-sm text-headline-sm font-bold text-secondary">Rp 1.500.000</div>
+<span class="font-body-sm text-body-sm text-outline text-xs">Pengerjaan 3 - 7 Hari Kerja</span>
+</div>
+</div>
+<!-- Pillar 2: E-Commerce & Platform -->
+<div class="bg-surface-container-low hover:bg-surface-container rounded-xl p-space-lg flex flex-col justify-between transition-all group shadow-sm">
+<div class="flex flex-col gap-space-md">
+<div class="flex items-center justify-between">
+<span class="w-12 h-12 rounded-lg bg-surface-container-high flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined text-2xl">shopping_cart</span>
+</span>
+<span class="font-label-code text-label-code bg-surface-container px-2 py-1 rounded text-on-surface-variant">Pillar B</span>
+</div>
+<div>
+<h3 class="font-headline-sm text-headline-sm font-bold text-on-surface">E-Commerce &amp; Retail</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">Platform penjualan modern dengan checkout instan, inventaris otomatis, dan multi-ekspedisi.</p>
+</div>
+<ul class="flex flex-col gap-2 font-body-sm text-body-sm text-on-surface-variant pt-2">
+<li class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-sm">check</span>
+<span>Katalog Produk &amp; Direct Order</span>
+</li>
+<li class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-sm">check</span>
+<span>Toko Online Payment Gateway</span>
+</li>
+<li class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-sm">check</span>
+<span>Marketplace Multi-Vendor</span>
+</li>
+<li class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-sm">check</span>
+<span>Reservasi &amp; Booking System</span>
+</li>
+</ul>
+</div>
+<div class="pt-space-lg mt-space-md bg-surface-container-lowest/50 p-space-md rounded-lg">
+<span class="font-label-code text-label-code text-outline block">INVESTASI MULAI</span>
+<div class="font-headline-sm text-headline-sm font-bold text-secondary">Rp 3.000.000</div>
+<span class="font-body-sm text-body-sm text-outline text-xs">Pengerjaan 7 - 14 Hari Kerja</span>
+</div>
+</div>
+<!-- Pillar 3: Backend & Custom Software -->
+<div class="bg-surface-container-low hover:bg-surface-container rounded-xl p-space-lg flex flex-col justify-between transition-all group shadow-sm">
+<div class="flex flex-col gap-space-md">
+<div class="flex items-center justify-between">
+<span class="w-12 h-12 rounded-lg bg-surface-container-high flex items-center justify-center text-primary-container">
+<span class="material-symbols-outlined text-2xl">developer_board</span>
+</span>
+<span class="font-label-code text-label-code bg-surface-container px-2 py-1 rounded text-on-surface-variant">Pillar C</span>
+</div>
+<div>
+<h3 class="font-headline-sm text-headline-sm font-bold text-on-surface">Backend &amp; Custom SaaS</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">Sistem manajemen terintegrasi untuk efisiensi operasional dan automasi alur kerja internal.</p>
+</div>
+<ul class="flex flex-col gap-2 font-body-sm text-body-sm text-on-surface-variant pt-2">
+<li class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-sm">check</span>
+<span>Custom ERP &amp; CRM Modules</span>
+</li>
+<li class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-sm">check</span>
+<span>Admin Telemetry Dashboard</span>
+</li>
+<li class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-sm">check</span>
+<span>Client &amp; Vendor Web Portal</span>
+</li>
+<li class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-sm">check</span>
+<span>RESTful &amp; GraphQL API Suite</span>
+</li>
+</ul>
+</div>
+<div class="pt-space-lg mt-space-md bg-surface-container-lowest/50 p-space-md rounded-lg">
+<span class="font-label-code text-label-code text-outline block">INVESTASI MULAI</span>
+<div class="font-headline-sm text-headline-sm font-bold text-secondary">Rp 5.000.000</div>
+<span class="font-body-sm text-body-sm text-outline text-xs">Pengerjaan 14 - 30 Hari Kerja</span>
+</div>
+</div>
+<!-- Pillar 4: Cloud, Deployment & AI Integrations -->
+<div class="bg-surface-container-low hover:bg-surface-container rounded-xl p-space-lg flex flex-col justify-between transition-all group shadow-sm">
+<div class="flex flex-col gap-space-md">
+<div class="flex items-center justify-between">
+<span class="w-12 h-12 rounded-lg bg-surface-container-high flex items-center justify-center text-secondary-fixed">
+<span class="material-symbols-outlined text-2xl">hub</span>
+</span>
+<span class="font-label-code text-label-code bg-surface-container px-2 py-1 rounded text-on-surface-variant">Pillar D</span>
+</div>
+<div>
+<h3 class="font-headline-sm text-headline-sm font-bold text-on-surface">Cloud, AI &amp; Integrasi</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">Penyatuan payment gateway, automasi WhatsApp, pipeline AI/LLM, serta orkestrasi cloud devops.</p>
+</div>
+<ul class="flex flex-col gap-2 font-body-sm text-body-sm text-on-surface-variant pt-2">
+<li class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-sm">check</span>
+<span>Payment Gateway (Midtrans/Xendit)</span>
+</li>
+<li class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-sm">check</span>
+<span>WhatsApp Bot &amp; Notifikasi</span>
+</li>
+<li class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-sm">check</span>
+<span>Integrasi Model OpenAI / Anthropic</span>
+</li>
+<li class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-sm">check</span>
+<span>DevOps &amp; Dockerized Cluster</span>
+</li>
+</ul>
+</div>
+<div class="pt-space-lg mt-space-md bg-surface-container-lowest/50 p-space-md rounded-lg">
+<span class="font-label-code text-label-code text-outline block">INVESTASI MULAI</span>
+<div class="font-headline-sm text-headline-sm font-bold text-secondary">Rp 1.500.000</div>
+<span class="font-body-sm text-body-sm text-outline text-xs">Pengerjaan 3 - 10 Hari Kerja</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- =========================================================================
+       4. FEATURED CASE STUDIES & CONCEPT DEMONSTRATIONS
+       ========================================================================= -->
+<section class="w-full bg-surface-container-lowest py-space-xl" id="case-studies">
+<div class="max-w-[1440px] mx-auto px-margin-mobile md:px-margin">
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-space-md mb-space-xl">
+<div>
+<div class="inline-flex items-center gap-2 px-3 py-1 rounded bg-secondary-container text-on-secondary-container font-label-code text-label-code uppercase tracking-wider mb-space-xs font-semibold">
+            02 • Showcase Arsitektur &amp; Portofolio
+          </div>
+<h2 class="font-headline-lg text-headline-lg font-bold text-on-surface tracking-tight">
+            Demonstrasi Konsep Rekayasa Nyata
+          </h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant mt-space-xs max-w-2xl">
+            Desain sistem yang telah teruji secara teknis untuk menangani kompleksitas data, auditibilitas, dan stabilitas operasional tinggi.
+          </p>
+</div>
+<div class="font-label-code text-label-code text-outline">
+          Semua proyek disertai source code &amp; dokumentasi
+        </div>
+</div>
+<!-- 3 Impactful Case Studies -->
+<div class="flex flex-col gap-space-xl">
+<!-- Case Study 1: OmniCommerce Engine -->
+<div class="bg-surface-container-low rounded-xl overflow-hidden grid grid-cols-1 lg:grid-cols-12 shadow-lg">
+<div class="lg:col-span-7 p-space-lg lg:p-space-xl flex flex-col justify-between">
+<div class="flex flex-col gap-space-md">
+<div class="flex flex-wrap items-center gap-2">
+<span class="bg-primary-container text-on-primary-container px-2.5 py-1 rounded font-label-code text-label-code font-bold">
+                  Demonstrasi Konsep Arsitektur
+                </span>
+<span class="bg-surface-container px-2.5 py-1 rounded text-outline font-label-code text-label-code">
+                  E-Commerce Engine
+                </span>
+<span class="text-secondary font-label-code text-label-code flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+                  Sub-second Search
+                </span>
+</div>
+<h3 class="font-headline-md text-headline-md font-bold text-on-surface">
+                OmniCommerce Engine • Headless Multi-Channel Architecture
+              </h3>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+                Platform retail performa tinggi dengan pencarian katalog sub-detik bertenaga edge caching, rekonsiliasi pembayaran multi-gateway otomatis, serta manajemen checkout instan bebas hambatan.
+              </p>
+<!-- Metrics telemetry bar -->
+<div class="grid grid-cols-3 gap-space-md py-space-sm bg-surface-container rounded-lg px-space-md">
+<div>
+<span class="font-label-code text-label-code text-outline block">CATALOG LATENCY</span>
+<span class="font-headline-sm text-headline-sm font-bold text-on-surface">&lt; 85ms</span>
+</div>
+<div>
+<span class="font-label-code text-label-code text-outline block">PAYMENT HOOK</span>
+<span class="font-headline-sm text-headline-sm font-bold text-secondary">Zero-Loss</span>
+</div>
+<div>
+<span class="font-label-code text-label-code text-outline block">ARCHITECTURE</span>
+<span class="font-headline-sm text-headline-sm font-bold text-primary">Headless</span>
+</div>
+</div>
+<!-- Tech chips -->
+<div class="flex flex-wrap gap-2 pt-1">
+<span class="px-2 py-1 rounded bg-surface-container-high text-xs font-label-code text-on-surface-variant">Next.js App Router</span>
+<span class="px-2 py-1 rounded bg-surface-container-high text-xs font-label-code text-on-surface-variant">PostgreSQL</span>
+<span class="px-2 py-1 rounded bg-surface-container-high text-xs font-label-code text-on-surface-variant">Redis Cache</span>
+<span class="px-2 py-1 rounded bg-surface-container-high text-xs font-label-code text-on-surface-variant">Midtrans Webhook</span>
+</div>
+</div>
+<div class="pt-space-lg flex items-center gap-space-md">
+<a class="font-label-md text-label-md text-primary hover:text-primary-fixed flex items-center gap-1 group font-semibold" href="#quick-consultation">
+<span>Pelajari Detail Arsitektur Engine</span>
+<span class="material-symbols-outlined text-sm group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</a>
+</div>
+</div>
+<div class="lg:col-span-5 bg-surface-container relative min-h-[340px] flex items-center justify-center p-space-md">
+<img class="w-full h-full object-cover rounded-lg shadow-xl" data-alt="Modern dark-mode headless e-commerce analytics dashboard mockup displayed on a sleek high-resolution display with glowing deep navy and tech green UI graphs, transactional data feeds, and inventory matrix panels rendered with sharp editorial tech typography." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA3wyt7kB-1v5b3v1mfAKHLdomzey2Fn1xoIL9SzxrffvCStZaaA2yH41k8JsyV43jvpAwDfgqUgi1hJmhqM5InAdGnlEYz7Kj1Yu0uT-WhYhBrnxFBCjkiym0a-bR7VQjhYxIf0ObBi2P5L2ifF0DWBzXIzfV0QlAqeswW21uaP7eF67yvnwfkcmuoUWZY5VNgmmeY4BATSuegv4CmkRggV9BCc4yLU0Ft0HOmvYWMVZZmSwJ6no1q_A"/>
+</div>
+</div>
+<!-- Case Study 2: HealthFlow Clinic -->
+<div class="bg-surface-container-low rounded-xl overflow-hidden grid grid-cols-1 lg:grid-cols-12 shadow-lg">
+<div class="lg:col-span-5 bg-surface-container relative min-h-[340px] order-2 lg:order-1 flex items-center justify-center p-space-md">
+<img class="w-full h-full object-cover rounded-lg shadow-xl" data-alt="Sophisticated medical appointment scheduling and telemedicine tele-consultation platform interface showing encrypted patient records, real-time doctor availability scheduler, and biometric security metrics with subtle indigo and soft white UI accents." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCR1s_50ZOIaQ4ikDh3-DeJSyHsF1MmLo9rsQW_6bywacWszsuk-5DKlhGyBkCr0Vf-vELOXWZdt0QLrwc43wkuZBqp937-twzbx46wETQ0xSRe1Nml6b4jkacrSUha8-h4x5_jUT54_y8uiuaEhDcQRaDVuP-KFDfFX-x_ISxilTggp2YV9l--jg0PXrCzH6nKB5b377gY8_1jdpACkEJiGc143ptvquCgj_L7MBg-xHpUBLh1ar-VnA"/>
+</div>
+<div class="lg:col-span-7 p-space-lg lg:p-space-xl flex flex-col justify-between order-1 lg:order-2">
+<div class="flex flex-col gap-space-md">
+<div class="flex flex-wrap items-center gap-2">
+<span class="bg-primary-container text-on-primary-container px-2.5 py-1 rounded font-label-code text-label-code font-bold">
+                  Demonstrasi Konsep Arsitektur
+                </span>
+<span class="bg-surface-container px-2.5 py-1 rounded text-outline font-label-code text-label-code">
+                  Telehealth &amp; Clinic Suite
+                </span>
+<span class="text-secondary font-label-code text-label-code flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+                  HIPAA-Ready Schema
+                </span>
+</div>
+<h3 class="font-headline-md text-headline-md font-bold text-on-surface">
+                HealthFlow Clinic • Telemedicine &amp; Realtime Appointment Suite
+              </h3>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+                Solusi penjadwalan janji temu medis online dan telekonsultasi terenkripsi dengan proteksi data ketat, sinkronisasi kalender realtime dokter, serta notifikasi otomatis WhatsApp.
+              </p>
+<!-- Metrics telemetry bar -->
+<div class="grid grid-cols-3 gap-space-md py-space-sm bg-surface-container rounded-lg px-space-md">
+<div>
+<span class="font-label-code text-label-code text-outline block">DATA PRIVACY</span>
+<span class="font-headline-sm text-headline-sm font-bold text-on-surface">AES-256</span>
+</div>
+<div>
+<span class="font-label-code text-label-code text-outline block">SLOT CONFLICT</span>
+<span class="font-headline-sm text-headline-sm font-bold text-secondary">0% (ACID)</span>
+</div>
+<div>
+<span class="font-label-code text-label-code text-outline block">REMINDER RATE</span>
+<span class="font-headline-sm text-headline-sm font-bold text-primary">99.4% WA</span>
+</div>
+</div>
+<!-- Tech chips -->
+<div class="flex flex-wrap gap-2 pt-1">
+<span class="px-2 py-1 rounded bg-surface-container-high text-xs font-label-code text-on-surface-variant">Supabase Auth &amp; RLS</span>
+<span class="px-2 py-1 rounded bg-surface-container-high text-xs font-label-code text-on-surface-variant">TypeScript</span>
+<span class="px-2 py-1 rounded bg-surface-container-high text-xs font-label-code text-on-surface-variant">WebRTC Telephony</span>
+<span class="px-2 py-1 rounded bg-surface-container-high text-xs font-label-code text-on-surface-variant">WhatsApp Cloud API</span>
+</div>
+</div>
+<div class="pt-space-lg flex items-center gap-space-md">
+<a class="font-label-md text-label-md text-primary hover:text-primary-fixed flex items-center gap-1 group font-semibold" href="#quick-consultation">
+<span>Pelajari Detail Keamanan Medis</span>
+<span class="material-symbols-outlined text-sm group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</a>
+</div>
+</div>
+</div>
+<!-- Case Study 3: Logix ERP Core -->
+<div class="bg-surface-container-low rounded-xl overflow-hidden grid grid-cols-1 lg:grid-cols-12 shadow-lg">
+<div class="lg:col-span-7 p-space-lg lg:p-space-xl flex flex-col justify-between">
+<div class="flex flex-col gap-space-md">
+<div class="flex flex-wrap items-center gap-2">
+<span class="bg-primary-container text-on-primary-container px-2.5 py-1 rounded font-label-code text-label-code font-bold">
+                  Demonstrasi Konsep Arsitektur
+                </span>
+<span class="bg-surface-container px-2.5 py-1 rounded text-outline font-label-code text-label-code">
+                  Supply Chain ERP
+                </span>
+<span class="text-secondary font-label-code text-label-code flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+                  Multi-Warehouse
+                </span>
+</div>
+<h3 class="font-headline-md text-headline-md font-bold text-on-surface">
+                Logix ERP Core • Multi-Warehouse Supply Chain Operations
+              </h3>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+                Dasbor operasi rantai pasokan multi-gudang secara real-time dengan audit trail tak terbatas, kontrol akses berbasis peran (RBAC), serta pemantauan inventaris terdistribusi.
+              </p>
+<!-- Metrics telemetry bar -->
+<div class="grid grid-cols-3 gap-space-md py-space-sm bg-surface-container rounded-lg px-space-md">
+<div>
+<span class="font-label-code text-label-code text-outline block">AUDIT LOGGING</span>
+<span class="font-headline-sm text-headline-sm font-bold text-on-surface">Immutable</span>
+</div>
+<div>
+<span class="font-label-code text-label-code text-outline block">INVENTORY SYNC</span>
+<span class="font-headline-sm text-headline-sm font-bold text-secondary">Real-Time</span>
+</div>
+<div>
+<span class="font-label-code text-label-code text-outline block">ROLE TIERS</span>
+<span class="font-headline-sm text-headline-sm font-bold text-primary">Granular</span>
+</div>
+</div>
+<!-- Tech chips -->
+<div class="flex flex-wrap gap-2 pt-1">
+<span class="px-2 py-1 rounded bg-surface-container-high text-xs font-label-code text-on-surface-variant">Next.js Dashboard</span>
+<span class="px-2 py-1 rounded bg-surface-container-high text-xs font-label-code text-on-surface-variant">PostgreSQL Views</span>
+<span class="px-2 py-1 rounded bg-surface-container-high text-xs font-label-code text-on-surface-variant">Docker Cluster</span>
+<span class="px-2 py-1 rounded bg-surface-container-high text-xs font-label-code text-on-surface-variant">Role-Based Auth</span>
+</div>
+</div>
+<div class="pt-space-lg flex items-center gap-space-md">
+<a class="font-label-md text-label-md text-primary hover:text-primary-fixed flex items-center gap-1 group font-semibold" href="#quick-consultation">
+<span>Pelajari Skema Multi-Warehouse</span>
+<span class="material-symbols-outlined text-sm group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</a>
+</div>
+</div>
+<div class="lg:col-span-5 bg-surface-container relative min-h-[340px] flex items-center justify-center p-space-md">
+<img class="w-full h-full object-cover rounded-lg shadow-xl" data-alt="Complex enterprise ERP logistics operations dashboard showing warehouse inventory heatmaps, stock dispatch logs, transport routes, and financial revenue graphs in midnight navy, tech green, and indigo accents." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDg5FFLn9LJ2gFk9MvTa2ssf8qViQBczvAs4QSfbsuWrPYR1eFrp-m6CeKuepcpAJDqkrGXWOlRzoy1SJtVupkYYX9fZ2k6-K3KRzDH_N7WDbIzDA3hhvw-chY7fmFDypnMBISgB8bSHRKsVnmEvJTryuaYBKg_oaVapKhZfMj7KEteiGT7ie6IKHDhqbu0oTjDtWyErrfDHTBvP2kK5daQH4xhXJZinCVtYjQuOYiCZTn7Jc8UdSz6PA"/>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- =========================================================================
+       5. WHY CHOOSE US: Engineering & Business Rationale
+       ========================================================================= -->
+<section class="w-full py-space-xl">
+<div class="max-w-[1440px] mx-auto px-margin-mobile md:px-margin">
+<div class="max-w-2xl mb-space-xl">
+<div class="inline-flex items-center gap-2 px-3 py-1 rounded bg-surface-container text-secondary font-label-code text-label-code uppercase tracking-wider mb-space-xs font-semibold">
+          03 • Keunggulan Rekayasa &amp; Nilai Bisnis
+        </div>
+<h2 class="font-headline-lg text-headline-lg font-bold text-on-surface tracking-tight">
+          Mengapa Bisnis Mempercayakan Software Mereka Kepada Kami?
+        </h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant mt-space-xs">
+          Kami memadukan disiplin software engineering Silicon Valley dengan pemahaman mendalam dinamika pasar bisnis di Indonesia.
+        </p>
+</div>
+<!-- 4-Pillar Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-gutter">
+<div class="bg-surface-container-low p-space-lg rounded-xl flex flex-col gap-space-md shadow-sm">
+<span class="font-display-xl-mobile text-display-xl-mobile font-extrabold text-outline/30">01</span>
+<h3 class="font-headline-sm text-headline-sm font-bold text-on-surface">Tanpa Vendor Lock-in (100% Milik Anda)</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+            Seluruh source code, kredensial server, database, dan aset digital diserahkan penuh kepada Anda. Anda bebas mengembangkannya secara mandiri kapan saja.
+          </p>
+<div class="mt-auto pt-space-sm font-label-code text-label-code text-secondary flex items-center gap-1">
+<span class="material-symbols-outlined text-sm">lock_open</span>
+<span>Zero Proprietary Traps</span>
+</div>
+</div>
+<div class="bg-surface-container-low p-space-lg rounded-xl flex flex-col gap-space-md shadow-sm">
+<span class="font-display-xl-mobile text-display-xl-mobile font-extrabold text-outline/30">02</span>
+<h3 class="font-headline-sm text-headline-sm font-bold text-on-surface">Keamanan Tingkat Enterprise</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+            Proteksi data multi-tier mencakup Row Level Security (RLS) pada level database, sanitasi input anti-SQL injection, dan pembagian hak akses terisolasi.
+          </p>
+<div class="mt-auto pt-space-sm font-label-code text-label-code text-primary flex items-center gap-1">
+<span class="material-symbols-outlined text-sm">shield</span>
+<span>OWASP Standards Compliant</span>
+</div>
+</div>
+<div class="bg-surface-container-low p-space-lg rounded-xl flex flex-col gap-space-md shadow-sm">
+<span class="font-display-xl-mobile text-display-xl-mobile font-extrabold text-outline/30">03</span>
+<h3 class="font-headline-sm text-headline-sm font-bold text-on-surface">Core Web Vitals &amp; Kecepatan Tinggi</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+            Optimalisasi aset gambar generasi baru (WebP/AVIF), SSR/ISR rendering, serta edge distribution untuk menjamin loading di bawah 1.5 detik di seluruh Indonesia.
+          </p>
+<div class="mt-auto pt-space-sm font-label-code text-label-code text-secondary flex items-center gap-1">
+<span class="material-symbols-outlined text-sm">bolt</span>
+<span>Sub-second Response Time</span>
+</div>
+</div>
+<div class="bg-surface-container-low p-space-lg rounded-xl flex flex-col gap-space-md shadow-sm">
+<span class="font-display-xl-mobile text-display-xl-mobile font-extrabold text-outline/30">04</span>
+<h3 class="font-headline-sm text-headline-sm font-bold text-on-surface">Dukungan Berkelanjutan &amp; SLA Jelas</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+            Setiap peluncuran produk dilindungi oleh Service Level Agreement (SLA) perbaikan bug bergaransi, monitoring uptime 24/7, dan panduan dokumentasi lengkap.
+          </p>
+<div class="mt-auto pt-space-sm font-label-code text-label-code text-primary-fixed flex items-center gap-1">
+<span class="material-symbols-outlined text-sm">support_agent</span>
+<span>Direct Engineering Support</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- =========================================================================
+       6. HOW WE WORK: Transparent 8-Stage Delivery Process
+       ========================================================================= -->
+<section class="w-full bg-surface-container-lowest py-space-xl">
+<div class="max-w-[1440px] mx-auto px-margin-mobile md:px-margin">
+<div class="max-w-2xl mb-space-xl">
+<div class="inline-flex items-center gap-2 px-3 py-1 rounded bg-surface-container text-primary-fixed font-label-code text-label-code uppercase tracking-wider mb-space-xs font-semibold">
+          04 • Siklus Pengembangan Terukur
+        </div>
+<h2 class="font-headline-lg text-headline-lg font-bold text-on-surface tracking-tight">
+          8 Tahap Pengerjaan Transparan &amp; Tepat Waktu
+        </h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant mt-space-xs">
+          Tidak ada tebak-tebakan. Setiap fase memiliki output deliverables spesifik dan demo berkala yang dapat Anda uji langsung.
+        </p>
+</div>
+<!-- 8-Stage Horizontal Ribbon/Grid -->
+<div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-space-md">
+<div class="bg-surface-container-low p-space-md rounded-lg flex flex-col gap-2">
+<div class="flex items-center justify-between">
+<span class="font-label-code text-label-code text-secondary font-bold">STAGE 01</span>
+<span class="material-symbols-outlined text-outline text-sm">search</span>
+</div>
+<h4 class="font-headline-sm text-headline-sm font-bold text-on-surface">Discovery</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Eksplorasi tujuan bisnis, target pengguna, dan audit kendala sistem eksisting.</p>
+</div>
+<div class="bg-surface-container-low p-space-md rounded-lg flex flex-col gap-2">
+<div class="flex items-center justify-between">
+<span class="font-label-code text-label-code text-secondary font-bold">STAGE 02</span>
+<span class="material-symbols-outlined text-outline text-sm">rule</span>
+</div>
+<h4 class="font-headline-sm text-headline-sm font-bold text-on-surface">Requirement Analysis</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Penyusunan User Story, Functional Specification Document (FSD), &amp; arsitektur data.</p>
+</div>
+<div class="bg-surface-container-low p-space-md rounded-lg flex flex-col gap-2">
+<div class="flex items-center justify-between">
+<span class="font-label-code text-label-code text-secondary font-bold">STAGE 03</span>
+<span class="material-symbols-outlined text-outline text-sm">description</span>
+</div>
+<h4 class="font-headline-sm text-headline-sm font-bold text-on-surface">Proposal &amp; Scope</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Pematangan timeline milestone pasti, transparansi biaya, dan kontrak SLA.</p>
+</div>
+<div class="bg-surface-container-low p-space-md rounded-lg flex flex-col gap-2">
+<div class="flex items-center justify-between">
+<span class="font-label-code text-label-code text-secondary font-bold">STAGE 04</span>
+<span class="material-symbols-outlined text-outline text-sm">palette</span>
+</div>
+<h4 class="font-headline-sm text-headline-sm font-bold text-on-surface">UI/UX Systems</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Wireframing interaktif, Design System komponen, dan high-fidelity Figma prototype.</p>
+</div>
+<div class="bg-surface-container-low p-space-md rounded-lg flex flex-col gap-2">
+<div class="flex items-center justify-between">
+<span class="font-label-code text-label-code text-primary font-bold">STAGE 05</span>
+<span class="material-symbols-outlined text-outline text-sm">code</span>
+</div>
+<h4 class="font-headline-sm text-headline-sm font-bold text-on-surface">Development</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Sprint rekayasa frontend &amp; backend berbasis Next.js, TypeScript, dan database.</p>
+</div>
+<div class="bg-surface-container-low p-space-md rounded-lg flex flex-col gap-2">
+<div class="flex items-center justify-between">
+<span class="font-label-code text-label-code text-primary font-bold">STAGE 06</span>
+<span class="material-symbols-outlined text-outline text-sm">bug_report</span>
+</div>
+<h4 class="font-headline-sm text-headline-sm font-bold text-on-surface">Testing &amp; QA</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Unit testing, integrasi API, audit keamanan kerentanan, dan uji beban traffic.</p>
+</div>
+<div class="bg-surface-container-low p-space-md rounded-lg flex flex-col gap-2">
+<div class="flex items-center justify-between">
+<span class="font-label-code text-label-code text-primary font-bold">STAGE 07</span>
+<span class="material-symbols-outlined text-outline text-sm">cloud_upload</span>
+</div>
+<h4 class="font-headline-sm text-headline-sm font-bold text-on-surface">Cloud Deployment</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Orkestrasi server produksi, konfigurasi SSL, CDN edge, dan setup CI/CD pipeline.</p>
+</div>
+<div class="bg-surface-container-low p-space-md rounded-lg flex flex-col gap-2">
+<div class="flex items-center justify-between">
+<span class="font-label-code text-label-code text-primary font-bold">STAGE 08</span>
+<span class="material-symbols-outlined text-outline text-sm">handshake</span>
+</div>
+<h4 class="font-headline-sm text-headline-sm font-bold text-on-surface">Handover &amp; SLA</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Penyerahan seluruh hak akses, training tim Anda, serta masa garansi aktif.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- =========================================================================
+       7. FEATURED PRICING PACKAGES (The 6 Core Tiers from Master Spec)
+       ========================================================================= -->
+<section class="w-full py-space-xl" id="pricing">
+<div class="max-w-[1440px] mx-auto px-margin-mobile md:px-margin">
+<div class="text-center max-w-2xl mx-auto mb-space-xl">
+<div class="inline-flex items-center gap-2 px-3 py-1 rounded bg-surface-container text-primary font-label-code text-label-code uppercase tracking-wider mb-space-xs font-semibold">
+          05 • Skema Paket &amp; Investasi
+        </div>
+<h2 class="font-headline-lg text-headline-lg font-bold text-on-surface tracking-tight">
+          Paket Pengembangan Transparan
+        </h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant mt-space-xs">
+          Pilih paket yang paling sesuai dengan target pertumbuhan bisnis Anda, atau konsultasikan kebutuhan kustom.
+        </p>
+</div>
+<!-- Grid of 6 Core Packages -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-gutter">
+<!-- Package 1: Landing Page -->
+<div class="bg-surface-container-low p-space-lg rounded-xl flex flex-col justify-between shadow-sm">
+<div class="flex flex-col gap-space-sm">
+<div class="flex items-center justify-between">
+<span class="font-label-code text-label-code text-outline uppercase font-semibold">Tier 01</span>
+<span class="px-2 py-0.5 rounded font-label-code text-label-code bg-surface-container text-on-surface">Fast Track</span>
+</div>
+<h3 class="font-headline-md text-headline-md font-bold text-on-surface">Landing Page</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Solusi satu halaman konversi tinggi untuk promosi produk, event, atau validasi startup.</p>
+<div class="py-space-md">
+<span class="font-label-code text-label-code text-outline block">Mulai dari</span>
+<div class="font-headline-lg text-headline-lg font-extrabold text-on-surface">Rp 1.500.000</div>
+<span class="font-body-sm text-body-sm text-outline text-xs">Pengerjaan 3 - 5 Hari Kerja</span>
+</div>
+<ul class="flex flex-col gap-2 font-body-sm text-body-sm text-on-surface-variant">
+<li class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-sm">check</span>
+<span>1 Halaman Responsif Multi-Seksi</span>
+</li>
+<li class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-sm">check</span>
+<span>Optimasi Kecepatan &amp; SEO On-Page</span>
+</li>
+<li class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-sm">check</span>
+<span>Integrasi Direct WhatsApp &amp; Form Lead</span>
+</li>
+<li class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-sm">check</span>
+<span>Garansi Bug Fix 30 Hari</span>
+</li>
+</ul>
+</div>
+<div class="pt-space-lg">
+<a class="w-full inline-flex items-center justify-center bg-surface-container hover:bg-surface-container-high text-on-surface font-label-md text-label-md py-3 rounded-lg transition-colors" href="#quick-consultation">
+              Pilih Paket Ini
+            </a>
+</div>
+</div>
+<!-- Package 2: Company Profile -->
+<div class="bg-surface-container-low p-space-lg rounded-xl flex flex-col justify-between shadow-sm">
+<div class="flex flex-col gap-space-sm">
+<div class="flex items-center justify-between">
+<span class="font-label-code text-label-code text-outline uppercase font-semibold">Tier 02</span>
+<span class="px-2 py-0.5 rounded font-label-code text-label-code bg-surface-container text-on-surface">Corporate</span>
+</div>
+<h3 class="font-headline-md text-headline-md font-bold text-on-surface">Company Profile</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Website profesional multi-halaman untuk memperkuat reputasi dan kredibilitas perusahaan.</p>
+<div class="py-space-md">
+<span class="font-label-code text-label-code text-outline block">Mulai dari</span>
+<div class="font-headline-lg text-headline-lg font-extrabold text-on-surface">Rp 4.000.000</div>
+<span class="font-body-sm text-body-sm text-outline text-xs">Pengerjaan 7 - 10 Hari Kerja</span>
+</div>
+<ul class="flex flex-col gap-2 font-body-sm text-body-sm text-on-surface-variant">
+<li class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-sm">check</span>
+<span>Hingga 5-7 Halaman Terstruktur</span>
+</li>
+<li class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-sm">check</span>
+<span>Panel Admin CMS (Kelola Berita/Produk)</span>
+</li>
+<li class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-sm">check</span>
+<span>Integrasi Google Search Console &amp; Maps</span>
+</li>
+<li class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-sm">check</span>
+<span>Garansi Bug Fix 45 Hari</span>
+</li>
+</ul>
+</div>
+<div class="pt-space-lg">
+<a class="w-full inline-flex items-center justify-center bg-surface-container hover:bg-surface-container-high text-on-surface font-label-md text-label-md py-3 rounded-lg transition-colors" href="#quick-consultation">
+              Pilih Paket Ini
+            </a>
+</div>
+</div>
+<!-- Package 3: Online Store / E-Commerce -->
+<div class="bg-surface-container p-space-lg rounded-xl flex flex-col justify-between shadow-lg relative">
+<div class="absolute -top-3 right-6 bg-primary-container text-on-primary-container font-label-code text-label-code font-bold px-3 py-1 rounded-full shadow-md">
+            Paling Populer
+          </div>
+<div class="flex flex-col gap-space-sm">
+<div class="flex items-center justify-between">
+<span class="font-label-code text-label-code text-primary uppercase font-semibold">Tier 03</span>
+<span class="px-2 py-0.5 rounded font-label-code text-label-code bg-secondary-container text-on-secondary-container">E-Commerce</span>
+</div>
+<h3 class="font-headline-md text-headline-md font-bold text-on-surface">Toko Online / E-Commerce</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Platform toko daring dengan checkout instan, manajemen stok, dan integrasi kurir.</p>
+<div class="py-space-md">
+<span class="font-label-code text-label-code text-outline block">Mulai dari</span>
+<div class="font-headline-lg text-headline-lg font-extrabold text-primary">Rp 6.000.000</div>
+<span class="font-body-sm text-body-sm text-outline text-xs">Pengerjaan 10 - 14 Hari Kerja</span>
+</div>
+<ul class="flex flex-col gap-2 font-body-sm text-body-sm text-on-surface-variant">
+<li class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-sm">check</span>
+<span>Payment Gateway Otomatis (QRIS, VA, CC)</span>
+</li>
+<li class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-sm">check</span>
+<span>Kalkulator Ongkos Kirim Multi-Kurir</span>
+</li>
+<li class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-sm">check</span>
+<span>Dasbor Penjualan &amp; Laporan Inventaris</span>
+</li>
+<li class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-sm">check</span>
+<span>Garansi &amp; Pendampingan 60 Hari</span>
+</li>
+</ul>
+</div>
+<div class="pt-space-lg">
+<a class="w-full inline-flex items-center justify-center bg-primary-container hover:bg-primary text-on-primary-container font-label-md text-label-md py-3 rounded-lg transition-all shadow-md" href="#quick-consultation">
+              Pilih Paket Ini
+            </a>
+</div>
+</div>
+<!-- Package 4: Custom Web Application -->
+<div class="bg-surface-container-low p-space-lg rounded-xl flex flex-col justify-between shadow-sm">
+<div class="flex flex-col gap-space-sm">
+<div class="flex items-center justify-between">
+<span class="font-label-code text-label-code text-outline uppercase font-semibold">Tier 04</span>
+<span class="px-2 py-0.5 rounded font-label-code text-label-code bg-surface-container text-on-surface">Web App</span>
+</div>
+<h3 class="font-headline-md text-headline-md font-bold text-on-surface">Custom Web Application</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Sistem berbasis web kustom seperti portal klien, sistem reservasi, atau internal tool bisnis.</p>
+<div class="py-space-md">
+<span class="font-label-code text-label-code text-outline block">Mulai dari</span>
+<div class="font-headline-lg text-headline-lg font-extrabold text-on-surface">Rp 8.000.000</div>
+<span class="font-body-sm text-body-sm text-outline text-xs">Pengerjaan 14 - 21 Hari Kerja</span>
+</div>
+<ul class="flex flex-col gap-2 font-body-sm text-body-sm text-on-surface-variant">
+<li class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-sm">check</span>
+<span>Arsitektur PostgreSQL &amp; Supabase RLS</span>
+</li>
+<li class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-sm">check</span>
+<span>Manajemen Hak Akses Pengguna (RBAC)</span>
+</li>
+<li class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-sm">check</span>
+<span>Export Data Laporan (PDF / Excel / CSV)</span>
+</li>
+<li class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-sm">check</span>
+<span>Garansi Bug Fix 60 Hari</span>
+</li>
+</ul>
+</div>
+<div class="pt-space-lg">
+<a class="w-full inline-flex items-center justify-center bg-surface-container hover:bg-surface-container-high text-on-surface font-label-md text-label-md py-3 rounded-lg transition-colors" href="#quick-consultation">
+              Pilih Paket Ini
+            </a>
+</div>
+</div>
+<!-- Package 5: Marketplace / SaaS -->
+<div class="bg-surface-container-low p-space-lg rounded-xl flex flex-col justify-between shadow-sm">
+<div class="flex flex-col gap-space-sm">
+<div class="flex items-center justify-between">
+<span class="font-label-code text-label-code text-outline uppercase font-semibold">Tier 05</span>
+<span class="px-2 py-0.5 rounded font-label-code text-label-code bg-surface-container text-on-surface">Platform</span>
+</div>
+<h3 class="font-headline-md text-headline-md font-bold text-on-surface">Marketplace / SaaS</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Platform multi-aktor dengan model langganan berulang, komisi transaksi, atau multi-tenant.</p>
+<div class="py-space-md">
+<span class="font-label-code text-label-code text-outline block">Mulai dari</span>
+<div class="font-headline-lg text-headline-lg font-extrabold text-on-surface">Rp 25.000.000</div>
+<span class="font-body-sm text-body-sm text-outline text-xs">Pengerjaan 30 - 60 Hari Kerja</span>
+</div>
+<ul class="flex flex-col gap-2 font-body-sm text-body-sm text-on-surface-variant">
+<li class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-sm">check</span>
+<span>Multi-Vendor / Multi-Tenant Isolation</span>
+</li>
+<li class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-sm">check</span>
+<span>Automated Subscription Billing &amp; Split Fee</span>
+</li>
+<li class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-sm">check</span>
+<span>Dokumentasi API Publik Terpadu</span>
+</li>
+<li class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-sm">check</span>
+<span>Garansi 90 Hari &amp; Monitoring Uptime</span>
+</li>
+</ul>
+</div>
+<div class="pt-space-lg">
+<a class="w-full inline-flex items-center justify-center bg-surface-container hover:bg-surface-container-high text-on-surface font-label-md text-label-md py-3 rounded-lg transition-colors" href="#quick-consultation">
+              Pilih Paket Ini
+            </a>
+</div>
+</div>
+<!-- Package 6: Enterprise Solution -->
+<div class="bg-surface-container-low p-space-lg rounded-xl flex flex-col justify-between shadow-sm">
+<div class="flex flex-col gap-space-sm">
+<div class="flex items-center justify-between">
+<span class="font-label-code text-label-code text-outline uppercase font-semibold">Tier 06</span>
+<span class="px-2 py-0.5 rounded font-label-code text-label-code bg-secondary-container text-on-secondary-container">Enterprise</span>
+</div>
+<h3 class="font-headline-md text-headline-md font-bold text-on-surface">Enterprise Solution</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Sistem berskala besar dengan integrasi legacy sistem, microservices, dan SLA korporat kustom.</p>
+<div class="py-space-md">
+<span class="font-label-code text-label-code text-outline block">Skema Khusus</span>
+<div class="font-headline-lg text-headline-lg font-extrabold text-on-surface">Custom Quote</div>
+<span class="font-body-sm text-body-sm text-outline text-xs">Sprint Berdasarkan FSD Lengkap</span>
+</div>
+<ul class="flex flex-col gap-2 font-body-sm text-body-sm text-on-surface-variant">
+<li class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-sm">check</span>
+<span>Audit Arsitektur &amp; High-Load Balancing</span>
+</li>
+<li class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-sm">check</span>
+<span>DevOps CI/CD On-Premise / Private Cloud</span>
+</li>
+<li class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-sm">check</span>
+<span>Dedicated Technical Lead &amp; NDA Ketat</span>
+</li>
+<li class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-sm">check</span>
+<span>SLA Ketersediaan 99.9% Perjanjian Resmi</span>
+</li>
+</ul>
+</div>
+<div class="pt-space-lg">
+<a class="w-full inline-flex items-center justify-center bg-surface-bright hover:bg-surface-container-highest text-on-surface font-label-md text-label-md py-3 rounded-lg transition-colors" href="#quick-consultation">
+              Diskusikan Kebutuhan
+            </a>
+</div>
+</div>
+</div>
+<!-- Transparent Cost Disclaimer Banner -->
+<div class="mt-space-xl p-space-md bg-surface-container rounded-lg flex flex-col sm:flex-row items-center justify-between gap-space-sm text-on-surface-variant font-body-sm text-body-sm">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-base">info</span>
+<span><strong>Transparansi Penuh:</strong> Harga jasa pengembangan di atas bersifat tetap sesuai scope. Biaya pihak ketiga seperti domain, cloud server (AWS/Vercel), dan MDR payment gateway ditagihkan secara langsung sesuai pemakaian riil.</span>
+</div>
+<a class="text-primary hover:underline whitespace-nowrap font-label-code text-label-code font-bold" href="#quick-consultation">Tanya Estimasi Server -&gt;</a>
+</div>
+</div>
+</section>
+<!-- =========================================================================
+       8. PROJECT INQUIRY / QUICK CONSULTATION SECTION
+       ========================================================================= -->
+<section class="w-full bg-surface-container-lowest py-space-xl" id="quick-consultation">
+<div class="max-w-[1440px] mx-auto px-margin-mobile md:px-margin">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter items-start">
+<!-- Left: Consultation Value Statement (5 cols) -->
+<div class="lg:col-span-5 flex flex-col gap-space-md">
+<div class="inline-flex items-center gap-2 px-3 py-1 rounded bg-secondary-container text-on-secondary-container font-label-code text-label-code uppercase tracking-wider self-start font-semibold">
+            06 • Mulai Diskusi Proyek
+          </div>
+<h2 class="font-headline-lg text-headline-lg font-bold text-on-surface tracking-tight">
+            Siap Merealisasikan Software Berkualitas Tinggi?
+          </h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant leading-relaxed">
+            Sampaikan ide atau kebutuhan sistem Anda. Tim technical architect kami akan menganalisis kebutuhan teknis dan mengirimkan estimasi scope awal dalam 1x24 jam kerja.
+          </p>
+<!-- Direct Instant WhatsApp Trigger -->
+<div class="bg-surface-container-low p-space-lg rounded-xl flex flex-col gap-space-sm shadow-sm mt-space-sm">
+<span class="font-label-code text-label-code text-secondary font-bold uppercase tracking-wider">Fast Response WhatsApp</span>
+<span class="font-headline-sm text-headline-sm text-on-surface font-semibold">Butuh Diskusi Langsung Tanpa Mengisi Form?</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Hubungi Technical Lead kami untuk percakapan langsung via WhatsApp:</p>
+<div class="pt-2">
+<a class="inline-flex items-center justify-center gap-2 bg-secondary-container hover:bg-secondary hover:text-on-secondary text-on-secondary-container font-label-md text-label-md px-space-lg py-3 rounded-lg transition-all w-full" href="https://wa.me/6281234567890?text=Halo%20Digital%20Studio%2C%20saya%20ingin%20konsultasi%20mengenai%20proyek%20software" rel="noopener noreferrer" target="_blank">
+<span class="material-symbols-outlined text-lg">chat</span>
+<span>Chat via WhatsApp (+62 812-3456-7890)</span>
+</a>
+</div>
+</div>
+<!-- Security & Privacy Assurance Markers -->
+<div class="flex flex-col gap-2 pt-space-xs text-outline font-label-code text-label-code">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-sm">lock</span>
+<span>Kerahasiaan Ide Terjamin (Perjanjian Kerahasiaan / NDA Ready)</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-sm">event_available</span>
+<span>Estimasi Biaya &amp; Rencana Kerja Tersedia Dalam 24 Jam</span>
+</div>
+</div>
+</div>
+<!-- Right: Inquiry Intake Component (7 cols) -->
+<div class="lg:col-span-7 bg-surface-container-low p-space-lg md:p-space-xl rounded-xl shadow-xl">
+<form class="flex flex-col gap-space-md" id="project-inquiry-form" onsubmit="event.preventDefault(); document.getElementById('form-success-state').classList.remove('hidden'); this.classList.add('hidden');">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-space-md">
+<!-- Nama -->
+<div class="flex flex-col gap-1.5">
+<label class="font-label-code text-label-code text-on-surface" for="client-name">Nama Lengkap / PIC *</label>
+<input class="bg-surface-container-lowest text-on-surface placeholder:text-outline font-body-sm text-body-sm px-space-md py-3 rounded-lg focus:outline-none focus:ring-1 focus:ring-primary shadow-inner" id="client-name" name="name" placeholder="Budi Prasetyo" required="" type="text"/>
+</div>
+<!-- Email -->
+<div class="flex flex-col gap-1.5">
+<label class="font-label-code text-label-code text-on-surface" for="client-email">Email Perusahaan / Pribadi *</label>
+<input class="bg-surface-container-lowest text-on-surface placeholder:text-outline font-body-sm text-body-sm px-space-md py-3 rounded-lg focus:outline-none focus:ring-1 focus:ring-primary shadow-inner" id="client-email" name="email" placeholder="budi@perusahaan.com" required="" type="email"/>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-space-md">
+<!-- WhatsApp -->
+<div class="flex flex-col gap-1.5">
+<label class="font-label-code text-label-code text-on-surface" for="client-wa">Nomor WhatsApp Aktif *</label>
+<input class="bg-surface-container-lowest text-on-surface placeholder:text-outline font-body-sm text-body-sm px-space-md py-3 rounded-lg focus:outline-none focus:ring-1 focus:ring-primary shadow-inner" id="client-wa" name="phone" placeholder="+62 812 3456 7890" required="" type="tel"/>
+</div>
+<!-- Kategori Layanan -->
+<div class="flex flex-col gap-1.5">
+<label class="font-label-code text-label-code text-on-surface" for="service-tier">Kategori Kebutuhan Layanan *</label>
+<select class="bg-surface-container-lowest text-on-surface font-body-sm text-body-sm px-space-md py-3 rounded-lg focus:outline-none focus:ring-1 focus:ring-primary shadow-inner" id="service-tier" name="category">
+<option value="landing">Landing Page (Mulai Rp1.500.000)</option>
+<option value="company-profile">Company Profile (Mulai Rp4.000.000)</option>
+<option value="ecommerce">E-Commerce / Toko Online (Mulai Rp6.000.000)</option>
+<option value="webapp">Custom Web Application (Mulai Rp8.000.000)</option>
+<option value="marketplace-saas">Marketplace / SaaS (Mulai Rp25.000.000)</option>
+<option value="enterprise">Enterprise Solution (Custom Scope)</option>
+<option value="other">Lainnya / Audit Sistem Eksisting</option>
+</select>
+</div>
+</div>
+<!-- Rentang Estimasi Budget -->
+<div class="flex flex-col gap-1.5">
+<label class="font-label-code text-label-code text-on-surface" for="budget-bracket">Rentang Anggaran Investasi</label>
+<select class="bg-surface-container-lowest text-on-surface font-body-sm text-body-sm px-space-md py-3 rounded-lg focus:outline-none focus:ring-1 focus:ring-primary shadow-inner" id="budget-bracket" name="budget">
+<option value="1.5-5">Rp 1.500.000 – Rp 5.000.000</option>
+<option value="5-15">Rp 5.000.000 – Rp 15.000.000</option>
+<option value="15-30">Rp 15.000.000 – Rp 30.000.000</option>
+<option value="30-75">Rp 30.000.000 – Rp 75.000.000</option>
+<option value="75+">&gt; Rp 75.000.000 (Skala Korporat)</option>
+</select>
+</div>
+<!-- Pesan Kebutuhan -->
+<div class="flex flex-col gap-1.5">
+<label class="font-label-code text-label-code text-on-surface" for="project-summary">Ringkasan Kebutuhan Proyek / Deskripsi Masalah *</label>
+<textarea class="bg-surface-container-lowest text-on-surface placeholder:text-outline font-body-sm text-body-sm px-space-md py-3 rounded-lg focus:outline-none focus:ring-1 focus:ring-primary shadow-inner resize-y" id="project-summary" name="message" placeholder="Ceritakan fitur utama, target audiens, deadline yang diharapkan, atau tautan sistem yang sudah ada..." required="" rows="4"></textarea>
+</div>
+<!-- Submit Button -->
+<div class="pt-2 flex flex-col sm:flex-row items-center justify-between gap-space-md">
+<button class="w-full sm:w-auto inline-flex items-center justify-center gap-space-sm bg-primary-container text-on-primary-container hover:bg-primary font-label-md text-label-md px-space-xl py-3.5 rounded-lg shadow-xl hover:scale-[1.02] transition-all" type="submit">
+<span>Kirim Permintaan Konsultasi</span>
+<span class="material-symbols-outlined text-sm">send</span>
+</button>
+<span class="font-label-code text-label-code text-outline text-xs">
+                Tidak ada komitmen atau biaya awal
+              </span>
+</div>
+</form>
+<!-- Interactive Success Confirmation Overlay -->
+<div class="hidden p-space-xl flex-col items-center justify-center text-center gap-space-md bg-surface-container rounded-lg" id="form-success-state">
+<span class="w-16 h-16 rounded-full bg-secondary-container flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined text-3xl">check_circle</span>
+</span>
+<div class="flex flex-col gap-1">
+<h3 class="font-headline-md text-headline-md font-bold text-on-surface">Permintaan Berhasil Terkirim!</h3>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-md">
+                Technical lead kami sedang mereview kebutuhan sistem Anda. Dokumen estimasi dan proposal awal akan kami kirimkan ke WhatsApp &amp; Email dalam waktu kurang dari 24 jam.
+              </p>
+</div>
+<button class="font-label-code text-label-code text-primary hover:underline mt-2" onclick="document.getElementById('form-success-state').classList.add('hidden'); document.getElementById('project-inquiry-form').reset(); document.getElementById('project-inquiry-form').classList.remove('hidden');" type="button">
+              Kirim Kebutuhan Proyek Tambahan • Kirim Ulang
+            </button>
+</div>
+</div>
+</div>
+</div>
+</section>
+</div></main><footer class="w-full bg-surface-container-lowest text-on-surface-variant"><div class="max-w-[1440px] mx-auto px-margin-mobile md:px-margin pt-space-xl pb-space-lg"><div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-gutter mb-space-xl"><div class="lg:col-span-4 flex flex-col gap-space-md"><div class="flex items-center gap-space-sm"><span class="font-headline-sm text-headline-sm text-on-surface font-bold">Smart Tech</span><span class="inline-flex items-center gap-1.5 px-space-sm py-0.5 rounded-full bg-secondary-container text-on-secondary-container font-label-code text-label-code"><span class="w-1.5 h-1.5 rounded-full bg-secondary animate-pulse"></span>Active</span></div><p class="font-body-md text-body-md text-on-surface-variant max-w-sm">High-velocity engineering and precision digital product design for modern enterprises, venture-backed scale-ups, and technology leaders worldwide.</p><div class="flex items-center gap-space-sm font-label-code text-label-code text-secondary"><span class="material-symbols-outlined text-sm">check_circle</span><span>All systems operational • 99.98% SLA</span></div></div><div class="lg:col-span-2 flex flex-col gap-space-sm"><span class="font-label-code text-label-code text-on-surface uppercase tracking-wider font-semibold mb-space-xs">Services</span><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" data-path="services" href="#">Web Development</a><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" data-path="services" href="#">E-Commerce Platforms</a><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" data-path="services" href="#">Backend &amp; Custom Software</a><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" data-path="services" href="#">Cloud &amp; DevOps Deployment</a><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" data-path="services" href="#">UI/UX Systems Engineering</a></div><div class="lg:col-span-2 flex flex-col gap-space-sm"><span class="font-label-code text-label-code text-on-surface uppercase tracking-wider font-semibold mb-space-xs">Solutions</span><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" data-path="solutions" href="#">Enterprise SaaS</a><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" data-path="solutions" href="#">Fintech Infrastructure</a><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" data-path="solutions" href="#">High-Load Architectures</a><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" data-path="solutions" href="#">Microservices Migration</a><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" data-path="solutions" href="#">AI Tooling Integration</a></div><div class="lg:col-span-4 flex flex-col gap-space-md"><span class="font-label-code text-label-code text-on-surface uppercase tracking-wider font-semibold">Project Advisory &amp; Dispatch</span><p class="font-body-sm text-body-sm text-on-surface-variant">Receive technical whitepapers, architectural case studies, and engineering briefs directly to your engineering lead's inbox.</p><div class="flex items-center gap-space-xs"><input class="bg-surface-container text-on-surface placeholder:text-outline font-body-sm text-body-sm px-space-md py-space-sm rounded-lg flex-1 focus:outline-none focus:ring-1 focus:ring-primary" placeholder="engineering@company.com" type="email"/><button class="bg-surface-bright hover:bg-surface-container-high text-on-surface font-label-md text-label-md px-space-md py-space-sm rounded-lg transition-colors flex items-center justify-center" type="button"><span class="material-symbols-outlined text-sm">arrow_forward</span></button></div></div></div><div class="pt-space-lg border-t border-surface-container-high flex flex-col md:flex-row items-center justify-between gap-space-md font-body-sm text-body-sm"><div class="flex flex-wrap items-center gap-space-md"><span class="text-outline">© 2026 Smart Tech Studio. All rights reserved.</span><a class="hover:text-on-surface transition-colors" data-path="privacy-policy" href="#">Privacy Policy</a><a class="hover:text-on-surface transition-colors" data-path="terms-of-service" href="#">Terms of Service</a><a class="hover:text-on-surface transition-colors" data-path="security" href="#">Security Compliance</a></div><div class="inline-flex items-center gap-space-sm font-label-code text-label-code text-outline"><span>ID • EN</span><span>•</span><span>UTC+7 / UTC+0</span></div></div></div></footer></body></html>

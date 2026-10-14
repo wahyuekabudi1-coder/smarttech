@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900" width="1200" height="900">
+  <rect width="1200" height="900" fill="#0F172A" />
+
+  <!-- Title Banner -->
+  <rect x="0" y="0" width="1200" height="60" fill="#172554" />
+  <text x="30" y="38" fill="#FFFFFF" font-family="sans-serif" font-size="20" font-weight="bold">SMART TECH — NAVIGASI TERBARU (LAYANAN, PORTFOLIO, HARGA, ABOUT)</text>
+  <text x="1170" y="38" fill="#38BDF8" font-family="monospace" font-size="14" text-anchor="end">DEEP NAVY #172554 • 200 OK</text>
+
+  <!-- PANEL 1: Desktop Header Live Render (Deep Navy) -->
+  <g transform="translate(40, 90)">
+    <rect width="1120" height="130" rx="16" fill="#172554" stroke="#334155" stroke-width="1.5" />
+    <text x="24" y="30" fill="#94A3B8" font-family="sans-serif" font-size="12" font-weight="bold">1. DESKTOP HEADER (Navigasi: Layanan • Portfolio • Harga • About)</text>
+    
+    <!-- Header Nav Container simulation -->
+    <rect x="24" y="46" width="1072" height="64" rx="12" fill="#172554" stroke="rgba(255,255,255,0.1)" />
+    
+    <!-- Brand Lockup: Logo + Text Smart Tech -->
+    <g transform="translate(44, 54)">
+      <rect width="48" height="48" rx="10" fill="rgba(255,255,255,0.06)" stroke="rgba(255,255,255,0.12)" />
+      <image href="public/images/smart-tech-logo.png" x="4" y="4" width="40" height="40" />
+      <text x="60" y="26" fill="#FFFFFF" font-family="'Plus Jakarta Sans', sans-serif" font-size="22" font-weight="800">Smart Tech</text>
+      <text x="60" y="42" fill="#93C5FD" font-family="'JetBrains Mono', monospace" font-size="10" font-weight="600" letter-spacing="1">TECHNOLOGY STUDIO</text>
+    </g>
+    
+    <!-- 4 Nav Links (Layanan, Portfolio, Harga, About) -->
+    <g transform="translate(460, 84)">
+      <text x="0" y="0" fill="#E2E8F0" font-family="sans-serif" font-size="13" font-weight="500">Layanan</text>
+      <text x="85" y="0" fill="#E2E8F0" font-family="sans-serif" font-size="13" font-weight="500">Portfolio</text>
+      <text x="175" y="0" fill="#E2E8F0" font-family="sans-serif" font-size="13" font-weight="500">Harga</text>
+      <text x="250" y="0" fill="#E2E8F0" font-family="sans-serif" font-size="13" font-weight="500">About</text>
+    </g>
+
+    <!-- Language & Portal -->
+    <rect x="820" y="62" width="60" height="32" rx="16" fill="rgba(255,255,255,0.1)" />
+    <text x="850" y="82" fill="#FFFFFF" font-family="sans-serif" font-size="11" font-weight="bold" text-anchor="middle">ID • EN</text>
+
+    <!-- Right CTA (#2563EB) -->
+    <rect x="960" y="61" width="120" height="34" rx="8" fill="#2563EB" />
+    <text x="1020" y="82" fill="#FFFFFF" font-family="sans-serif" font-size="13" font-weight="600" text-anchor="middle">Konsultasi →</text>
+  </g>
+
+  <!-- PANEL 2: Mobile Drawer Menu Live Render -->
+  <g transform="translate(40, 250)">
+    <rect width="540" height="280" rx="16" fill="#172554" stroke="#334155" stroke-width="1.5" />
+    <text x="24" y="32" fill="#94A3B8" font-family="sans-serif" font-size="12" font-weight="bold">2. MOBILE MENU DRAWER (Layanan • Portfolio • Harga • About)</text>
+    
+    <rect x="24" y="46" width="492" height="210" rx="12" fill="#172554" stroke="rgba(255,255,255,0.1)" />
+    <!-- Mobile Brand Bar -->
+    <g transform="translate(44, 58)">
+      <rect width="40" height="40" rx="8" fill="rgba(255,255,255,0.06)" stroke="rgba(255,255,255,0.12)" />
+      <image href="public/images/smart-tech-logo.png" x="3" y="3" width="34" height="34" />
+      <text x="52" y="22" fill="#FFFFFF" font-family="sans-serif" font-size="17" font-weight="800">Smart Tech</text>
+      <text x="52" y="36" fill="#93C5FD" font-family="monospace" font-size="9">TECHNOLOGY STUDIO</text>
+    </g>
+    <line x1="24" y1="112" x2="516" y2="112" stroke="rgba(255,255,255,0.1)" />
+    
+    <!-- Mobile Links (Only 4 items) -->
+    <text x="44" y="138" fill="#E2E8F0" font-family="sans-serif" font-size="14" font-weight="500">• Layanan</text>
+    <text x="44" y="168" fill="#E2E8F0" font-family="sans-serif" font-size="14" font-weight="500">• Portfolio</text>
+    <text x="44" y="198" fill="#E2E8F0" font-family="sans-serif" font-size="14" font-weight="500">• Harga</text>
+    <text x="44" y="228" fill="#60A5FA" font-family="sans-serif" font-size="14" font-weight="bold">• About</text>
+  </g>
+
+  <!-- PANEL 3: About Section & Contact Access Banner -->
+  <g transform="translate(620, 250)">
+    <rect width="540" height="280" rx="16" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="1.5" />
+    <text x="24" y="32" fill="#64748B" font-family="sans-serif" font-size="12" font-weight="bold">3. ABOUT SECTION (#about) &amp; AKSES KONTAK</text>
+    
+    <rect x="24" y="46" width="492" height="210" rx="12" fill="#F8FAFC" stroke="#E2E8F0" />
+    <text x="40" y="75" fill="#2563EB" font-family="monospace" font-size="11" font-weight="bold">04 • ABOUT STUDIO &amp; ALUR CEPAT</text>
+    <text x="40" y="102" fill="#172554" font-family="sans-serif" font-size="16" font-weight="bold">4 Langkah Mudah Dari Ide Sampai Rilis</text>
+    <text x="40" y="126" fill="#64748B" font-family="sans-serif" font-size="12">Alur kerja transparan: Konsultasi → Desain → Pengerjaan → Online</text>
+    
+    <!-- Contact Access Callout in About -->
+    <rect x="40" y="145" width="460" height="90" rx="8" fill="#EFF6FF" stroke="#BFDBFE" />
+    <text x="54" y="172" fill="#172554" font-family="sans-serif" font-size="13" font-weight="bold">Ingin Konsultasi Langsung dengan Tim?</text>
+    <text x="54" y="192" fill="#64748B" font-family="sans-serif" font-size="11">Technical Lead kami siap membantu estimasi fitur dan budget Anda.</text>
+    <rect x="54" y="204" width="180" height="24" rx="4" fill="#2563EB" />
+    <text x="144" y="220" fill="#FFFFFF" font-family="sans-serif" font-size="10" font-weight="bold" text-anchor="middle">Akses Formulir &amp; Kontak →</text>
+  </g>
+
+  <!-- PANEL 4: Enterprise Footer Live Render -->
+  <g transform="translate(40, 560)">
+    <rect width="1120" height="300" rx="16" fill="#172554" stroke="#1E3A8A" stroke-width="1.5" />
+    <text x="24" y="32" fill="#94A3B8" font-family="sans-serif" font-size="12" font-weight="bold">4. ENTERPRISE FOOTER (Deep Navy Background - Contrast Verified)</text>
+    
+    <g transform="translate(40, 60)">
+      <image href="public/images/smart-tech-logo.png" x="0" y="0" width="100" height="75" />
+      <text x="0" y="110" fill="#94A3B8" font-family="sans-serif" font-size="13">Rekayasa software dan desain produk digital presisi tinggi</text>
+      <text x="0" y="130" fill="#94A3B8" font-family="sans-serif" font-size="13">untuk bisnis, scale-up, dan pemimpin industri di Indonesia &amp; dunia.</text>
+      
+      <circle cx="6" cy="160" r="4" fill="#2563EB" />
+      <text x="20" y="164" fill="#FFFFFF" font-family="monospace" font-size="12" font-weight="bold">All systems operational • 99.98% SLA</text>
+    </g>
+
+    <!-- Footer Columns -->
+    <g transform="translate(540, 60)">
+      <text x="0" y="15" fill="#FFFFFF" font-family="monospace" font-size="12" font-weight="bold">LAYANAN UTAMA</text>
+      <text x="0" y="45" fill="#94A3B8" font-family="sans-serif" font-size="13">Website &amp; Landing Page</text>
+      <text x="0" y="75" fill="#94A3B8" font-family="sans-serif" font-size="13">Toko Online &amp; E-Commerce</text>
+      <text x="0" y="105" fill="#94A3B8" font-family="sans-serif" font-size="13">Custom Web App &amp; ERP</text>
+      <text x="0" y="135" fill="#94A3B8" font-family="sans-serif" font-size="13">AI &amp; Integrasi Cloud</text>
+    </g>
+
+    <g transform="translate(850, 60)">
+      <text x="0" y="15" fill="#FFFFFF" font-family="monospace" font-size="12" font-weight="bold">KONTAK KONSULTASI</text>
+      <text x="0" y="45" fill="#94A3B8" font-family="sans-serif" font-size="13">WhatsApp: +62 812-3456-7890</text>
+      <text x="0" y="75" fill="#94A3B8" font-family="sans-serif" font-size="13">Email: hello@smarttech.id</text>
+      <text x="0" y="105" fill="#94A3B8" font-family="sans-serif" font-size="13">Jakarta • Surabaya • Bali</text>
+    </g>
+  </g>
+</svg>
