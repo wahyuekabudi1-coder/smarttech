@@ -80,6 +80,16 @@ export const Header: React.FC<HeaderProps> = ({
             {t.nav_portfolio}
           </a>
           <a
+            href="#inspirasi"
+            onClick={(e) => handleNavClick(e, '#inspirasi')}
+            className="text-slate-200 hover:text-blue transition-colors py-1 font-medium inline-flex items-center gap-1.5"
+          >
+            <span>Inspirasi Bisnis</span>
+            <span className="font-mono text-[10px] bg-blue/30 text-blue-200 px-1.5 py-0.5 rounded border border-white/10 font-bold">
+              8 Demo
+            </span>
+          </a>
+          <a
             href="#harga"
             onClick={(e) => handleNavClick(e, '#harga')}
             className="text-slate-200 hover:text-blue transition-colors py-1 font-medium"
@@ -120,16 +130,6 @@ export const Header: React.FC<HeaderProps> = ({
               EN
             </button>
           </div>
-
-          {/* Discreet Portal & Admin Trigger */}
-          <button
-            onClick={() => onNavigate('/admin/dashboard')}
-            title="Login Client Portal & Admin Workspace"
-            className="hidden sm:inline-flex items-center gap-1.5 px-3 py-2 rounded-lg text-xs font-mono text-slate-200 hover:text-white hover:bg-white/10 border border-white/15 transition-colors cursor-pointer"
-          >
-            <span className="material-symbols-outlined text-sm text-blue">admin_panel_settings</span>
-            <span>{t.btn_portal}</span>
-          </button>
 
           {/* Main CTA Button */}
           <a
@@ -192,6 +192,16 @@ export const Header: React.FC<HeaderProps> = ({
               {t.nav_portfolio}
             </a>
             <a
+              href="#inspirasi"
+              onClick={(e) => handleNavClick(e, '#inspirasi')}
+              className="text-slate-200 hover:text-blue py-1 transition-colors flex items-center justify-between"
+            >
+              <span>Inspirasi Bisnis</span>
+              <span className="font-mono text-[10px] bg-blue/30 text-blue-200 px-1.5 py-0.5 rounded border border-white/10 font-bold">
+                8 Demo
+              </span>
+            </a>
+            <a
               href="#harga"
               onClick={(e) => handleNavClick(e, '#harga')}
               className="text-slate-200 hover:text-blue py-1 transition-colors"
@@ -207,26 +217,13 @@ export const Header: React.FC<HeaderProps> = ({
             </a>
           </nav>
           <div className="pt-3 border-t border-white/10 flex items-center justify-between">
-            <button
-              onClick={() => {
-                setMobileMenuOpen(false);
-                onNavigate('/admin/dashboard');
-              }}
-              className="inline-flex items-center gap-1.5 text-xs font-mono text-blue font-semibold hover:underline"
+            <a
+              href="#kontak"
+              onClick={(e) => handleNavClick(e, '#kontak')}
+              className="w-full text-center py-2.5 px-4 rounded-lg bg-blue hover:bg-blue-hover text-white text-sm font-medium transition-colors"
             >
-              <span className="material-symbols-outlined text-sm">admin_panel_settings</span>
-              <span>Akses Portal Klien / Admin</span>
-            </button>
-            <button
-              onClick={() => {
-                setMobileMenuOpen(false);
-                onNavigate('/portal');
-              }}
-              className="inline-flex items-center gap-1.5 text-xs font-mono text-blue-soft font-semibold hover:underline"
-            >
-              <span className="material-symbols-outlined text-sm">lock_open</span>
-              <span>Client Portal</span>
-            </button>
+              {t.btn_consult}
+            </a>
           </div>
         </div>
       )}

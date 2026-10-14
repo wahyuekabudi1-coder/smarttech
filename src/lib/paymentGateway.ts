@@ -2,6 +2,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { ArtopayAdapter, type CreatePaymentLinkParams, type WebhookPayload } from '../server/artopayAdapter.ts';
+import { pool, isPostgresConfigured } from '../server/db.ts';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -50,7 +51,9 @@ export class PaymentGateway {
   private initStorage() {
     try {
       if (!fs.existsSync(DATA_DIR)) {
-        fs.mkdirSync(DATA_DIR, { recursive: true });
+        try {
+          fs.mkdirSync(DATA_DIR, { recursive: true });
+        } catch (_) {}
       }
 
       if (fs.existsSync(ORDERS_FILE)) {
@@ -72,6 +75,45 @@ export class PaymentGateway {
       } else {
         this.persistEvents();
       }
+
+      // Sync from PostgreSQL if configured
+      if (pool) {
+        pool.query('SELECT * FROM orders').then((res) => {
+          for (const row of res.rows) {
+            const ord: ShopOrder = {
+              orderId: row.order_id,
+              customerName: row.customer_name,
+              customerEmail: row.customer_email,
+              customerPhone: row.customer_phone || undefined,
+              items: typeof row.items === 'string' ? JSON.parse(row.items) : row.items,
+              baseAmount: Number(row.base_amount),
+              uniqueCode: Number(row.unique_code),
+              grossAmount: Number(row.gross_amount),
+              currency: row.currency || 'IDR',
+              status: row.status,
+              paymentId: row.payment_id || undefined,
+              paymentUrl: row.payment_url || undefined,
+              createdAt: new Date(row.created_at).toISOString(),
+              expiresAt: row.expires_at ? new Date(row.expires_at).toISOString() : '',
+              paidAt: row.paid_at ? new Date(row.paid_at).toISOString() : undefined,
+              paymentMethod: row.payment_method || undefined,
+              disputeReason: row.dispute_reason || undefined,
+              notes: row.notes || undefined
+            };
+            this.orders.set(ord.orderId, ord);
+          }
+        }).catch((err: any) => {
+          console.error('[PaymentGateway] PostgreSQL orders load error:', err.message);
+        });
+
+        pool.query('SELECT event_key FROM processed_events').then((res) => {
+          for (const row of res.rows) {
+            this.processedEvents.add(row.event_key);
+          }
+        }).catch((err: any) => {
+          console.error('[PaymentGateway] PostgreSQL events load error:', err.message);
+        });
+      }
     } catch (err) {
       console.error('[PaymentGateway] Storage initialization error:', err);
     }
@@ -82,7 +124,34 @@ export class PaymentGateway {
       const data = JSON.stringify(Array.from(this.orders.values()), null, 2);
       fs.writeFileSync(ORDERS_FILE, data, 'utf8');
     } catch (err) {
-      console.error('[PaymentGateway] Failed to persist orders to disk:', err);
+      // In serverless readonly environments (like Vercel AWS Lambda /var/task), local write might fail gracefully
+    }
+  }
+
+  public persistOrderToDb(order: ShopOrder) {
+    this.persistOrders();
+    if (pool) {
+      pool.query(
+        `INSERT INTO orders (
+          order_id, customer_name, customer_email, customer_phone, items,
+          base_amount, unique_code, gross_amount, currency, status,
+          payment_id, payment_url, created_at, expires_at, paid_at, payment_method, dispute_reason, notes
+        ) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15, $16, $17, $18)
+        ON CONFLICT (order_id) DO UPDATE SET
+          status = EXCLUDED.status,
+          paid_at = EXCLUDED.paid_at,
+          payment_method = EXCLUDED.payment_method,
+          dispute_reason = EXCLUDED.dispute_reason,
+          notes = EXCLUDED.notes`,
+        [
+          order.orderId, order.customerName, order.customerEmail, order.customerPhone || null, JSON.stringify(order.items || []),
+          order.baseAmount, order.uniqueCode, order.grossAmount, order.currency || 'IDR', order.status,
+          order.paymentId || null, order.paymentUrl || null, order.createdAt || new Date().toISOString(), order.expiresAt || null,
+          order.paidAt || null, order.paymentMethod || null, order.disputeReason || null, order.notes || null
+        ]
+      ).catch((err: any) => {
+        console.error('[PaymentGateway] PostgreSQL order persist error:', err.message);
+      });
     }
   }
 
@@ -91,7 +160,19 @@ export class PaymentGateway {
       const data = JSON.stringify(Array.from(this.processedEvents), null, 2);
       fs.writeFileSync(EVENTS_FILE, data, 'utf8');
     } catch (err) {
-      console.error('[PaymentGateway] Failed to persist processed events:', err);
+      // Graceful in serverless
+    }
+  }
+
+  public persistEventToDb(eventKey: string) {
+    this.persistEvents();
+    if (pool) {
+      pool.query(
+        'INSERT INTO processed_events (event_key, processed_at) VALUES ($1, NOW()) ON CONFLICT (event_key) DO NOTHING',
+        [eventKey]
+      ).catch((err: any) => {
+        console.error('[PaymentGateway] PostgreSQL event persist error:', err.message);
+      });
     }
   }
 
@@ -221,7 +302,7 @@ export class PaymentGateway {
       };
 
       this.orders.set(orderId, newOrder);
-      this.persistOrders();
+      this.persistOrderToDb(newOrder);
 
       return newOrder;
     });
@@ -318,8 +399,8 @@ export class PaymentGateway {
         order.status = 'AMOUNT_MISMATCH';
         order.disputeReason = `Expected Rp ${order.grossAmount}, received Rp ${orderData.gross_amount}`;
         this.processedEvents.add(eventId);
-        this.persistOrders();
-        this.persistEvents();
+        this.persistOrderToDb(order);
+        this.persistEventToDb(eventId);
         return {
           success: false,
           statusCode: 422,
@@ -354,8 +435,8 @@ export class PaymentGateway {
 
       // 7. Record Processed Event & Persist
       this.processedEvents.add(eventId);
-      this.persistOrders();
-      this.persistEvents();
+      this.persistOrderToDb(order);
+      this.persistEventToDb(eventId);
 
       return {
         success: true,
@@ -391,7 +472,7 @@ export class PaymentGateway {
     order.status = 'PAID';
     order.paidAt = new Date().toISOString();
     order.paymentMethod = 'SANDBOX_SIMULATION_AUTHORIZED';
-    this.persistOrders();
+    this.persistOrderToDb(order);
 
     return order;
   }

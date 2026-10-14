@@ -13,7 +13,7 @@ interface PortalDashboardProps {
   onLogout: () => void;
   onNavigate: (path: string) => void;
   onToast: (title: string, msg: string) => void;
-  onOpenSimulation: () => void;
+  onOpenSimulation?: () => void;
   logoVersion: number;
 }
 
@@ -24,7 +24,6 @@ export const PortalDashboard: React.FC<PortalDashboardProps> = ({
   onLogout,
   onNavigate,
   onToast,
-  onOpenSimulation,
   logoVersion,
 }) => {
   const [project, setProject] = useState<Project | null>(initialProject);
@@ -74,7 +73,10 @@ export const PortalDashboard: React.FC<PortalDashboardProps> = ({
     try {
       const res = await fetch('/api/portal/feedback', {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
+        headers: {
+          'Content-Type': 'application/json',
+          'x-portal-code': accessCode,
+        },
         body: JSON.stringify({
           projectId: project.id,
           title: feedbackTitle,
@@ -329,19 +331,21 @@ export const PortalDashboard: React.FC<PortalDashboardProps> = ({
               </div>
             )}
 
-            {/* Tab: Invoices */}
+            {/* Tab: Invoices (Catatan Tagihan Manual) */}
             {activeTab === 'invoices' && (
               <div className="bg-white rounded-2xl border border-neutral-border p-6 shadow-xs space-y-4">
-                <div className="flex items-center justify-between">
-                  <h3 className="font-heading font-bold text-lg text-navy">
-                    Daftar Tagihan &amp; Termin
-                  </h3>
-                  <button
-                    onClick={onOpenSimulation}
-                    className="text-xs font-mono text-blue hover:underline cursor-pointer"
-                  >
-                    Simulasi Checkout Sandbox
-                  </button>
+                <div className="flex items-center justify-between pb-2 border-b border-neutral-border">
+                  <div>
+                    <h3 className="font-heading font-bold text-lg text-navy">
+                      Daftar Tagihan &amp; Termin
+                    </h3>
+                    <p className="text-xs text-neutral-muted mt-0.5">
+                      Catatan tagihan termin kontrak proyek. Pembayaran diproses via transfer bank resmi.
+                    </p>
+                  </div>
+                  <span className="text-[11px] font-mono text-slate-500 bg-ice px-2.5 py-1 rounded-md border border-neutral-border">
+                    Transfer Bank Manual
+                  </span>
                 </div>
 
                 <div className="space-y-4">
@@ -366,34 +370,36 @@ export const PortalDashboard: React.FC<PortalDashboardProps> = ({
                         <h4 className="font-heading font-bold text-base text-navy mt-1">
                           {inv.title}
                         </h4>
-                        <span className="text-xs font-mono text-neutral-muted">
-                          Jatuh Tempo: {inv.dueDate || '-'}
-                        </span>
+                        <div className="flex items-center gap-3 text-xs font-mono text-neutral-muted mt-0.5">
+                          <span>Jatuh Tempo: {inv.dueDate || '-'}</span>
+                          <span>•</span>
+                          <span>Metode: {inv.paymentMethod || 'Transfer Bank Manual'}</span>
+                        </div>
                       </div>
 
-                      <div className="flex items-center gap-4">
-                        <div className="text-right">
+                      <div className="flex flex-col sm:flex-row sm:items-center gap-4 sm:text-right">
+                        <div>
                           <span className="font-mono text-xs text-neutral-muted block">Jumlah</span>
                           <span className="font-heading font-extrabold text-lg text-navy">
                             Rp {(inv.amount || 0).toLocaleString('id-ID')}
                           </span>
                         </div>
 
-                        {inv.status !== 'Lunas' && (
-                          <a
-                            href={inv.paymentUrl || '#'}
-                            target="_blank"
-                            rel="noreferrer"
-                            onClick={(e) => {
-                              if (!inv.paymentUrl || inv.paymentUrl === '#') {
-                                e.preventDefault();
-                                onOpenSimulation();
-                              }
-                            }}
-                            className="bg-blue hover:bg-blue-hover text-white text-xs font-semibold px-4 py-2 rounded-lg shadow-xs transition-colors whitespace-nowrap"
-                          >
-                            Bayar Sekarang
-                          </a>
+                        {inv.status !== 'Lunas' ? (
+                          <div className="bg-amber-50/80 border border-amber-200/80 rounded-lg p-2.5 text-left text-xs font-mono text-amber-900">
+                            <div className="font-bold text-[11px] flex items-center gap-1 text-amber-800">
+                              <span className="material-symbols-outlined text-sm">account_balance</span>
+                              <span>Transfer: BCA 8820-192-888</span>
+                            </div>
+                            <span className="text-[10px] text-amber-700 block mt-0.5">
+                              a.n PT SMART TECH REKAYASA DIGITAL
+                            </span>
+                          </div>
+                        ) : (
+                          <div className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-emerald-50 border border-emerald-200 text-emerald-800 text-xs font-semibold">
+                            <span className="material-symbols-outlined text-sm">check_circle</span>
+                            <span>Lunas</span>
+                          </div>
                         )}
                       </div>
                     </div>

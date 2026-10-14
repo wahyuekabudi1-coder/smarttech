@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 interface FooterProps {
   onNavigate: (path: string) => void;
@@ -6,6 +6,20 @@ interface FooterProps {
 }
 
 export const Footer: React.FC<FooterProps> = ({ onNavigate, logoVersion }) => {
+  const [copyrightClicks, setCopyrightClicks] = useState<number>(0);
+
+  const handleCopyrightClick = () => {
+    setCopyrightClicks((prev) => {
+      const next = prev + 1;
+      if (next >= 14) {
+        return 0; // reset hitungan ke 0
+      }
+      return next;
+    });
+  };
+
+  const isPortalVisible = copyrightClicks >= 10 && copyrightClicks <= 13;
+
   return (
     <footer className="bg-navy text-white pt-16 pb-12 border-t border-white/10">
       <div className="max-w-[1280px] mx-auto px-4 sm:px-6">
@@ -35,7 +49,15 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, logoVersion }) => {
               online dengan kode berstandar internasional.
             </p>
             <div className="pt-2 text-xs font-mono text-slate-400">
-              © {new Date().getFullYear()} Smart Tech. All rights reserved.
+              <button
+                type="button"
+                id="copyright-trigger"
+                onClick={handleCopyrightClick}
+                className="hover:text-slate-300 transition-colors text-left select-none cursor-default focus:outline-hidden"
+                aria-label="Copyright Smart Tech"
+              >
+                © {new Date().getFullYear()} Smart Tech. All rights reserved.
+              </button>
             </div>
           </div>
 
@@ -73,31 +95,66 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, logoVersion }) => {
             </ul>
           </div>
 
-          {/* Portal & Workspace access */}
+          {/* Third Column: Conditional Portal Access or Studio Commitment */}
           <div className="md:col-span-4 space-y-3">
-            <span className="font-mono text-xs uppercase tracking-wider text-blue-soft font-semibold block">
-              Akses Portal &amp; Klien
-            </span>
-            <p className="text-slate-300 text-xs leading-relaxed">
-              Klien terdaftar dapat memantau progres milestone, unduh dokumen FSD, dan verifikasi
-              pembayaran lewat Client Portal.
-            </p>
-            <div className="flex flex-wrap gap-2 pt-1">
-              <button
-                onClick={() => onNavigate('/portal')}
-                className="inline-flex items-center gap-1.5 px-3 py-2 rounded-lg bg-white/10 hover:bg-white/20 text-xs font-mono text-white transition-colors cursor-pointer"
+            {isPortalVisible ? (
+              <div
+                id="hidden-portal-access"
+                className="p-4 rounded-xl bg-white/5 border border-blue/40 shadow-lg space-y-3"
               >
-                <span className="material-symbols-outlined text-sm">lock_open</span>
-                <span>Client Portal</span>
-              </button>
-              <button
-                onClick={() => onNavigate('/admin/dashboard')}
-                className="inline-flex items-center gap-1.5 px-3 py-2 rounded-lg bg-blue hover:bg-blue-hover text-xs font-mono text-white transition-colors cursor-pointer"
-              >
-                <span className="material-symbols-outlined text-sm">admin_panel_settings</span>
-                <span>Admin Workspace</span>
-              </button>
-            </div>
+                <div className="flex items-center justify-between">
+                  <div className="flex items-center gap-2">
+                    <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+                    <span className="font-mono text-xs uppercase tracking-wider text-blue-soft font-semibold">
+                      Akses Portal Tersembunyi
+                    </span>
+                  </div>
+                  <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-blue/20 text-blue-soft border border-blue/30 font-semibold">
+                    Klik {copyrightClicks}/13
+                  </span>
+                </div>
+                <p className="text-slate-300 text-xs leading-relaxed">
+                  Akses login ke Client Portal dan Admin Workspace telah diaktifkan. Klik copyright ke-14 untuk mengunci kembali.
+                </p>
+                <div className="flex flex-wrap gap-2 pt-1">
+                  <button
+                    id="btn-portal-client"
+                    onClick={() => onNavigate('/portal')}
+                    className="inline-flex items-center gap-1.5 px-3 py-2 rounded-lg bg-white/10 hover:bg-white/20 text-xs font-mono text-white transition-colors cursor-pointer"
+                  >
+                    <span className="material-symbols-outlined text-sm">lock_open</span>
+                    <span>Portal Klien</span>
+                  </button>
+                  <button
+                    id="btn-portal-admin"
+                    onClick={() => onNavigate('/admin/dashboard')}
+                    className="inline-flex items-center gap-1.5 px-3 py-2 rounded-lg bg-blue hover:bg-blue-hover text-xs font-mono text-white transition-colors cursor-pointer"
+                  >
+                    <span className="material-symbols-outlined text-sm">admin_panel_settings</span>
+                    <span>Portal Admin</span>
+                  </button>
+                </div>
+              </div>
+            ) : (
+              <>
+                <span className="font-mono text-xs uppercase tracking-wider text-blue-soft font-semibold block">
+                  Standar Mutu Rekayasa
+                </span>
+                <p className="text-slate-300 text-xs leading-relaxed">
+                  Arsitektur cloud teruji, standar clean architecture, 100% kepemilikan kode sumber, dan garansi bug resmi untuk setiap sistem digital.
+                </p>
+                <div className="pt-1 space-y-1.5 text-xs text-slate-400 font-mono">
+                  <div className="flex items-center gap-2">
+                    <span className="material-symbols-outlined text-blue text-sm">verified</span>
+                    <span>ISO/IEC Standar Kualitas Software</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <span className="material-symbols-outlined text-blue text-sm">security</span>
+                    <span>Enkripsi TLS 1.3 &amp; Signature HMAC-SHA256</span>
+                  </div>
+                </div>
+              </>
+            )}
           </div>
         </div>
 

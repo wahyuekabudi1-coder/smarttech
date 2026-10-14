@@ -11,10 +11,12 @@ import { InquirySection } from './components/public/InquirySection';
 import { Footer } from './components/public/Footer';
 import { ServiceDetailModal } from './components/public/ServiceDetailModal';
 import { PortfolioDetailModal } from './components/public/PortfolioDetailModal';
-import { PaymentSimulationModal } from './components/public/PaymentSimulationModal';
+import { DemoShowcaseSection } from './components/public/DemoShowcaseSection';
+import { DemoWebsiteView } from './components/demo/DemoWebsiteView';
 
 import { AdminLayout } from './components/admin/AdminLayout';
 import { DashboardView } from './components/admin/DashboardView';
+import { LeadsView } from './components/admin/LeadsView';
 import { ConsultationsView } from './components/admin/ConsultationsView';
 import { ClientsView } from './components/admin/ClientsView';
 import { ProposalsView } from './components/admin/ProposalsView';
@@ -38,7 +40,6 @@ export const App: React.FC = () => {
   // Public Modals
   const [activeServiceKey, setActiveServiceKey] = useState<string | null>(null);
   const [activeProjectKey, setActiveProjectKey] = useState<string | null>(null);
-  const [simulationModalOpen, setSimulationModalOpen] = useState(false);
 
   // Inquiry Form pre-fills
   const [prefillCategory, setPrefillCategory] = useState<string>('website');
@@ -107,13 +108,7 @@ export const App: React.FC = () => {
             }}
             onNavigate={navigate}
             onToast={addToast}
-            onOpenSimulation={() => setSimulationModalOpen(true)}
             logoVersion={logoVersion}
-          />
-          <PaymentSimulationModal
-            isOpen={simulationModalOpen}
-            onClose={() => setSimulationModalOpen(false)}
-            onSuccess={() => addToast('Pembayaran Dikonfirmasi', 'Status Invoice INV-2026-003 berhasil disimulasikan sebagai lunas.')}
           />
           <Toast toasts={toasts} onDismiss={dismissToast} />
         </>
@@ -129,6 +124,34 @@ export const App: React.FC = () => {
             addToast('Login Berhasil', `Selamat datang, ${client.name || client.company}!`);
           }}
           onNavigate={navigate}
+          logoVersion={logoVersion}
+        />
+        <Toast toasts={toasts} onDismiss={dismissToast} />
+      </>
+    );
+  }
+
+  // 1.5 Interactive Business Demo Websites (Zero Modal Full Page)
+  if (cleanPath.startsWith('/demo')) {
+    const parts = cleanPath.split('/').filter(Boolean); // e.g. ['demo', 'toko-baju', 'checkout']
+    const slug = parts[1] || 'toko-baju';
+    const subView = parts[2] || '';
+
+    return (
+      <>
+        <DemoWebsiteView
+          slug={slug}
+          subView={subView}
+          onNavigate={navigate}
+          onConsultFullStack={(demoSlug, businessName, categoryTitle) => {
+            setPrefillCategory('website');
+            setPrefillMessage(`Tertarik mengembangkan website full-stack seperti Demo: ${categoryTitle} (${businessName}) dengan integrasi transaksi & database otomatis.`);
+            navigate('/');
+            setTimeout(() => {
+              const el = document.querySelector('#kontak');
+              if (el) el.scrollIntoView({ behavior: 'smooth' });
+            }, 100);
+          }}
           logoVersion={logoVersion}
         />
         <Toast toasts={toasts} onDismiss={dismissToast} />
@@ -155,6 +178,24 @@ export const App: React.FC = () => {
           logoVersion={logoVersion}
         />
       );
+    } else if (cleanPath === '/admin/leads') {
+      adminView = 'leads';
+      breadcrumbs.push({ label: 'Leads', path: '/admin/leads' });
+      subContent = <LeadsView mode="list" onNavigate={navigate} onToast={addToast} />;
+    } else if (cleanPath === '/admin/leads/new') {
+      adminView = 'leads';
+      breadcrumbs.push({ label: 'Leads', path: '/admin/leads' }, { label: 'Baru', path: cleanPath });
+      subContent = <LeadsView mode="new" onNavigate={navigate} onToast={addToast} />;
+    } else if (cleanPath.match(/^\/admin\/leads\/([^/]+)\/edit$/)) {
+      const match = cleanPath.match(/^\/admin\/leads\/([^/]+)\/edit$/)!;
+      adminView = 'leads';
+      breadcrumbs.push({ label: 'Leads', path: '/admin/leads' }, { label: 'Edit', path: cleanPath });
+      subContent = <LeadsView mode="edit" id={match[1]} onNavigate={navigate} onToast={addToast} />;
+    } else if (cleanPath.match(/^\/admin\/leads\/([^/]+)$/)) {
+      const match = cleanPath.match(/^\/admin\/leads\/([^/]+)$/)!;
+      adminView = 'leads';
+      breadcrumbs.push({ label: 'Leads', path: '/admin/leads' }, { label: match[1], path: cleanPath });
+      subContent = <LeadsView mode="detail" id={match[1]} onNavigate={navigate} onToast={addToast} />;
     } else if (cleanPath === '/admin/consultations') {
       adminView = 'consultations';
       breadcrumbs.push({ label: 'Permintaan Konsultasi', path: '/admin/consultations' });
@@ -230,21 +271,21 @@ export const App: React.FC = () => {
     } else if (cleanPath === '/admin/invoices') {
       adminView = 'invoices';
       breadcrumbs.push({ label: 'Tagihan & Pembayaran', path: '/admin/invoices' });
-      subContent = <InvoicesView mode="list" onNavigate={navigate} onToast={addToast} onOpenSimulation={() => setSimulationModalOpen(true)} />;
+      subContent = <InvoicesView mode="list" onNavigate={navigate} onToast={addToast} />;
     } else if (cleanPath === '/admin/invoices/new') {
       adminView = 'invoices';
       breadcrumbs.push({ label: 'Tagihan & Pembayaran', path: '/admin/invoices' }, { label: 'Baru', path: cleanPath });
-      subContent = <InvoicesView mode="new" onNavigate={navigate} onToast={addToast} onOpenSimulation={() => setSimulationModalOpen(true)} />;
+      subContent = <InvoicesView mode="new" onNavigate={navigate} onToast={addToast} />;
     } else if (cleanPath.match(/^\/admin\/invoices\/([^/]+)\/edit$/)) {
       const match = cleanPath.match(/^\/admin\/invoices\/([^/]+)\/edit$/)!;
       adminView = 'invoices';
       breadcrumbs.push({ label: 'Tagihan & Pembayaran', path: '/admin/invoices' }, { label: 'Edit', path: cleanPath });
-      subContent = <InvoicesView mode="edit" id={match[1]} onNavigate={navigate} onToast={addToast} onOpenSimulation={() => setSimulationModalOpen(true)} />;
+      subContent = <InvoicesView mode="edit" id={match[1]} onNavigate={navigate} onToast={addToast} />;
     } else if (cleanPath.match(/^\/admin\/invoices\/([^/]+)$/)) {
       const match = cleanPath.match(/^\/admin\/invoices\/([^/]+)$/)!;
       adminView = 'invoices';
       breadcrumbs.push({ label: 'Tagihan & Pembayaran', path: '/admin/invoices' }, { label: match[1], path: cleanPath });
-      subContent = <InvoicesView mode="detail" id={match[1]} onNavigate={navigate} onToast={addToast} onOpenSimulation={() => setSimulationModalOpen(true)} />;
+      subContent = <InvoicesView mode="detail" id={match[1]} onNavigate={navigate} onToast={addToast} />;
     } else if (cleanPath === '/admin/calendar') {
       adminView = 'calendar';
       breadcrumbs.push({ label: 'Jadwal', path: '/admin/calendar' });
@@ -273,11 +314,6 @@ export const App: React.FC = () => {
         >
           {subContent}
         </AdminLayout>
-        <PaymentSimulationModal
-          isOpen={simulationModalOpen}
-          onClose={() => setSimulationModalOpen(false)}
-          onSuccess={() => addToast('Pembayaran Dikonfirmasi', 'Status invoice berhasil disimulasikan sebagai lunas.')}
-        />
         <Toast toasts={toasts} onDismiss={dismissToast} />
       </>
     );
@@ -301,6 +337,10 @@ export const App: React.FC = () => {
       <PortfolioSection
         currentLang={currentLang}
         onOpenProject={(key) => setActiveProjectKey(key)}
+      />
+      <DemoShowcaseSection
+        currentLang={currentLang}
+        onNavigate={navigate}
       />
       <PricingSection
         currentLang={currentLang}
@@ -330,12 +370,6 @@ export const App: React.FC = () => {
           const el = document.querySelector('#kontak');
           if (el) el.scrollIntoView({ behavior: 'smooth' });
         }}
-      />
-
-      <PaymentSimulationModal
-        isOpen={simulationModalOpen}
-        onClose={() => setSimulationModalOpen(false)}
-        onSuccess={() => addToast('Pembayaran Dikonfirmasi', 'Status Invoice INV-2026-003 berhasil disimulasikan sebagai lunas.')}
       />
 
       <Toast toasts={toasts} onDismiss={dismissToast} />

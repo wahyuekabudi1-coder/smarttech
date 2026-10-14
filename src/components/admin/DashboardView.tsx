@@ -142,56 +142,46 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
           </h3>
           <span className="text-xs font-mono text-slate-400">10 Tahap Terintegrasi</span>
         </div>
-        <div className="grid grid-cols-2 sm:grid-cols-5 gap-2 text-xs font-medium">
+        <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-8 gap-2 text-xs font-medium">
           <div className="p-3 bg-blue-50 border border-blue-200 rounded-xl text-blue-900 flex flex-col">
             <span className="font-bold text-blue font-mono text-[10px]">TAHAP 1</span>
-            <span className="font-semibold mt-0.5">Permintaan Masuk</span>
-            <span className="text-[11px] text-slate-500 mt-1">Form / Kontak website</span>
+            <span className="font-semibold mt-0.5">Lead Masuk</span>
+            <span className="text-[11px] text-slate-500 mt-1">Form website / WhatsApp</span>
           </div>
           <div className="p-3 bg-slate-50 border border-slate-200 rounded-xl text-slate-800 flex flex-col">
             <span className="font-bold text-slate-500 font-mono text-[10px]">TAHAP 2</span>
-            <span className="font-semibold mt-0.5">Tinjau &amp; Hubungi</span>
+            <span className="font-semibold mt-0.5">Marketing Follow-up</span>
             <span className="text-[11px] text-slate-500 mt-1">Kualifikasi kebutuhan</span>
           </div>
           <div className="p-3 bg-slate-50 border border-slate-200 rounded-xl text-slate-800 flex flex-col">
             <span className="font-bold text-slate-500 font-mono text-[10px]">TAHAP 3</span>
-            <span className="font-semibold mt-0.5">Jadwal Konsultasi</span>
-            <span className="text-[11px] text-slate-500 mt-1">Temu teknis / Online</span>
+            <span className="font-semibold mt-0.5">Konsultasi</span>
+            <span className="text-[11px] text-slate-500 mt-1">Temu teknis &amp; arsitektur</span>
           </div>
           <div className="p-3 bg-slate-50 border border-slate-200 rounded-xl text-slate-800 flex flex-col">
             <span className="font-bold text-slate-500 font-mono text-[10px]">TAHAP 4</span>
             <span className="font-semibold mt-0.5">Proposal Penawaran</span>
-            <span className="text-[11px] text-slate-500 mt-1">Scope, harga &amp; termin</span>
+            <span className="text-[11px] text-slate-500 mt-1">Scope &amp; estimasi biaya</span>
           </div>
           <div className="p-3 bg-slate-50 border border-slate-200 rounded-xl text-slate-800 flex flex-col">
             <span className="font-bold text-slate-500 font-mono text-[10px]">TAHAP 5</span>
-            <span className="font-semibold mt-0.5">Kesepakatan &amp; DP</span>
-            <span className="text-[11px] text-slate-500 mt-1">Invoicing DP (ArtoPay)</span>
+            <span className="font-semibold mt-0.5">Persetujuan Pelanggan</span>
+            <span className="text-[11px] text-slate-500 mt-1">Kontrak &amp; tagihan manual</span>
           </div>
           <div className="p-3 bg-slate-50 border border-slate-200 rounded-xl text-slate-800 flex flex-col">
             <span className="font-bold text-slate-500 font-mono text-[10px]">TAHAP 6</span>
-            <span className="font-semibold mt-0.5">Proyek Dimulai</span>
-            <span className="text-[11px] text-slate-500 mt-1">Kickoff &amp; invite portal</span>
+            <span className="font-semibold mt-0.5">Pembuatan Proyek</span>
+            <span className="text-[11px] text-slate-500 mt-1">Kickoff &amp; Portal Klien</span>
           </div>
           <div className="p-3 bg-slate-50 border border-slate-200 rounded-xl text-slate-800 flex flex-col">
             <span className="font-bold text-slate-500 font-mono text-[10px]">TAHAP 7</span>
-            <span className="font-semibold mt-0.5">Pengerjaan Milestones</span>
-            <span className="text-[11px] text-slate-500 mt-1">Sprint &amp; tracking tugas</span>
-          </div>
-          <div className="p-3 bg-slate-50 border border-slate-200 rounded-xl text-slate-800 flex flex-col">
-            <span className="font-bold text-slate-500 font-mono text-[10px]">TAHAP 8</span>
-            <span className="font-semibold mt-0.5">Review &amp; Revisi</span>
-            <span className="text-[11px] text-slate-500 mt-1">Feedback via Client Portal</span>
-          </div>
-          <div className="p-3 bg-slate-50 border border-slate-200 rounded-xl text-slate-800 flex flex-col">
-            <span className="font-bold text-slate-500 font-mono text-[10px]">TAHAP 9</span>
-            <span className="font-semibold mt-0.5">Pelunasan Akhir</span>
-            <span className="text-[11px] text-slate-500 mt-1">Tagihan termin akhir</span>
+            <span className="font-semibold mt-0.5">Pengerjaan</span>
+            <span className="text-[11px] text-slate-500 mt-1">Milestones &amp; sprint</span>
           </div>
           <div className="p-3 bg-emerald-50 border border-emerald-200 rounded-xl text-emerald-900 flex flex-col">
-            <span className="font-bold text-emerald-600 font-mono text-[10px]">TAHAP 10</span>
-            <span className="font-semibold mt-0.5">Serah Terima &amp; BAST</span>
-            <span className="text-[11px] text-slate-500 mt-1">Source code &amp; garansi</span>
+            <span className="font-bold text-emerald-600 font-mono text-[10px]">TAHAP 8</span>
+            <span className="font-semibold mt-0.5">Serah Terima</span>
+            <span className="text-[11px] text-slate-500 mt-1">100% kode, BAST &amp; SLA</span>
           </div>
         </div>
       </div>

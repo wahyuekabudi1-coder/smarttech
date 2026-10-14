@@ -1,3 +1,47 @@
+export type LeadStatus =
+  | 'Baru'
+  | 'Belum Dihubungi'
+  | 'Sudah Dihubungi'
+  | 'Tertarik'
+  | 'Follow-up Lagi'
+  | 'Tidak Tertarik'
+  | 'Menjadi Klien';
+
+export interface LeadNote {
+  id: string;
+  date: string;
+  author: string;
+  type: 'Telepon' | 'WhatsApp' | 'Catatan';
+  content: string;
+}
+
+export interface LeadActivity {
+  date: string;
+  user: string;
+  action: string;
+  note?: string;
+}
+
+export interface Lead {
+  id: string;
+  name: string;
+  email?: string;
+  whatsapp: string;
+  phone?: string;
+  address?: string;
+  source: 'Website' | 'Manual' | 'Rujukan';
+  status: LeadStatus;
+  assignedMarketing?: string;
+  nextFollowUpDate?: string;
+  notes: LeadNote[];
+  activities: LeadActivity[];
+  consentGiven: boolean;
+  consultationId?: string;
+  clientId?: string;
+  createdAt: string;
+  updatedAt: string;
+}
+
 export interface Consultation {
   id: string;
   name: string;
@@ -153,6 +197,7 @@ export interface Invoice {
   dueDate: string;
   status: 'Menunggu Pembayaran' | 'Lunas' | 'Terlambat' | 'Dibatalkan';
   paymentDate?: string;
+  paidAt?: string;
   paymentMethod?: string;
   paymentUrl?: string;
   notes?: string;
@@ -189,7 +234,7 @@ export interface ActivityLog {
   id: string;
   timestamp: string;
   user: string;
-  module: 'Consultation' | 'Client' | 'Proposal' | 'Project' | 'Invoice' | 'Settings' | 'Portal';
+  module: 'Lead' | 'Consultation' | 'Client' | 'Proposal' | 'Project' | 'Invoice' | 'Settings' | 'Portal';
   action: string;
   details: string;
 }

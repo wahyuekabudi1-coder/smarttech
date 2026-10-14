@@ -6,7 +6,7 @@ interface InvoicesViewProps {
   id?: string;
   onNavigate: (path: string) => void;
   onToast: (title: string, msg: string) => void;
-  onOpenSimulation: () => void;
+  onOpenSimulation?: () => void;
 }
 
 export const InvoicesView: React.FC<InvoicesViewProps> = ({
@@ -14,14 +14,12 @@ export const InvoicesView: React.FC<InvoicesViewProps> = ({
   id,
   onNavigate,
   onToast,
-  onOpenSimulation,
 }) => {
   const [list, setList] = useState<Invoice[]>([]);
   const [projects, setProjects] = useState<Project[]>([]);
   const [clients, setClients] = useState<Client[]>([]);
   const [selected, setSelected] = useState<Invoice | null>(null);
   const [loading, setLoading] = useState(true);
-  const [generatingLink, setGeneratingLink] = useState(false);
 
   // Form
   const [formData, setFormData] = useState<Partial<Invoice>>({
@@ -95,27 +93,6 @@ export const InvoicesView: React.FC<InvoicesViewProps> = ({
     }
   }, [mode, id]);
 
-  const handleGenerateArtoPay = async () => {
-    if (!selected) return;
-    setGeneratingLink(true);
-    try {
-      const res = await fetch(`/api/admin/invoices/${selected.id}/generate-artopay`, {
-        method: 'POST',
-      });
-      const data = await res.json();
-      if (data.success) {
-        setSelected({ ...selected, paymentUrl: data.paymentUrl });
-        onToast('Link ArtoPay Diterbitkan', 'Link pembayaran sandbox resmi berhasil dibuat.');
-      } else {
-        onToast('Gagal', data.error || 'Terjadi kesalahan.');
-      }
-    } catch (err: any) {
-      onToast('Error', err.message);
-    } finally {
-      setGeneratingLink(false);
-    }
-  };
-
   const handleMarkPaid = async () => {
     if (!selected) return;
     try {
@@ -125,7 +102,7 @@ export const InvoicesView: React.FC<InvoicesViewProps> = ({
         body: JSON.stringify({
           status: 'Lunas',
           paymentDate: new Date().toISOString(),
-          paymentMethod: 'ArtoPay QRIS / Sandbox Verified',
+          paymentMethod: 'Transfer Bank Manual / Verifikasi Internal',
         }),
       });
       const data = await res.json();
@@ -413,53 +390,54 @@ export const InvoicesView: React.FC<InvoicesViewProps> = ({
             <div className="p-3 bg-ice rounded-xl border border-slate-100">
               <span className="text-slate-400 block uppercase text-[10px]">Metode Pembayaran</span>
               <span className="text-navy font-bold block mt-0.5">
-                {selected.paymentMethod || 'ArtoPay Gateway / QRIS'}
+                {selected.paymentMethod || 'Transfer Bank Manual'}
               </span>
             </div>
           </div>
 
-          {/* ArtoPay Link Generator Action */}
-          <div className="p-6 rounded-xl bg-blue-soft border border-blue-border space-y-3">
+          {/* Pencatatan Tagihan Manual */}
+          <div className="p-6 rounded-xl bg-slate-50 border border-slate-200 space-y-4">
             <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
               <div>
-                <span className="text-xs font-mono font-bold text-blue uppercase">
-                  ArtoPay Payment Link Gateway
+                <span className="text-xs font-mono font-bold text-navy uppercase flex items-center gap-1.5">
+                  <span className="material-symbols-outlined text-sm text-blue">account_balance</span>
+                  <span>Metode Tagihan Administratif (Transfer Bank Manual)</span>
                 </span>
-                <p className="text-xs text-slate-600 mt-0.5">
-                  Terbitkan tautan pembayaran checkout sandbox resmi untuk dikirimkan kepada klien atau disimulasikan.
+                <p className="text-xs text-slate-600 mt-1">
+                  Tagihan diterbitkan sebagai berkas invoice resmi. Pembayaran dilakukan klien melalui transfer ke rekening perusahaan dan diverifikasi manual oleh tim Finance/Admin.
                 </p>
               </div>
               <div className="flex items-center gap-2">
-                <button
-                  onClick={handleGenerateArtoPay}
-                  disabled={generatingLink}
-                  className="bg-blue hover:bg-blue-hover text-white text-xs font-semibold px-4 py-2 rounded-lg cursor-pointer shadow-xs disabled:opacity-50"
-                >
-                  {generatingLink ? 'Menerbitkan Link...' : 'Terbitkan Link ArtoPay'}
-                </button>
-                <button
-                  onClick={onOpenSimulation}
-                  className="bg-white border border-blue-border text-blue hover:bg-slate-50 text-xs font-semibold px-3 py-2 rounded-lg cursor-pointer"
-                >
-                  Simulasi
-                </button>
+                {selected.status !== 'Lunas' && (
+                  <button
+                    onClick={handleMarkPaid}
+                    className="bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-semibold px-4 py-2 rounded-lg cursor-pointer shadow-xs flex items-center gap-1.5"
+                  >
+                    <span className="material-symbols-outlined text-sm">verified</span>
+                    <span>Tandai Lunas Manual</span>
+                  </button>
+                )}
               </div>
             </div>
 
-            {selected.paymentUrl && (
-              <div className="p-3 bg-white rounded-lg border border-slate-200 flex items-center justify-between text-xs font-mono">
-                <span className="text-navy truncate mr-2">{selected.paymentUrl}</span>
-                <button
-                  onClick={() => {
-                    navigator.clipboard?.writeText(selected.paymentUrl || '');
-                    onToast('Link Disalin', 'URL pembayaran berhasil disalin ke clipboard.');
-                  }}
-                  className="text-blue font-bold hover:underline shrink-0 cursor-pointer"
-                >
-                  Salin URL
-                </button>
+            <div className="p-4 bg-white rounded-xl border border-slate-200 text-xs text-slate-700 space-y-2 font-mono">
+              <div className="flex flex-col sm:flex-row sm:justify-between gap-1">
+                <span className="text-slate-400">Rekening Tujuan:</span>
+                <span className="text-navy font-bold">BCA 8820-192-888 a.n. PT SMART TECH REKAYASA DIGITAL</span>
               </div>
-            )}
+              <div className="flex flex-col sm:flex-row sm:justify-between gap-1">
+                <span className="text-slate-400">Status Administrasi:</span>
+                <span className="text-blue font-semibold">
+                  {selected.status === 'Lunas' ? 'Lunas (Verifikasi Manual Diterima)' : 'Menunggu Konfirmasi Transfer Klien'}
+                </span>
+              </div>
+              {(selected.paidAt || selected.paymentDate) && (
+                <div className="flex flex-col sm:flex-row sm:justify-between gap-1">
+                  <span className="text-slate-400">Tanggal Pelunasan:</span>
+                  <span className="text-slate-700">{new Date(selected.paidAt || selected.paymentDate || '').toLocaleString('id-ID')}</span>
+                </div>
+              )}
+            </div>
           </div>
         </div>
       </div>
@@ -475,7 +453,7 @@ export const InvoicesView: React.FC<InvoicesViewProps> = ({
             Tagihan &amp; Pembayaran Termin
           </h2>
           <p className="text-xs text-slate-500 mt-0.5">
-            Penerbitan invoice DP, termin milestone, pelunasan, dan integrasi ArtoPay Gateway.
+            Penerbitan invoice DP, termin milestone, pelunasan, dan pencatatan tagihan administratif manual.
           </p>
         </div>
         <button
@@ -497,7 +475,7 @@ export const InvoicesView: React.FC<InvoicesViewProps> = ({
                 <th className="p-3.5">Nominal</th>
                 <th className="p-3.5">Jatuh Tempo</th>
                 <th className="p-3.5">Status</th>
-                <th className="p-3.5">Link ArtoPay</th>
+                <th className="p-3.5">Metode Tagihan</th>
                 <th className="p-3.5 text-right">Aksi</th>
               </tr>
             </thead>
@@ -533,19 +511,8 @@ export const InvoicesView: React.FC<InvoicesViewProps> = ({
                         {inv.status}
                       </span>
                     </td>
-                    <td className="p-3.5">
-                      {inv.paymentUrl ? (
-                        <a
-                          href={inv.paymentUrl}
-                          target="_blank"
-                          rel="noreferrer"
-                          className="text-blue font-mono text-[11px] hover:underline"
-                        >
-                          Checkout Link ↗
-                        </a>
-                      ) : (
-                        <span className="text-slate-400 font-mono text-[11px]">-</span>
-                      )}
+                    <td className="p-3.5 font-mono text-[11px] text-slate-600">
+                      {inv.paymentMethod || 'Transfer Bank Manual'}
                     </td>
                     <td className="p-3.5 text-right whitespace-nowrap">
                       <button

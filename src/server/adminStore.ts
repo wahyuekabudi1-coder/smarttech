@@ -1,6 +1,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { pool, isPostgresConfigured, initializeDatabaseSchema, seedPostgresFromJson, syncNormalizedTables } from './db.ts';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -11,11 +12,55 @@ const STORE_FILE = path.join(DATA_DIR, 'admin_store.json');
 // DATA INTERFACES
 // ============================================================================
 
+export type LeadStatus =
+  | 'Baru'
+  | 'Belum Dihubungi'
+  | 'Sudah Dihubungi'
+  | 'Tertarik'
+  | 'Follow-up Lagi'
+  | 'Tidak Tertarik'
+  | 'Menjadi Klien';
+
+export interface LeadNote {
+  id: string;
+  date: string;
+  author: string;
+  type: 'Telepon' | 'WhatsApp' | 'Catatan';
+  content: string;
+}
+
+export interface LeadActivity {
+  date: string;
+  user: string;
+  action: string;
+  note?: string;
+}
+
+export interface Lead {
+  id: string;
+  name: string;
+  email?: string;
+  whatsapp: string;
+  phone?: string;
+  address?: string;
+  source: 'Website' | 'Manual' | 'Rujukan';
+  status: LeadStatus;
+  assignedMarketing?: string;
+  nextFollowUpDate?: string;
+  notes: LeadNote[];
+  activities: LeadActivity[];
+  consentGiven: boolean;
+  consultationId?: string;
+  clientId?: string;
+  createdAt: string;
+  updatedAt: string;
+}
+
 export interface ActivityLog {
   id: string;
   timestamp: string;
   user: string;
-  module: 'Consultation' | 'Client' | 'Proposal' | 'Project' | 'Invoice' | 'Settings' | 'Portal';
+  module: 'Lead' | 'Consultation' | 'Client' | 'Proposal' | 'Project' | 'Invoice' | 'Settings' | 'Portal';
   action: string;
   details: string;
 }
@@ -238,6 +283,7 @@ export interface SystemSettings {
 }
 
 export interface AdminStoreData {
+  leads: Lead[];
   consultations: Consultation[];
   clients: Client[];
   proposals: Proposal[];
@@ -255,20 +301,96 @@ export interface AdminStoreData {
 
 export class AdminStore {
   private data: AdminStoreData;
+  private isPostgresSyncing = false;
+  private pgInitPromise: Promise<void> | null = null;
+  private lastSyncTime = 0;
 
   constructor() {
     this.data = this.loadOrInit();
+    if (isPostgresConfigured) {
+      this.pgInitPromise = this.initPostgresStore();
+    }
+  }
+
+  private async initPostgresStore() {
+    if (!pool) return;
+    try {
+      await initializeDatabaseSchema();
+      const res = await pool.query('SELECT value, updated_at FROM app_state WHERE key = $1', ['admin_store']);
+      if (res.rows.length > 0 && res.rows[0].value) {
+        const pgData = res.rows[0].value;
+        if (pgData && Array.isArray(pgData.consultations)) {
+          this.data = pgData;
+          if (res.rows[0].updated_at) {
+            this.lastSyncTime = new Date(res.rows[0].updated_at).getTime();
+          }
+          // Sync to disk as local cache
+          try {
+            fs.writeFileSync(STORE_FILE, JSON.stringify(this.data, null, 2), 'utf8');
+          } catch (_) {}
+          console.log('[AdminStore] Successfully synchronized state from PostgreSQL.');
+          return;
+        }
+      }
+      // If PostgreSQL was empty, seed with existing local data
+      await seedPostgresFromJson(this.data, [], []);
+      this.lastSyncTime = Date.now();
+    } catch (err) {
+      console.error('[AdminStore] Failed to initialize PostgreSQL store sync:', err);
+    }
+  }
+
+  public async waitForReady(): Promise<void> {
+    if (this.pgInitPromise) {
+      await this.pgInitPromise;
+    }
+  }
+
+  /**
+   * Validates if PostgreSQL state has been updated by another instance and refreshes if stale.
+   */
+  public async syncFromPostgresIfStale(): Promise<void> {
+    if (!pool) return;
+    if (this.pgInitPromise) {
+      await this.pgInitPromise;
+    }
+    try {
+      const res = await pool.query('SELECT value, updated_at FROM app_state WHERE key = $1', ['admin_store']);
+      if (res.rows.length > 0 && res.rows[0].value) {
+        const row = res.rows[0];
+        const rowTime = row.updated_at ? new Date(row.updated_at).getTime() : 0;
+        if (rowTime > this.lastSyncTime) {
+          const pgData = row.value;
+          if (pgData && Array.isArray(pgData.consultations)) {
+            this.data = pgData;
+            this.lastSyncTime = rowTime;
+            try {
+              fs.writeFileSync(STORE_FILE, JSON.stringify(this.data, null, 2), 'utf8');
+            } catch (_) {}
+          }
+        }
+      }
+    } catch (_) {
+      // Graceful fallback to in-memory state during transient network issues
+    }
   }
 
   private loadOrInit(): AdminStoreData {
     if (!fs.existsSync(DATA_DIR)) {
-      fs.mkdirSync(DATA_DIR, { recursive: true });
+      try {
+        fs.mkdirSync(DATA_DIR, { recursive: true });
+      } catch (_) {}
     }
 
     if (fs.existsSync(STORE_FILE)) {
       try {
         const raw = fs.readFileSync(STORE_FILE, 'utf8');
-        return JSON.parse(raw);
+        const parsed = JSON.parse(raw);
+        if (!parsed.leads || !Array.isArray(parsed.leads)) {
+          parsed.leads = this.getSeedLeads();
+          this.saveData(parsed);
+        }
+        return parsed;
       } catch (err) {
         console.error('[AdminStore] Error reading store, re-initializing seed data:', err);
       }
@@ -280,11 +402,31 @@ export class AdminStore {
   }
 
   private saveData(dataToSave?: AdminStoreData) {
+    const target = dataToSave || this.data;
     try {
-      const target = dataToSave || this.data;
       fs.writeFileSync(STORE_FILE, JSON.stringify(target, null, 2), 'utf8');
     } catch (err) {
-      console.error('[AdminStore] Error saving store to disk:', err);
+      // In serverless readonly environments (like Vercel AWS Lambda /var/task), local write might fail gracefully
+      // PostgreSQL is the primary persistent storage in production
+    }
+
+    // Persist to PostgreSQL if configured
+    if (pool && !this.isPostgresSyncing) {
+      this.isPostgresSyncing = true;
+      pool.query(
+        'INSERT INTO app_state (key, value, updated_at) VALUES ($1, $2, NOW()) ON CONFLICT (key) DO UPDATE SET value = EXCLUDED.value, updated_at = NOW() RETURNING updated_at',
+        ['admin_store', JSON.stringify(target)]
+      ).then(async (res) => {
+        if (res.rows[0]?.updated_at) {
+          this.lastSyncTime = new Date(res.rows[0].updated_at).getTime();
+        }
+        // Asynchronously synchronize normalized relational tables
+        await syncNormalizedTables(target);
+      }).catch((err: any) => {
+        console.error('[AdminStore] PostgreSQL persist error:', err.message);
+      }).finally(() => {
+        this.isPostgresSyncing = false;
+      });
     }
   }
 
@@ -375,13 +517,204 @@ export class AdminStore {
         pendingProposals,
         totalRevenue,
         pendingInvoicesAmount,
-        totalClients: this.data.clients.length
+        totalClients: this.data.clients.length,
+        totalLeads: (this.data.leads || []).length,
+        newLeads: (this.data.leads || []).filter(l => l.status === 'Baru' || l.status === 'Belum Dihubungi').length
       },
       followUps,
       recentActivity: this.data.activityLogs.slice(0, 8),
       recentConsultations: this.data.consultations.slice(0, 5),
       activeProjectsList: this.data.projects.filter(p => p.status !== 'Selesai').slice(0, 4)
     };
+  }
+
+  // ==========================================================================
+  // LEADS MANAGEMENT CRUD & WORKFLOW
+  // ==========================================================================
+  public getAllLeads(query?: { status?: string; search?: string; marketing?: string }): Lead[] {
+    let list = [...(this.data.leads || [])];
+    if (query?.status && query.status !== 'Semua' && query.status !== 'all') {
+      list = list.filter(l => l.status === query.status);
+    }
+    if (query?.marketing && query.marketing !== 'Semua' && query.marketing !== 'all') {
+      list = list.filter(l => l.assignedMarketing === query.marketing);
+    }
+    if (query?.search && query.search.trim()) {
+      const q = query.search.toLowerCase().trim();
+      list = list.filter(l =>
+        l.name.toLowerCase().includes(q) ||
+        l.whatsapp.toLowerCase().includes(q) ||
+        (l.phone && l.phone.toLowerCase().includes(q)) ||
+        (l.email && l.email.toLowerCase().includes(q)) ||
+        (l.address && l.address.toLowerCase().includes(q)) ||
+        l.id.toLowerCase().includes(q)
+      );
+    }
+    return list.sort((a, b) => new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime());
+  }
+
+  public getLeadById(id: string): Lead | undefined {
+    return (this.data.leads || []).find(l => l.id === id);
+  }
+
+  public createLead(payload: Partial<Lead>, actor = 'Website'): Lead {
+    if (!this.data.leads) this.data.leads = [];
+    const id = `LEAD-${new Date().getFullYear()}-${String(this.data.leads.length + 1).padStart(3, '0')}`;
+    const now = new Date().toISOString();
+    
+    const lead: Lead = {
+      id,
+      name: (payload.name || '').trim(),
+      email: (payload.email || '').trim(),
+      whatsapp: (payload.whatsapp || '').trim(),
+      phone: (payload.phone || '').trim(),
+      address: (payload.address || '').trim(),
+      source: payload.source || 'Website',
+      status: (payload.status as LeadStatus) || 'Baru',
+      assignedMarketing: payload.assignedMarketing || 'Belum Ditugaskan',
+      nextFollowUpDate: payload.nextFollowUpDate || '',
+      notes: payload.notes || [],
+      activities: [
+        {
+          date: now,
+          user: actor,
+          action: 'Pendaftaran Lead',
+          note: `Lead baru diterima dari formulir ${payload.source || 'Website'}`
+        }
+      ],
+      consentGiven: payload.consentGiven !== false,
+      consultationId: payload.consultationId,
+      clientId: payload.clientId,
+      createdAt: now,
+      updatedAt: now
+    };
+
+    this.data.leads.unshift(lead);
+    this.saveData();
+    this.logActivity(actor, 'Lead', 'Lead Baru Masuk', `${lead.name} (${lead.whatsapp}) - Sumber: ${lead.source}`);
+    return lead;
+  }
+
+  public updateLead(id: string, payload: Partial<Lead>, actor = 'Admin'): Lead | undefined {
+    const lead = this.getLeadById(id);
+    if (!lead) return undefined;
+
+    const prevStatus = lead.status;
+    const prevMarketing = lead.assignedMarketing;
+    const now = new Date().toISOString();
+
+    Object.assign(lead, {
+      ...payload,
+      updatedAt: now
+    });
+
+    if (payload.status && payload.status !== prevStatus) {
+      lead.activities.unshift({
+        date: now,
+        user: actor,
+        action: 'Perubahan Status',
+        note: `Status diubah dari "${prevStatus}" menjadi "${payload.status}"`
+      });
+      this.logActivity(actor, 'Lead', 'Perubahan Status Lead', `${lead.name}: ${prevStatus} -> ${payload.status}`);
+    }
+
+    if (payload.assignedMarketing && payload.assignedMarketing !== prevMarketing) {
+      lead.activities.unshift({
+        date: now,
+        user: actor,
+        action: 'Penugasan Marketing',
+        note: `PIC dialihkan ke ${payload.assignedMarketing}`
+      });
+      this.logActivity(actor, 'Lead', 'Penugasan Marketing', `${lead.name}: Ditugaskan ke ${payload.assignedMarketing}`);
+    }
+
+    this.saveData();
+    return lead;
+  }
+
+  public addLeadNote(id: string, notePayload: { author: string; type: LeadNote['type']; content: string }): LeadNote | undefined {
+    const lead = this.getLeadById(id);
+    if (!lead) return undefined;
+
+    const now = new Date().toISOString();
+    const noteItem: LeadNote = {
+      id: `NOTE-${Date.now().toString(36)}-${Math.random().toString(36).substr(2, 4)}`,
+      date: now,
+      author: notePayload.author || 'Marketing',
+      type: notePayload.type || 'WhatsApp',
+      content: notePayload.content.trim()
+    };
+
+    if (!lead.notes) lead.notes = [];
+    lead.notes.unshift(noteItem);
+    lead.updatedAt = now;
+
+    lead.activities.unshift({
+      date: now,
+      user: notePayload.author || 'Marketing',
+      action: `Catatan Follow-up (${notePayload.type})`,
+      note: notePayload.content.slice(0, 100) + (notePayload.content.length > 100 ? '...' : '')
+    });
+
+    this.saveData();
+    this.logActivity(notePayload.author || 'Marketing', 'Lead', `Follow-up ${notePayload.type}`, `${lead.name}: ${notePayload.content.slice(0, 60)}`);
+    return noteItem;
+  }
+
+  public convertLeadToConsultation(leadId: string, actor = 'Admin'): { lead: Lead; consultation: Consultation; alreadyConverted: boolean } {
+    const lead = this.getLeadById(leadId);
+    if (!lead) {
+      throw new Error('Data Lead tidak ditemukan');
+    }
+
+    // Cegah duplikasi jika sudah pernah dikonversi
+    if (lead.consultationId) {
+      const existing = this.getConsultationById(lead.consultationId);
+      if (existing) {
+        return { lead, consultation: existing, alreadyConverted: true };
+      }
+    }
+
+    // Buat konsultasi baru secara seamless
+    const consultation = this.createConsultation({
+      name: lead.name,
+      email: lead.email || 'belum-diisi@domain.id',
+      phone: lead.whatsapp || lead.phone || '-',
+      company: lead.address || '',
+      category: 'webapp',
+      categoryName: 'Aplikasi Bisnis & Rekayasa Sistem',
+      budget: '15-30',
+      budgetRange: 'Rp 15.000.000 – Rp 30.000.000',
+      message: `Lead dikonversi dari CRM Leads (${lead.source}). Alamat/Domisili: ${lead.address || '-'}. No WA: ${lead.whatsapp}`,
+      priority: 'Tinggi',
+      status: 'Baru Masuk',
+      assignedTo: lead.assignedMarketing && lead.assignedMarketing !== 'Belum Ditugaskan' ? lead.assignedMarketing : 'Aditya Pratama (Technical Lead)'
+    }, actor);
+
+    lead.consultationId = consultation.id;
+    lead.status = 'Tertarik';
+    lead.updatedAt = new Date().toISOString();
+    lead.activities.unshift({
+      date: new Date().toISOString(),
+      user: actor,
+      action: 'Konversi ke Konsultasi',
+      note: `Berhasil diteruskan ke alur konsultasi resmi: ${consultation.id}`
+    });
+
+    this.saveData();
+    this.logActivity(actor, 'Lead', 'Konversi Lead ke Konsultasi', `${lead.name} diteruskan ke Konsultasi ${consultation.id}`);
+    return { lead, consultation, alreadyConverted: false };
+  }
+
+  public deleteLead(id: string, actor = 'Admin'): boolean {
+    if (!this.data.leads) return false;
+    const idx = this.data.leads.findIndex(l => l.id === id);
+    if (idx === -1) return false;
+
+    const removed = this.data.leads.splice(idx, 1)[0];
+    this.saveData();
+    this.logActivity(actor, 'Lead', 'Hapus Data Lead', `Lead ${removed.name} (${removed.id}) dihapus`);
+    return true;
   }
 
   // ==========================================================================
@@ -812,7 +1145,7 @@ export class AdminStore {
       amount: proposal.paymentTerms.dpAmount,
       dueDate: new Date(Date.now() + 86400000 * 7).toISOString().slice(0, 10),
       status: 'Menunggu Pembayaran',
-      paymentUrl: `https://checkout-sandbox.artopay.id/pay/${invoiceId}`,
+      paymentMethod: 'Transfer Bank Manual / Termin Kontrak',
       createdAt: new Date().toISOString(),
       updatedAt: new Date().toISOString(),
       notes: `Invoice pembayaran tahap 1 uang muka (DP) sesuai kontrak proposal ${proposal.id}.`
@@ -1053,7 +1386,8 @@ export class AdminStore {
       amount,
       dueDate: payload.dueDate || new Date(Date.now() + 86400000 * 7).toISOString().slice(0, 10),
       status: payload.status || 'Menunggu Pembayaran',
-      paymentUrl: payload.paymentUrl || `https://checkout-sandbox.artopay.id/pay/${id}`,
+      paymentMethod: payload.paymentMethod || 'Transfer Bank Manual',
+      paymentUrl: payload.paymentUrl || undefined,
       notes: payload.notes || '',
       createdAt: new Date().toISOString(),
       updatedAt: new Date().toISOString()
@@ -1231,6 +1565,7 @@ export class AdminStore {
   // ==========================================================================
   private getSeedData(): AdminStoreData {
     return {
+      leads: this.getSeedLeads(),
       consultations: [
         {
           id: 'CNS-2026-001',
@@ -1603,7 +1938,7 @@ export class AdminStore {
           amount: 5000000,
           dueDate: '2026-11-28',
           status: 'Menunggu Pembayaran',
-          paymentUrl: 'https://checkout-sandbox.artopay.id/pay/INV-2026-003',
+          paymentMethod: 'Transfer Bank Manual (BCA)',
           notes: 'Tagihan pelunasan akhir sebelum penyerahan hak akses server production.',
           createdAt: '2026-10-18T11:00:00Z',
           updatedAt: '2026-10-18T11:00:00Z'
@@ -1760,6 +2095,80 @@ export class AdminStore {
         ]
       }
     };
+  }
+
+  private getSeedLeads(): Lead[] {
+    return [
+      {
+        id: 'LEAD-2026-001',
+        name: 'Ahmad Fauzi',
+        email: 'ahmad.fauzi@megasolusi.com',
+        whatsapp: '+6281234567890',
+        phone: '+62215556789',
+        address: 'Jl. Sudirman Kav. 45, Jakarta Pusat',
+        source: 'Website',
+        status: 'Belum Dihubungi',
+        assignedMarketing: 'Rian Pratama',
+        nextFollowUpDate: '2026-10-16',
+        notes: [
+          {
+            id: 'NOTE-001',
+            date: '2026-10-14T08:30:00.000Z',
+            author: 'Rian Pratama',
+            type: 'Catatan',
+            content: 'Lead masuk dari form website. Membutuhkan sistem inventory gudang multi-cabang.'
+          }
+        ],
+        activities: [
+          {
+            date: '2026-10-14T08:20:00.000Z',
+            user: 'Website',
+            action: 'Pendaftaran Lead',
+            note: 'Form publik website diisi calon pelanggan'
+          }
+        ],
+        consentGiven: true,
+        createdAt: new Date(Date.now() - 3600 * 1000 * 4).toISOString(),
+        updatedAt: new Date(Date.now() - 3600 * 1000 * 2).toISOString(),
+      },
+      {
+        id: 'LEAD-2026-002',
+        name: 'Dewi Lestari',
+        email: 'dewi@kreasiboutique.id',
+        whatsapp: '+6285712345678',
+        phone: '',
+        address: 'Bandung, Jawa Barat',
+        source: 'Website',
+        status: 'Sudah Dihubungi',
+        assignedMarketing: 'Sarah Wijaya',
+        nextFollowUpDate: '2026-10-18',
+        notes: [
+          {
+            id: 'NOTE-002',
+            date: '2026-10-14T09:15:00.000Z',
+            author: 'Sarah Wijaya',
+            type: 'WhatsApp',
+            content: 'Sudah dihubungi via WhatsApp. Tertarik pembuatan e-commerce fashion dengan gateway pembayaran ArtoPay.'
+          }
+        ],
+        activities: [
+          {
+            date: '2026-10-14T07:10:00.000Z',
+            user: 'Website',
+            action: 'Pendaftaran Lead'
+          },
+          {
+            date: '2026-10-14T09:15:00.000Z',
+            user: 'Sarah Wijaya',
+            action: 'Follow-up WhatsApp',
+            note: 'Kirim company profile dan jadwal follow-up'
+          }
+        ],
+        consentGiven: true,
+        createdAt: new Date(Date.now() - 3600 * 1000 * 20).toISOString(),
+        updatedAt: new Date(Date.now() - 3600 * 1000 * 18).toISOString(),
+      }
+    ];
   }
 }
 

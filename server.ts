@@ -5,6 +5,7 @@ import { fileURLToPath } from 'node:url';
 import { PaymentGateway } from './src/lib/paymentGateway.ts';
 import { ArtopayAdapter } from './src/server/artopayAdapter.ts';
 import { adminStore } from './src/server/adminStore.ts';
+import { isPostgresConfigured, pool } from './src/server/db.ts';
 export { adminStore };
 
 const __filename = fileURLToPath(import.meta.url);
@@ -26,6 +27,14 @@ app.use(express.json({
   }
 }));
 app.use(express.urlencoded({ extended: true, limit: '15mb' }));
+
+// Ensure AdminStore is synchronized with PostgreSQL if running in a distributed / serverless environment
+app.use('/api', async (_req, _res, next) => {
+  try {
+    await adminStore.syncFromPostgresIfStale();
+  } catch (_) {}
+  next();
+});
 
 // Serve static assets from project root and /public directory
 app.use(express.static(__dirname));
@@ -83,7 +92,7 @@ const clientProject = {
   invoices: [
     { id: 'INV-2026-001', title: 'DP Tahap 1 (50%) - Kickoff', amount: 'Rp 12.500.000', status: 'Lunas', paymentDate: '04 Okt 2026' },
     { id: 'INV-2026-002', title: 'Termin 2 (30%) - Development', amount: 'Rp 7.500.000', status: 'Lunas', paymentDate: '18 Okt 2026' },
-    { id: 'INV-2026-003', title: 'Pelunasan Akhir (20%) - Handover', amount: 'Rp 5.000.000', status: 'Menunggu Pelunasan', dueDate: '28 Nov 2026', paymentUrl: 'https://checkout-sandbox.artopay.id/pay/INV-2026-003' }
+    { id: 'INV-2026-003', title: 'Pelunasan Akhir (20%) - Handover', amount: 'Rp 5.000.000', status: 'Menunggu Pelunasan', dueDate: '28 Nov 2026', paymentMethod: 'Transfer Bank Manual (BCA)' }
   ]
 };
 
@@ -93,8 +102,13 @@ const clientProject = {
 app.get('/api/health', (_req: Request, res: Response) => {
   res.json({
     status: 'ok',
-    brand: 'Smart Tech / Tumpang Shop',
+    brand: 'Smart Tech Indonesia',
+    model: 'Lead Generation & Consultation',
     uptime: process.uptime(),
+    database: {
+      configured: isPostgresConfigured,
+      status: pool ? 'connected' : 'standalone/in-memory'
+    },
     paymentGateway: {
       provider: 'Artopay',
       sandbox: artopayAdapter.isSandboxMode(),
@@ -298,12 +312,93 @@ app.post('/api/upload-logo', (req: Request, res: Response) => {
 // ============================================================================
 // 7. PUBLIC INQUIRY API (Synced with Admin Store)
 // ============================================================================
-app.post('/api/inquiry', (req: Request, res: Response) => {
-  const { name, email, phone, category, budget, message, company } = req.body;
-  if (!name || !email || !phone) {
-    return res.status(400).json({ success: false, message: 'Nama, Email, dan WhatsApp wajib diisi.' });
+// 7. PUBLIC LEADS & INQUIRY API (Synced with Admin Store)
+// ============================================================================
+
+// Public Leads Form Endpoint
+app.post('/api/leads', (req: Request, res: Response) => {
+  const { name, whatsapp, email, phone, address, consent } = req.body;
+
+  // 1. Validasi minimal: Nama dan Nomor WhatsApp
+  if (!name || typeof name !== 'string' || name.trim().length < 2) {
+    return res.status(400).json({
+      success: false,
+      message: 'Nama lengkap wajib diisi (minimal 2 karakter).'
+    });
   }
 
+  const cleanWA = whatsapp ? String(whatsapp).replace(/[^0-9+]/g, '') : '';
+  const digitsOnly = cleanWA.replace(/\D/g, '');
+  if (!cleanWA || digitsOnly.length < 8) {
+    return res.status(400).json({
+      success: false,
+      message: 'Nomor WhatsApp wajib diisi dengan format nomor yang valid (minimal 8 digit).'
+    });
+  }
+
+  // 2. Validasi persetujuan kontak
+  if (consent === false || consent === 'false') {
+    return res.status(400).json({
+      success: false,
+      message: 'Mohon centang persetujuan agar tim Smart Tech dapat menghubungi Anda.'
+    });
+  }
+
+  // 3. Perlindungan spam & pencegahan pengiriman berulang (anti-duplicate 60 detik)
+  const existingLeads = adminStore.getAllLeads();
+  const recentDuplicate = existingLeads.find(l =>
+    l.name.toLowerCase() === name.trim().toLowerCase() &&
+    l.whatsapp === cleanWA &&
+    (Date.now() - new Date(l.createdAt).getTime()) < 60000
+  );
+
+  if (recentDuplicate) {
+    return res.status(200).json({
+      success: true,
+      message: 'Data Anda telah kami terima sebelumnya. Tim Smart Tech akan segera menghubungi nomor WhatsApp Anda.',
+      data: recentDuplicate,
+      isDuplicateSubmission: true
+    });
+  }
+
+  // 4. Simpan ke database AdminStore (Sumber: Website, Status: Baru)
+  const initialNotes = [];
+  if (req.body.demoInterest && typeof req.body.demoInterest === 'string' && req.body.demoInterest.trim()) {
+    initialNotes.push({
+      id: `NOTE-${Date.now()}`,
+      date: new Date().toISOString(),
+      author: 'Website Form',
+      type: 'Catatan' as const,
+      content: `Minat Solusi Demo: ${req.body.demoInterest.trim()}`
+    });
+  }
+
+  const lead = adminStore.createLead({
+    name: name.trim(),
+    whatsapp: cleanWA,
+    email: email && typeof email === 'string' ? email.trim() : '',
+    phone: phone && typeof phone === 'string' ? phone.trim() : '',
+    address: address && typeof address === 'string' ? address.trim() : '',
+    source: 'Website',
+    status: 'Baru',
+    consentGiven: true,
+    notes: initialNotes
+  }, 'Website Form');
+
+  res.status(201).json({
+    success: true,
+    message: 'Terima kasih! Informasi Anda berhasil kami terima. Tim Smart Tech akan segera menghubungi Anda melalui WhatsApp.',
+    data: lead
+  });
+});
+
+app.post('/api/inquiry', (req: Request, res: Response) => {
+  const { name, email, phone, category, budget, message, company, address } = req.body;
+  if (!name || (!phone && !req.body.whatsapp)) {
+    return res.status(400).json({ success: false, message: 'Nama dan Nomor WhatsApp wajib diisi.' });
+  }
+
+  const contactPhone = phone || req.body.whatsapp;
   const categoryNames: Record<string, string> = {
     'website': 'Website (Landing Page / Company Profile)',
     'ecommerce': 'Toko Online / E-Commerce',
@@ -313,30 +408,26 @@ app.post('/api/inquiry', (req: Request, res: Response) => {
     'maintenance': 'Deployment & Maintenance Cloud'
   };
 
-  const categoryName = categoryNames[category] || category || 'Umum';
+  const categoryName = categoryNames[category] || category || 'Aplikasi Bisnis & Rekayasa Sistem';
 
-  // 1. Sync with legacy in-memory leads array
-  const newLead = {
-    id: `LEAD-${String(leads.length + 1).padStart(3, '0')}`,
-    name,
-    email,
-    phone,
-    category: category || 'general',
-    categoryName,
-    budget: budget || 'Fleksibel',
-    budgetRange: budget ? `Rp ${budget} Juta` : 'Fleksibel',
-    message: message || '-',
-    status: 'Baru Masuk',
-    createdAt: new Date().toISOString()
-  };
-  leads.unshift(newLead);
+  // 1. Sync ke CRM Leads
+  const lead = adminStore.createLead({
+    name: name.trim(),
+    email: email ? email.trim() : '',
+    whatsapp: String(contactPhone).trim(),
+    phone: phone ? String(phone).trim() : '',
+    address: address ? String(address).trim() : '',
+    source: 'Website',
+    status: 'Baru',
+    consentGiven: true
+  }, 'Website Visitor');
 
-  // 2. Persist in AdminStore with full workflow lifecycle
+  // 2. Persist in AdminStore Consultation
   const consultation = adminStore.createConsultation({
     name,
-    email,
-    phone,
-    company: company || '',
+    email: email || '',
+    phone: contactPhone,
+    company: company || address || '',
     category: category || 'general',
     categoryName,
     budget: budget || 'Fleksibel',
@@ -346,6 +437,9 @@ app.post('/api/inquiry', (req: Request, res: Response) => {
     status: 'Baru Masuk'
   }, 'Website Visitor');
 
+  lead.consultationId = consultation.id;
+  adminStore.updateLead(lead.id, { consultationId: consultation.id });
+
   res.json({
     success: true,
     message: 'Permintaan konsultasi berhasil diterima! Tim Technical Lead Smart Tech akan menghubungi Anda dalam 1x24 jam kerja.',
@@ -354,7 +448,76 @@ app.post('/api/inquiry', (req: Request, res: Response) => {
 });
 
 app.get('/api/leads', (_req: Request, res: Response) => {
-  res.json({ success: true, brand: 'Smart Tech', total: leads.length, leads });
+  const list = adminStore.getAllLeads();
+  res.json({ success: true, brand: 'Smart Tech', total: list.length, leads: list });
+});
+
+// Admin Leads Endpoints
+app.get('/api/admin/leads', (req: Request, res: Response) => {
+  const { search, status, marketing } = req.query;
+  const list = adminStore.getAllLeads({
+    search: search as string,
+    status: status as string,
+    marketing: marketing as string
+  });
+  const uncontacted = list.filter(l => l.status === 'Baru' || l.status === 'Belum Dihubungi').length;
+  res.json({ success: true, total: list.length, uncontacted, data: list });
+});
+
+app.get('/api/admin/leads/:id', (req: Request, res: Response) => {
+  const lead = adminStore.getLeadById(req.params.id as string);
+  if (!lead) return res.status(404).json({ success: false, error: 'Lead tidak ditemukan' });
+  res.json({ success: true, data: lead });
+});
+
+app.post('/api/admin/leads', (req: Request, res: Response) => {
+  const { name, whatsapp } = req.body;
+  if (!name || !whatsapp) {
+    return res.status(400).json({ success: false, error: 'Nama dan Nomor WhatsApp wajib diisi.' });
+  }
+  const lead = adminStore.createLead(req.body, 'Admin');
+  res.status(201).json({ success: true, message: 'Lead berhasil didaftarkan', data: lead });
+});
+
+app.put('/api/admin/leads/:id', (req: Request, res: Response) => {
+  const updated = adminStore.updateLead(req.params.id as string, req.body, 'Admin');
+  if (!updated) return res.status(404).json({ success: false, error: 'Lead tidak ditemukan' });
+  res.json({ success: true, message: 'Data lead berhasil diperbarui', data: updated });
+});
+
+app.post('/api/admin/leads/:id/notes', (req: Request, res: Response) => {
+  const { author, type, content } = req.body;
+  if (!content || !content.trim()) {
+    return res.status(400).json({ success: false, error: 'Isi catatan tidak boleh kosong.' });
+  }
+  const note = adminStore.addLeadNote(req.params.id as string, {
+    author: author || 'Marketing',
+    type: type || 'WhatsApp',
+    content: content.trim()
+  });
+  if (!note) return res.status(404).json({ success: false, error: 'Lead tidak ditemukan' });
+  res.json({ success: true, message: 'Catatan follow-up berhasil ditambahkan', data: note });
+});
+
+app.post('/api/admin/leads/:id/convert-to-consultation', (req: Request, res: Response) => {
+  try {
+    const result = adminStore.convertLeadToConsultation(req.params.id as string, 'Admin');
+    res.json({
+      success: true,
+      message: result.alreadyConverted
+        ? 'Lead telah terkonversi sebelumnya ke alur konsultasi.'
+        : 'Lead berhasil diteruskan ke alur Konsultasi Resmi Smart Tech!',
+      data: result
+    });
+  } catch (err: any) {
+    res.status(400).json({ success: false, error: err.message || 'Gagal mengonversi lead' });
+  }
+});
+
+app.delete('/api/admin/leads/:id', (req: Request, res: Response) => {
+  const ok = adminStore.deleteLead(req.params.id as string, 'Admin');
+  if (!ok) return res.status(404).json({ success: false, error: 'Lead tidak ditemukan' });
+  res.json({ success: true, message: 'Lead berhasil dihapus' });
 });
 
 app.get('/api/client/portal', (_req: Request, res: Response) => {
@@ -554,38 +717,12 @@ app.delete('/api/admin/invoices/:id', (req: Request, res: Response) => {
   res.json({ success: true, message: 'Tagihan berhasil dihapus' });
 });
 
-// Generate Real ArtoPay Payment Link for Invoice
-app.post('/api/admin/invoices/:id/generate-artopay', async (req: Request, res: Response) => {
-  const invoice = adminStore.getInvoiceById(req.params.id as string);
-  if (!invoice) return res.status(404).json({ success: false, error: 'Tagihan tidak ditemukan' });
-
-  try {
-    const order = await paymentGateway.createCheckoutOrder({
-      customerName: invoice.clientName,
-      customerEmail: invoice.clientEmail || 'finance@smarttech.id',
-      items: [
-        {
-          id: invoice.id,
-          name: invoice.title,
-          price: invoice.amount,
-          quantity: 1
-        }
-      ]
-    });
-
-    const paymentUrl = order.paymentUrl || `https://checkout-sandbox.artopay.id/pay/${order.orderId}`;
-    adminStore.updateInvoice(invoice.id, { paymentUrl }, 'Admin');
-
-    res.json({
-      success: true,
-      message: 'Link pembayaran ArtoPay berhasil diterbitkan',
-      orderId: order.orderId,
-      grossAmount: order.grossAmount,
-      paymentUrl
-    });
-  } catch (err: any) {
-    res.status(500).json({ success: false, error: err.message || 'Gagal menerbitkan link pembayaran' });
-  }
+// Generate Real ArtoPay Payment Link for Invoice (Disabled for Consulting Model)
+app.post('/api/admin/invoices/:id/generate-artopay', async (_req: Request, res: Response) => {
+  return res.status(400).json({
+    success: false,
+    error: 'Sistem pembayaran online untuk invoice Smart Tech telah dinonaktifkan. Seluruh tagihan dikelola secara manual via Transfer Bank / Termin Kontrak.'
+  });
 });
 
 // Calendar, Documents, Reports, Settings, Logs
@@ -673,16 +810,21 @@ app.get('/api/portal/project/:id', (req: Request, res: Response) => {
   const project = adminStore.getProjectById(req.params.id as string);
   if (!project) return res.status(404).json({ success: false, error: 'Proyek tidak ditemukan' });
 
-  // Client Data Isolation Guard: If access code is supplied, verify ownership
+  // Client Data Isolation Guard: If access code is supplied or missing, verify ownership
   const portalCode = (req.headers['x-portal-code'] || req.query.code) as string;
-  if (portalCode) {
-    const authorizedClient = adminStore.getClientByAccessCode(portalCode);
-    if (!authorizedClient || authorizedClient.id !== project.clientId) {
-      return res.status(403).json({
-        success: false,
-        error: 'Akses Ditolak: Anda tidak memiliki wewenang untuk mengakses data proyek klien lain.'
-      });
-    }
+  if (!portalCode) {
+    return res.status(401).json({
+      success: false,
+      error: 'Autentikasi Diperlukan: Kode akses portal wajib disertakan.'
+    });
+  }
+
+  const authorizedClient = adminStore.getClientByAccessCode(portalCode);
+  if (!authorizedClient || authorizedClient.id !== project.clientId) {
+    return res.status(403).json({
+      success: false,
+      error: 'Akses Ditolak: Anda tidak memiliki wewenang untuk mengakses data proyek klien lain.'
+    });
   }
 
   // Invoices strictly for this project
@@ -706,6 +848,19 @@ app.post('/api/portal/feedback', (req: Request, res: Response) => {
     return res.status(400).json({ success: false, error: 'ID Proyek dan Judul Revisi wajib diisi.' });
   }
 
+  const portalCode = (req.headers['x-portal-code'] || req.query.code) as string;
+  if (portalCode) {
+    const project = adminStore.getProjectById(projectId);
+    if (!project) return res.status(404).json({ success: false, error: 'Proyek tidak ditemukan' });
+    const authorizedClient = adminStore.getClientByAccessCode(portalCode);
+    if (!authorizedClient || authorizedClient.id !== project.clientId) {
+      return res.status(403).json({
+        success: false,
+        error: 'Akses Ditolak: Anda tidak memiliki wewenang untuk mengirim revisi untuk proyek ini.'
+      });
+    }
+  }
+
   const rev = adminStore.addProjectRevision(projectId, { title, description }, clientName || 'Klien');
   if (!rev) return res.status(404).json({ success: false, error: 'Proyek tidak ditemukan' });
 
@@ -713,21 +868,45 @@ app.post('/api/portal/feedback', (req: Request, res: Response) => {
 });
 
 // Single Page Application / Static entry point fallback & Vite integration
+const isServerless = Boolean(
+  process.env.VERCEL ||
+  process.env.VERCEL_ENV ||
+  process.env.NOW_REGION ||
+  process.env.AWS_LAMBDA_FUNCTION_NAME ||
+  process.env.FUNCTION_NAME
+);
+
 async function initApp() {
-  if (process.env.NODE_ENV !== 'test') {
-    const isProd = process.env.NODE_ENV === 'production' || fs.existsSync(path.join(__dirname, 'dist', 'index.html'));
+  if (process.env.NODE_ENV !== 'test' && !isServerless) {
+    const isProd = process.env.NODE_ENV === 'production';
     if (isProd && fs.existsSync(path.join(__dirname, 'dist'))) {
       app.use(express.static(path.join(__dirname, 'dist')));
       app.get('*', (_req: Request, res: Response) => {
         res.sendFile(path.join(__dirname, 'dist', 'index.html'));
       });
     } else {
-      const { createServer: createViteServer } = await import('vite');
+      const vitePkg = 'vite';
+      const { createServer: createViteServer } = await import(/* @vite-ignore */ vitePkg);
       const vite = await createViteServer({
         server: { middlewareMode: true },
         appType: 'spa'
       });
       app.use(vite.middlewares);
+      app.use('*', async (req: Request, res: Response, next) => {
+        const url = req.originalUrl;
+        try {
+          const indexPath = path.resolve(__dirname, 'index.html');
+          if (fs.existsSync(indexPath)) {
+            let template = fs.readFileSync(indexPath, 'utf-8');
+            template = await vite.transformIndexHtml(url, template);
+            res.status(200).set({ 'Content-Type': 'text/html' }).end(template);
+          } else {
+            next();
+          }
+        } catch (e) {
+          next(e);
+        }
+      });
     }
 
     app.listen(Number(PORT), HOST, () => {
@@ -739,4 +918,6 @@ async function initApp() {
 initApp().catch(err => {
   console.error('Failed to initialize server:', err);
 });
+
+export default app;
 

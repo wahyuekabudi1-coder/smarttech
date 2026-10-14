@@ -166,7 +166,7 @@ export const PricingSection: React.FC<PricingSectionProps> = ({ currentLang, onS
                     : 'bg-ice hover:bg-neutral-subtle text-navy border border-neutral-border'
                 }`}
               >
-                Pilih Paket Ini
+                Konsultasikan Paket Ini
               </button>
             </div>
           ))}

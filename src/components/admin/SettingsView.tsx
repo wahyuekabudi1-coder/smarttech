@@ -129,19 +129,19 @@ export const SettingsView: React.FC<SettingsViewProps> = ({ onToast }) => {
           </div>
         </div>
 
-        {/* Payment Gateway Box */}
+        {/* Model Tagihan & Layanan */}
         <div className="p-4 bg-ice rounded-xl border border-slate-200 space-y-2">
           <div className="flex items-center justify-between">
             <span className="text-xs font-bold text-navy flex items-center gap-1.5">
-              <span className="material-symbols-outlined text-blue text-sm">lock</span>
-              <span>Integrasi Gateway ArtoPay</span>
+              <span className="material-symbols-outlined text-blue text-sm">receipt_long</span>
+              <span>Model Bisnis Smart Tech: Lead Generation &amp; Konsultasi</span>
             </span>
-            <span className="px-2 py-0.5 rounded-full text-[10px] font-mono font-bold bg-emerald-50 text-emerald-700 border border-emerald-200">
-              Sandbox Active
+            <span className="px-2 py-0.5 rounded-full text-[10px] font-mono font-bold bg-blue-50 text-blue-700 border border-blue-200">
+              Manual Invoicing
             </span>
           </div>
           <p className="text-xs text-slate-500">
-            Payment link terintegrasi dengan webhook HMAC-SHA256 untuk verifikasi otomatis status pelunasan invoice termin klien.
+            Penjualan layanan rekayasa Smart Tech menggunakan alur Proposal Penawaran dan Tagihan Manual (Transfer Bank / BAST). Modul integrasi payment gateway disediakan khusus sebagai demonstrasi studi kasus solusi e-commerce untuk klien.
           </p>
         </div>
 

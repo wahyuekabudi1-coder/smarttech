@@ -24,6 +24,7 @@ export const AdminLayout: React.FC<AdminLayoutProps> = ({
 
   const navItems = [
     { id: 'dashboard', label: 'Dashboard', icon: 'dashboard', path: '/admin/dashboard' },
+    { id: 'leads', label: 'Leads', icon: 'person_search', path: '/admin/leads' },
     { id: 'consultations', label: 'Permintaan Konsultasi', icon: 'contact_support', path: '/admin/consultations' },
     { id: 'clients', label: 'Calon Klien & Klien', icon: 'groups', path: '/admin/clients' },
     { id: 'proposals', label: 'Proposal & Penawaran', icon: 'description', path: '/admin/proposals' },
