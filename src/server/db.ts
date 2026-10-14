@@ -9,22 +9,42 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 const DATA_DIR = path.resolve(__dirname, '../../data');
 
+function isValidPostgresUrl(urlStr: string): boolean {
+  if (!urlStr || typeof urlStr !== 'string' || !urlStr.trim()) return false;
+  const trimmed = urlStr.trim();
+  if (trimmed.includes('[') || trimmed.includes(']') || trimmed.includes('<') || trimmed.includes('>')) {
+    return false;
+  }
+  try {
+    const parsed = new URL(trimmed);
+    return parsed.protocol === 'postgres:' || parsed.protocol === 'postgresql:';
+  } catch {
+    return false;
+  }
+}
+
 export const databaseUrl = process.env.DATABASE_URL || process.env.POSTGRES_URL || process.env.SUPABASE_DB_URL || '';
 
-export const isPostgresConfigured = Boolean(databaseUrl && databaseUrl.trim().length > 0);
+export const isPostgresConfigured = isValidPostgresUrl(databaseUrl);
 
 let pool: pg.Pool | null = null;
 if (isPostgresConfigured) {
-  pool = new Pool({
-    connectionString: databaseUrl,
-    ssl: databaseUrl.includes('localhost') ? false : { rejectUnauthorized: false },
-    max: 10,
-    idleTimeoutMillis: 30000,
-  });
+  try {
+    pool = new Pool({
+      connectionString: databaseUrl,
+      ssl: databaseUrl.includes('localhost') ? false : { rejectUnauthorized: false },
+      max: 10,
+      idleTimeoutMillis: 30000,
+      connectionTimeoutMillis: 5000,
+    });
 
-  pool.on('error', (err) => {
-    console.error('[PostgreSQL] Unexpected pool error on idle client:', err);
-  });
+    pool.on('error', (err) => {
+      console.warn('[PostgreSQL] Unexpected pool error on idle client:', err.message);
+    });
+  } catch (err: any) {
+    console.warn('[PostgreSQL] Failed to initialize Pool, fallback to in-memory store:', err.message);
+    pool = null;
+  }
 }
 
 export { pool };

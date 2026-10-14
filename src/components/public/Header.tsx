@@ -21,9 +21,13 @@ export const Header: React.FC<HeaderProps> = ({
     e.preventDefault();
     setMobileMenuOpen(false);
     if (href.startsWith('#')) {
-      const el = document.querySelector(href);
-      if (el) {
-        el.scrollIntoView({ behavior: 'smooth' });
+      if (window.location.pathname === '/') {
+        const el = document.querySelector(href);
+        if (el) {
+          el.scrollIntoView({ behavior: 'smooth' });
+        }
+      } else {
+        onNavigate(`/${href}`);
       }
     } else {
       onNavigate(href);
@@ -35,8 +39,8 @@ export const Header: React.FC<HeaderProps> = ({
       <div className="max-w-[1280px] mx-auto px-4 sm:px-6 h-20 flex items-center justify-between gap-4">
         {/* Brand Logo & Brand Name */}
         <a
-          href="#home"
-          onClick={(e) => handleNavClick(e, '#home')}
+          href="/"
+          onClick={(e) => handleNavClick(e, '/')}
           className="flex items-center gap-3 group shrink-0"
           aria-label="Smart Tech Home"
         >
@@ -73,8 +77,8 @@ export const Header: React.FC<HeaderProps> = ({
             {t.nav_services}
           </a>
           <a
-            href="#portfolio"
-            onClick={(e) => handleNavClick(e, '#portfolio')}
+            href="/portfolio"
+            onClick={(e) => handleNavClick(e, '/portfolio')}
             className="text-slate-200 hover:text-blue transition-colors py-1 font-medium"
           >
             {t.nav_portfolio}
@@ -97,8 +101,8 @@ export const Header: React.FC<HeaderProps> = ({
             {t.nav_pricing}
           </a>
           <a
-            href="#about"
-            onClick={(e) => handleNavClick(e, '#about')}
+            href="/about"
+            onClick={(e) => handleNavClick(e, '/about')}
             className="text-slate-200 hover:text-blue transition-colors py-1 font-medium"
           >
             {t.nav_about}
@@ -133,8 +137,8 @@ export const Header: React.FC<HeaderProps> = ({
 
           {/* Main CTA Button */}
           <a
-            href="#kontak"
-            onClick={(e) => handleNavClick(e, '#kontak')}
+            href="/konsultasi"
+            onClick={(e) => handleNavClick(e, '/konsultasi')}
             className="inline-flex items-center justify-center gap-1.5 bg-blue hover:bg-blue-hover text-white font-medium text-sm px-5 py-2.5 rounded-lg shadow-sm hover:shadow-md transition-all active:scale-[0.98]"
           >
             <span>{t.btn_consult}</span>
@@ -185,8 +189,8 @@ export const Header: React.FC<HeaderProps> = ({
               {t.nav_services}
             </a>
             <a
-              href="#portfolio"
-              onClick={(e) => handleNavClick(e, '#portfolio')}
+              href="/portfolio"
+              onClick={(e) => handleNavClick(e, '/portfolio')}
               className="text-slate-200 hover:text-blue py-1 transition-colors"
             >
               {t.nav_portfolio}
@@ -209,8 +213,8 @@ export const Header: React.FC<HeaderProps> = ({
               {t.nav_pricing}
             </a>
             <a
-              href="#about"
-              onClick={(e) => handleNavClick(e, '#about')}
+              href="/about"
+              onClick={(e) => handleNavClick(e, '/about')}
               className="text-slate-200 hover:text-blue py-1 transition-colors"
             >
               {t.nav_about}
@@ -218,8 +222,8 @@ export const Header: React.FC<HeaderProps> = ({
           </nav>
           <div className="pt-3 border-t border-white/10 flex items-center justify-between">
             <a
-              href="#kontak"
-              onClick={(e) => handleNavClick(e, '#kontak')}
+              href="/konsultasi"
+              onClick={(e) => handleNavClick(e, '/konsultasi')}
               className="w-full text-center py-2.5 px-4 rounded-lg bg-blue hover:bg-blue-hover text-white text-sm font-medium transition-colors"
             >
               {t.btn_consult}

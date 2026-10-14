@@ -13,6 +13,8 @@ import { ServiceDetailModal } from './components/public/ServiceDetailModal';
 import { PortfolioDetailModal } from './components/public/PortfolioDetailModal';
 import { DemoShowcaseSection } from './components/public/DemoShowcaseSection';
 import { DemoWebsiteView } from './components/demo/DemoWebsiteView';
+import { ProcessStepsSection } from './components/public/ProcessStepsSection';
+import { TestimonialsSection } from './components/public/TestimonialsSection';
 
 import { AdminLayout } from './components/admin/AdminLayout';
 import { DashboardView } from './components/admin/DashboardView';
@@ -84,8 +86,7 @@ export const App: React.FC = () => {
   const handleSelectPackage = (packageName: string, category: string) => {
     setPrefillCategory(category);
     setPrefillMessage(`Saya tertarik dengan paket ${packageName}. Mohon informasi estimasi jadwal pengerjaan dan detail scope.`);
-    const el = document.querySelector('#kontak');
-    if (el) el.scrollIntoView({ behavior: 'smooth' });
+    navigate('/konsultasi');
   };
 
   // Route Parsing
@@ -146,11 +147,7 @@ export const App: React.FC = () => {
           onConsultFullStack={(demoSlug, businessName, categoryTitle) => {
             setPrefillCategory('website');
             setPrefillMessage(`Tertarik mengembangkan website full-stack seperti Demo: ${categoryTitle} (${businessName}) dengan integrasi transaksi & database otomatis.`);
-            navigate('/');
-            setTimeout(() => {
-              const el = document.querySelector('#kontak');
-              if (el) el.scrollIntoView({ behavior: 'smooth' });
-            }, 100);
+            navigate('/konsultasi');
           }}
           logoVersion={logoVersion}
         />
@@ -319,57 +316,178 @@ export const App: React.FC = () => {
     );
   }
 
-  // 3. Default: Public Landing Page
+  // 3. Dedicated Public Route: Portfolio
+  if (cleanPath === '/portfolio') {
+    return (
+      <div className="bg-ice text-navy font-body antialiased min-h-screen selection:bg-blue-soft selection:text-blue">
+        <Header
+          currentLang={currentLang}
+          onSetLang={setCurrentLang}
+          onNavigate={navigate}
+          logoVersion={logoVersion}
+        />
+        <main className="pt-24 pb-16">
+          <PortfolioSection
+            currentLang={currentLang}
+            onOpenProject={(key) => setActiveProjectKey(key)}
+          />
+          <div className="max-w-[1280px] mx-auto px-4 sm:px-6 pt-12">
+            <div className="bg-navy rounded-3xl p-8 sm:p-10 text-white flex flex-col md:flex-row items-center justify-between gap-6 shadow-xl">
+              <div>
+                <span className="font-mono text-xs uppercase tracking-wider text-blue-soft font-semibold block mb-1">
+                  Arsitektur Siap Kustom
+                </span>
+                <h3 className="font-heading font-bold text-2xl sm:text-3xl text-white">
+                  Tertarik Membangun Sistem Serupa?
+                </h3>
+                <p className="text-slate-300 text-sm mt-1 max-w-xl">
+                  Diskusikan kebutuhan sistem digital bisnis Anda bersama Technical Lead Smart Tech. Kami siapkan estimasi arsitektur, timeline, dan transparansi ruang lingkup.
+                </p>
+              </div>
+              <button
+                type="button"
+                onClick={() => {
+                  setPrefillCategory('webapp');
+                  setPrefillMessage('Tertarik mendiskusikan implementasi sistem serupa dengan arsitektur portfolio Smart Tech.');
+                  navigate('/konsultasi');
+                }}
+                className="inline-flex items-center gap-2 bg-blue hover:bg-blue-hover text-white font-semibold text-sm sm:text-base px-6 py-3.5 rounded-xl shadow-md transition-all shrink-0 cursor-pointer"
+              >
+                <span>Konsultasikan Kebutuhan Anda</span>
+                <span className="material-symbols-outlined text-base">arrow_forward</span>
+              </button>
+            </div>
+          </div>
+        </main>
+        <Footer onNavigate={navigate} logoVersion={logoVersion} />
+
+        <PortfolioDetailModal
+          projectKey={activeProjectKey}
+          onClose={() => setActiveProjectKey(null)}
+          onDiscussArchitecture={() => {
+            setActiveProjectKey(null);
+            setPrefillCategory('webapp');
+            setPrefillMessage('Tertarik mendiskusikan implementasi sistem serupa dengan arsitektur portfolio Smart Tech.');
+            navigate('/konsultasi');
+          }}
+        />
+
+        <Toast toasts={toasts} onDismiss={dismissToast} />
+      </div>
+    );
+  }
+
+  // 4. Dedicated Public Route: About / Tentang Kami
+  if (cleanPath === '/about') {
+    return (
+      <div className="bg-ice text-navy font-body antialiased min-h-screen selection:bg-blue-soft selection:text-blue">
+        <Header
+          currentLang={currentLang}
+          onSetLang={setCurrentLang}
+          onNavigate={navigate}
+          logoVersion={logoVersion}
+        />
+        <main className="pt-24 pb-16">
+          <AboutSection
+            currentLang={currentLang}
+            onConsult={() => {
+              setPrefillCategory('website');
+              navigate('/konsultasi');
+            }}
+          />
+        </main>
+        <Footer onNavigate={navigate} logoVersion={logoVersion} />
+        <Toast toasts={toasts} onDismiss={dismissToast} />
+      </div>
+    );
+  }
+
+  // 5. Dedicated Public Route: Konsultasi / Form Leads
+  if (cleanPath === '/konsultasi' || cleanPath === '/kontak') {
+    return (
+      <div className="bg-ice text-navy font-body antialiased min-h-screen selection:bg-blue-soft selection:text-blue">
+        <Header
+          currentLang={currentLang}
+          onSetLang={setCurrentLang}
+          onNavigate={navigate}
+          logoVersion={logoVersion}
+        />
+        <main className="pt-24 pb-16">
+          <InquirySection
+            currentLang={currentLang}
+            prefillCategory={prefillCategory}
+            prefillMessage={prefillMessage}
+            onSuccessToast={addToast}
+          />
+        </main>
+        <Footer onNavigate={navigate} logoVersion={logoVersion} />
+        <Toast toasts={toasts} onDismiss={dismissToast} />
+      </div>
+    );
+  }
+
+  // 6. Default: Public Homepage
+  // Urutan Wajib:
+  // 1. Header / menu navigasi
+  // 2. Hero utama yang sudah ada
+  // 3. Bagian kepercayaan: "100% Hak Milik", "NDA Resmi", "Sah Terjamin"
+  // 4. Inspirasi Website Bisnis Siap Coba
+  // 5. Enam Solusi Digital Bisnis Anda
+  // 6. Bagian empat langkah mudah dari ide hingga rilis
+  // 7. Pilihan Paket (tepat setelah empat langkah)
+  // 8. Testimoni pelanggan (carousel otomatis)
+  // 9. Footer
   return (
     <div className="bg-ice text-navy font-body antialiased min-h-screen selection:bg-blue-soft selection:text-blue">
+      {/* 1. Header */}
       <Header
         currentLang={currentLang}
         onSetLang={setCurrentLang}
         onNavigate={navigate}
         logoVersion={logoVersion}
       />
-      <Hero currentLang={currentLang} />
+
+      {/* 2. Hero */}
+      <Hero
+        currentLang={currentLang}
+        onNavigate={navigate}
+      />
+
+      {/* 3. Kepercayaan (100% Hak Milik, NDA Resmi, Sah Terjamin) */}
       <EngineeringBanner />
-      <ServicesSection
-        currentLang={currentLang}
-        onOpenDetail={(key) => setActiveServiceKey(key)}
-      />
-      <PortfolioSection
-        currentLang={currentLang}
-        onOpenProject={(key) => setActiveProjectKey(key)}
-      />
+
+      {/* 4. Inspirasi Website Bisnis Siap Coba */}
       <DemoShowcaseSection
         currentLang={currentLang}
         onNavigate={navigate}
       />
+
+      {/* 5. Enam Solusi Digital Bisnis Anda */}
+      <ServicesSection
+        currentLang={currentLang}
+        onOpenDetail={(key) => setActiveServiceKey(key)}
+      />
+
+      {/* 6. Empat langkah mudah dari ide hingga rilis */}
+      <ProcessStepsSection currentLang={currentLang} />
+
+      {/* 7. Pilihan Paket (tepat setelah section empat langkah) */}
       <PricingSection
         currentLang={currentLang}
         onSelectPackage={handleSelectPackage}
       />
-      <AboutSection currentLang={currentLang} />
-      <InquirySection
-        currentLang={currentLang}
-        prefillCategory={prefillCategory}
-        prefillMessage={prefillMessage}
-        onSuccessToast={addToast}
-      />
+
+      {/* 8. Testimoni pelanggan — carousel otomatis */}
+      <TestimonialsSection />
+
+      {/* 9. Footer */}
       <Footer onNavigate={navigate} logoVersion={logoVersion} />
 
-      {/* Public Modals */}
+      {/* Service Detail Modal */}
       <ServiceDetailModal
         serviceKey={activeServiceKey}
         onClose={() => setActiveServiceKey(null)}
         onSelectService={(title, cat) => handleSelectPackage(title, cat)}
-      />
-
-      <PortfolioDetailModal
-        projectKey={activeProjectKey}
-        onClose={() => setActiveProjectKey(null)}
-        onDiscussArchitecture={() => {
-          setActiveProjectKey(null);
-          const el = document.querySelector('#kontak');
-          if (el) el.scrollIntoView({ behavior: 'smooth' });
-        }}
       />
 
       <Toast toasts={toasts} onDismiss={dismissToast} />

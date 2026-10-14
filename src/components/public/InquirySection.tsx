@@ -168,7 +168,7 @@ export const InquirySection: React.FC<InquirySectionProps> = ({
                     Lokasi Studio
                   </span>
                   <span className="font-medium text-navy">
-                    Kuningan Cyber 2 Tower, Jakarta Selatan &amp; Global Remote
+                    Malang, Jawa Timur, Indonesia
                   </span>
                 </div>
               </div>
@@ -289,7 +289,7 @@ export const InquirySection: React.FC<InquirySectionProps> = ({
                     rows={2}
                     value={formData.address}
                     onChange={handleChange}
-                    placeholder="Contoh: Jl. Sudirman No. 12, Jakarta Selatan"
+                    placeholder="Contoh: Malang, Jawa Timur (atau kota Anda)"
                     className="w-full px-3.5 py-2.5 rounded-lg border border-neutral-border bg-white text-sm text-navy focus:outline-none focus:border-blue"
                   ></textarea>
                 </div>

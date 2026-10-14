@@ -68,27 +68,72 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, logoVersion }) => {
             </span>
             <ul className="space-y-2 text-sm text-slate-300">
               <li>
-                <a href="#layanan" className="hover:text-blue transition-colors">
+                <a
+                  href="#layanan"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    if (window.location.pathname === '/') {
+                      const el = document.querySelector('#layanan');
+                      if (el) el.scrollIntoView({ behavior: 'smooth' });
+                    } else {
+                      onNavigate('/#layanan');
+                    }
+                  }}
+                  className="hover:text-blue transition-colors"
+                >
                   Layanan Rekayasa
                 </a>
               </li>
               <li>
-                <a href="#portfolio" className="hover:text-blue transition-colors">
+                <a
+                  href="/portfolio"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    onNavigate('/portfolio');
+                  }}
+                  className="hover:text-blue transition-colors"
+                >
                   Portfolio Terpilih
                 </a>
               </li>
               <li>
-                <a href="#harga" className="hover:text-blue transition-colors">
+                <a
+                  href="#harga"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    if (window.location.pathname === '/') {
+                      const el = document.querySelector('#harga');
+                      if (el) el.scrollIntoView({ behavior: 'smooth' });
+                    } else {
+                      onNavigate('/#harga');
+                    }
+                  }}
+                  className="hover:text-blue transition-colors"
+                >
                   Paket &amp; Harga
                 </a>
               </li>
               <li>
-                <a href="#about" className="hover:text-blue transition-colors">
-                  Standar Rekayasa
+                <a
+                  href="/about"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    onNavigate('/about');
+                  }}
+                  className="hover:text-blue transition-colors"
+                >
+                  Tentang Kami
                 </a>
               </li>
               <li>
-                <a href="#kontak" className="hover:text-blue transition-colors">
+                <a
+                  href="/konsultasi"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    onNavigate('/konsultasi');
+                  }}
+                  className="hover:text-blue transition-colors"
+                >
                   Konsultasi Gratis
                 </a>
               </li>
@@ -159,7 +204,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, logoVersion }) => {
         </div>
 
         <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs font-mono text-slate-400">
-          <span>Jakarta Selatan, DKI Jakarta, Indonesia</span>
+          <span>Malang, Jawa Timur, Indonesia</span>
           <span>100% Hak Milik Kode • Garansi Bug Resmi</span>
         </div>
       </div>

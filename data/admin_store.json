@@ -1,6 +1,114 @@
 {
   "consultations": [
     {
+      "id": "CNS-2026-037",
+      "name": "Ir. Rahmat Hidayat",
+      "email": "rahmat@inovasimaju.id",
+      "phone": "+6281311223344",
+      "company": "Jl. Pemuda No. 88, Surabaya, Jawa Timur",
+      "category": "webapp",
+      "categoryName": "Aplikasi Bisnis & Rekayasa Sistem",
+      "budget": "15-30",
+      "budgetRange": "Rp 15.000.000 – Rp 30.000.000",
+      "message": "Lead dikonversi dari CRM Leads (Website). Alamat/Domisili: Jl. Pemuda No. 88, Surabaya, Jawa Timur. No WA: +6281311223344",
+      "priority": "Tinggi",
+      "status": "Baru Masuk",
+      "consultationNotes": "",
+      "assignedTo": "Sarah Wijaya",
+      "createdAt": "2026-10-14T12:12:12.222Z",
+      "updatedAt": "2026-10-14T12:12:12.222Z",
+      "history": [
+        {
+          "date": "2026-10-14T12:12:12.222Z",
+          "user": "Sarah Wijaya",
+          "status": "Baru Masuk",
+          "note": "Permintaan konsultasi berhasil didaftarkan ke sistem."
+        }
+      ]
+    },
+    {
+      "id": "CNS-2026-036",
+      "name": "Dr. Hendra Gunawan",
+      "email": "hendra@meditech.id",
+      "phone": "+62 811-9988-7766",
+      "company": "PT Medika Inovasi Digital",
+      "category": "webapp",
+      "categoryName": "Aplikasi Bisnis / Internal Tool",
+      "budget": "15-30",
+      "budgetRange": "Rp 40.000.000 – Rp 60.000.000",
+      "message": "Sistem rekam medis terpadu & antrean poli terintegrasi BPJS.",
+      "priority": "Tinggi",
+      "status": "Proyek Dimulai",
+      "consultationNotes": "",
+      "assignedTo": "Aditya Pratama (Technical Lead)",
+      "createdAt": "2026-10-14T12:12:12.037Z",
+      "updatedAt": "2026-10-14T12:12:12.074Z",
+      "history": [
+        {
+          "date": "2026-10-14T12:12:12.037Z",
+          "user": "Website Visitor",
+          "status": "Baru Masuk",
+          "note": "Permintaan konsultasi berhasil didaftarkan ke sistem."
+        }
+      ],
+      "proposalId": "PROP-2026-023",
+      "projectId": "PRJ-2026-21"
+    },
+    {
+      "id": "CNS-2026-035",
+      "name": "Ir. Rahmat Hidayat",
+      "email": "rahmat@inovasimaju.id",
+      "phone": "+6281311223344",
+      "company": "Jl. Pemuda No. 88, Surabaya, Jawa Timur",
+      "category": "webapp",
+      "categoryName": "Aplikasi Bisnis & Rekayasa Sistem",
+      "budget": "15-30",
+      "budgetRange": "Rp 15.000.000 – Rp 30.000.000",
+      "message": "Lead dikonversi dari CRM Leads (Website). Alamat/Domisili: Jl. Pemuda No. 88, Surabaya, Jawa Timur. No WA: +6281311223344",
+      "priority": "Tinggi",
+      "status": "Baru Masuk",
+      "consultationNotes": "",
+      "assignedTo": "Sarah Wijaya",
+      "createdAt": "2026-10-14T11:58:45.658Z",
+      "updatedAt": "2026-10-14T11:58:45.658Z",
+      "history": [
+        {
+          "date": "2026-10-14T11:58:45.658Z",
+          "user": "Sarah Wijaya",
+          "status": "Baru Masuk",
+          "note": "Permintaan konsultasi berhasil didaftarkan ke sistem."
+        }
+      ]
+    },
+    {
+      "id": "CNS-2026-034",
+      "name": "Dr. Hendra Gunawan",
+      "email": "hendra@meditech.id",
+      "phone": "+62 811-9988-7766",
+      "company": "PT Medika Inovasi Digital",
+      "category": "webapp",
+      "categoryName": "Aplikasi Bisnis / Internal Tool",
+      "budget": "15-30",
+      "budgetRange": "Rp 40.000.000 – Rp 60.000.000",
+      "message": "Sistem rekam medis terpadu & antrean poli terintegrasi BPJS.",
+      "priority": "Tinggi",
+      "status": "Proyek Dimulai",
+      "consultationNotes": "",
+      "assignedTo": "Aditya Pratama (Technical Lead)",
+      "createdAt": "2026-10-14T11:58:45.415Z",
+      "updatedAt": "2026-10-14T11:58:45.489Z",
+      "history": [
+        {
+          "date": "2026-10-14T11:58:45.415Z",
+          "user": "Website Visitor",
+          "status": "Baru Masuk",
+          "note": "Permintaan konsultasi berhasil didaftarkan ke sistem."
+        }
+      ],
+      "proposalId": "PROP-2026-022",
+      "projectId": "PRJ-2026-20"
+    },
+    {
       "id": "CNS-2026-033",
       "name": "Ir. Rahmat Hidayat",
       "email": "rahmat@inovasimaju.id",
@@ -972,6 +1080,40 @@
   ],
   "clients": [
     {
+      "id": "CLI-022",
+      "name": "Dr. Hendra Gunawan",
+      "company": "PT Medika Inovasi Digital",
+      "email": "hendra@meditech.id",
+      "phone": "+62 811-9988-7766",
+      "industry": "Kesehatan & Farmasi",
+      "type": "Klien Aktif",
+      "address": "Jakarta, Indonesia",
+      "portalAccessCode": "PT -8052",
+      "totalValue": 50000000,
+      "projectsCount": 1,
+      "notes": "",
+      "meetings": [],
+      "createdAt": "2026-10-14T12:12:12.042Z",
+      "updatedAt": "2026-10-14T12:12:12.074Z"
+    },
+    {
+      "id": "CLI-021",
+      "name": "Dr. Hendra Gunawan",
+      "company": "PT Medika Inovasi Digital",
+      "email": "hendra@meditech.id",
+      "phone": "+62 811-9988-7766",
+      "industry": "Kesehatan & Farmasi",
+      "type": "Klien Aktif",
+      "address": "Jakarta, Indonesia",
+      "portalAccessCode": "PT -8456",
+      "totalValue": 50000000,
+      "projectsCount": 1,
+      "notes": "",
+      "meetings": [],
+      "createdAt": "2026-10-14T11:58:45.421Z",
+      "updatedAt": "2026-10-14T11:58:45.489Z"
+    },
+    {
       "id": "CLI-020",
       "name": "Dr. Hendra Gunawan",
       "company": "PT Medika Inovasi Digital",
@@ -1336,6 +1478,112 @@
     }
   ],
   "proposals": [
+    {
+      "id": "PROP-2026-023",
+      "consultationId": "CNS-2026-036",
+      "clientId": "CLI-022",
+      "clientName": "Dr. Hendra Gunawan",
+      "clientCompany": "PT Medika Inovasi Digital",
+      "title": "Hospital Information & Telemedicine Platform",
+      "summary": "Dokumen penawaran resmi rancangan software dan infrastruktur sistem.",
+      "scopeOfWork": [
+        "FSD Rekam Medis",
+        "UI/UX Portal Dokter & Pasien",
+        "Core Telemedicine Engine",
+        "Integrasi BPJS & QA"
+      ],
+      "deliverables": [
+        "Dokumen FSD v1.0",
+        "Source Code Git",
+        "Cloud Deployment"
+      ],
+      "techStack": [
+        "Next.js 15",
+        "TypeScript",
+        "PostgreSQL",
+        "Tailwind CSS",
+        "Docker"
+      ],
+      "totalPrice": 50000000,
+      "paymentTerms": {
+        "dpPercentage": 50,
+        "dpAmount": 25000000,
+        "terminPercentage": 0,
+        "terminAmount": 0,
+        "settlementPercentage": 50,
+        "settlementAmount": 25000000,
+        "description": "DP 50% saat kickoff, Pelunasan 50% saat serah terima proyek."
+      },
+      "timeline": "8 Minggu",
+      "estimatedStartDate": "2026-10-14",
+      "status": "Dikonversi ke Proyek",
+      "revisionsCount": 0,
+      "revisionsHistory": [
+        {
+          "version": 1,
+          "date": "2026-10-14T12:12:12.048Z",
+          "changeNote": "Inisialisasi dokumen penawaran resmi v1.0",
+          "price": 50000000,
+          "user": "Admin"
+        }
+      ],
+      "createdAt": "2026-10-14T12:12:12.048Z",
+      "updatedAt": "2026-10-14T12:12:12.074Z",
+      "approvedAt": "2026-10-14T12:12:12.074Z"
+    },
+    {
+      "id": "PROP-2026-022",
+      "consultationId": "CNS-2026-034",
+      "clientId": "CLI-021",
+      "clientName": "Dr. Hendra Gunawan",
+      "clientCompany": "PT Medika Inovasi Digital",
+      "title": "Hospital Information & Telemedicine Platform",
+      "summary": "Dokumen penawaran resmi rancangan software dan infrastruktur sistem.",
+      "scopeOfWork": [
+        "FSD Rekam Medis",
+        "UI/UX Portal Dokter & Pasien",
+        "Core Telemedicine Engine",
+        "Integrasi BPJS & QA"
+      ],
+      "deliverables": [
+        "Dokumen FSD v1.0",
+        "Source Code Git",
+        "Cloud Deployment"
+      ],
+      "techStack": [
+        "Next.js 15",
+        "TypeScript",
+        "PostgreSQL",
+        "Tailwind CSS",
+        "Docker"
+      ],
+      "totalPrice": 50000000,
+      "paymentTerms": {
+        "dpPercentage": 50,
+        "dpAmount": 25000000,
+        "terminPercentage": 0,
+        "terminAmount": 0,
+        "settlementPercentage": 50,
+        "settlementAmount": 25000000,
+        "description": "DP 50% saat kickoff, Pelunasan 50% saat serah terima proyek."
+      },
+      "timeline": "8 Minggu",
+      "estimatedStartDate": "2026-10-14",
+      "status": "Dikonversi ke Proyek",
+      "revisionsCount": 0,
+      "revisionsHistory": [
+        {
+          "version": 1,
+          "date": "2026-10-14T11:58:45.426Z",
+          "changeNote": "Inisialisasi dokumen penawaran resmi v1.0",
+          "price": 50000000,
+          "user": "Admin"
+        }
+      ],
+      "createdAt": "2026-10-14T11:58:45.426Z",
+      "updatedAt": "2026-10-14T11:58:45.489Z",
+      "approvedAt": "2026-10-14T11:58:45.489Z"
+    },
     {
       "id": "PROP-2026-021",
       "consultationId": "CNS-2026-032",
@@ -2461,6 +2709,282 @@
     }
   ],
   "projects": [
+    {
+      "id": "PRJ-2026-21",
+      "name": "Hospital Information & Telemedicine Platform",
+      "clientId": "CLI-022",
+      "clientName": "Dr. Hendra Gunawan",
+      "clientEmail": "hendra@meditech.id",
+      "proposalId": "PROP-2026-023",
+      "pic": "Aditya Pratama (Technical Lead)",
+      "teamMembers": [
+        {
+          "name": "Aditya Pratama",
+          "role": "Lead Architect"
+        },
+        {
+          "name": "Sarah Lestari",
+          "role": "Lead UI/UX"
+        },
+        {
+          "name": "Dimas Wicaksono",
+          "role": "Fullstack Engineer"
+        }
+      ],
+      "startDate": "2026-10-14",
+      "deadline": "28 November 2026",
+      "progressPercentage": 100,
+      "status": "Selesai",
+      "milestones": [
+        {
+          "id": "PRJ-2026-21-M1",
+          "title": "Discovery & Requirement Analysis (FSD)",
+          "phase": 1,
+          "status": "Selesai",
+          "dueDate": "2026-10-21",
+          "desc": "Penyusunan arsitektur data & scope deliverables disetujui bersama klien.",
+          "deliverables": [
+            "Dokumen FSD v1.0",
+            "Diagram ERD Database",
+            "Wireframe Flow"
+          ],
+          "approvedByClient": true
+        },
+        {
+          "id": "PRJ-2026-21-M2",
+          "title": "UI/UX Design System & Prototype Interaktif",
+          "phase": 2,
+          "status": "Menunggu",
+          "dueDate": "2026-11-01",
+          "desc": "Penyusunan desain UI/UX interaktif Figma untuk desktop dan mobile.",
+          "deliverables": [
+            "Design System",
+            "Figma Prototype Siap Uji"
+          ]
+        },
+        {
+          "id": "PRJ-2026-21-M3",
+          "title": "Core Development & Integrasi Gateway Payment",
+          "phase": 3,
+          "status": "Menunggu",
+          "dueDate": "2026-11-18",
+          "desc": "Pengerjaan kode modul inti, autentikasi, database, dan webhook payment gateway.",
+          "deliverables": [
+            "Backend API Endpoint",
+            "Frontend Interactive",
+            "Integrasi Gateway"
+          ]
+        },
+        {
+          "id": "PRJ-2026-21-M4",
+          "title": "Quality Assurance, Load Test & Serah Terima Final",
+          "phase": 4,
+          "status": "Menunggu",
+          "dueDate": "2026-11-28",
+          "desc": "Audit performa Core Web Vitals, pengujian keamanan, dan serah terima 100% hak milik kode.",
+          "deliverables": [
+            "Laporan Uji QA",
+            "Akses Repo Git Penuh",
+            "Deployment Cloud Berjalan"
+          ]
+        }
+      ],
+      "tasks": [
+        {
+          "id": "TSK-1",
+          "milestoneId": "PRJ-2026-21-M1",
+          "title": "Kickoff Meeting Teknis",
+          "assignee": "Aditya Pratama",
+          "status": "Done",
+          "priority": "Tinggi",
+          "dueDate": "2026-10-14"
+        },
+        {
+          "id": "TSK-2",
+          "milestoneId": "PRJ-2026-21-M1",
+          "title": "Finalisasi FSD & Scope Deliverables",
+          "assignee": "Aditya Pratama",
+          "status": "In Progress",
+          "priority": "Tinggi",
+          "dueDate": "2026-10-17"
+        },
+        {
+          "id": "TSK-3",
+          "milestoneId": "PRJ-2026-21-M2",
+          "title": "Penyusunan Desain UI/UX Figma",
+          "assignee": "Sarah Lestari",
+          "status": "To Do",
+          "priority": "Sedang",
+          "dueDate": "2026-10-28"
+        }
+      ],
+      "revisions": [],
+      "files": [
+        {
+          "id": "FIL-01",
+          "name": "FSD_Hospital_Information_&_Telemedicine_Platform_v1.0.pdf",
+          "category": "FSD / Spec",
+          "size": "1.8 MB",
+          "url": "/public/images/smart-tech-logo.png",
+          "uploadedAt": "2026-10-14",
+          "allowedForClient": true
+        }
+      ],
+      "activityLog": [
+        {
+          "date": "2026-10-14T12:12:12.099Z",
+          "user": "Admin",
+          "action": "Perubahan Status Proyek",
+          "note": "Status proyek diubah dari \"Pengerjaan\" menjadi \"Selesai\"."
+        },
+        {
+          "date": "2026-10-14T12:12:12.074Z",
+          "user": "Admin",
+          "action": "Proyek Resmi Dimulai",
+          "note": "Dikonversi dari proposal PROP-2026-023 yang telah disetujui."
+        }
+      ],
+      "createdAt": "2026-10-14T12:12:12.074Z",
+      "updatedAt": "2026-10-14T12:12:12.099Z"
+    },
+    {
+      "id": "PRJ-2026-20",
+      "name": "Hospital Information & Telemedicine Platform",
+      "clientId": "CLI-021",
+      "clientName": "Dr. Hendra Gunawan",
+      "clientEmail": "hendra@meditech.id",
+      "proposalId": "PROP-2026-022",
+      "pic": "Aditya Pratama (Technical Lead)",
+      "teamMembers": [
+        {
+          "name": "Aditya Pratama",
+          "role": "Lead Architect"
+        },
+        {
+          "name": "Sarah Lestari",
+          "role": "Lead UI/UX"
+        },
+        {
+          "name": "Dimas Wicaksono",
+          "role": "Fullstack Engineer"
+        }
+      ],
+      "startDate": "2026-10-14",
+      "deadline": "28 November 2026",
+      "progressPercentage": 100,
+      "status": "Selesai",
+      "milestones": [
+        {
+          "id": "PRJ-2026-20-M1",
+          "title": "Discovery & Requirement Analysis (FSD)",
+          "phase": 1,
+          "status": "Selesai",
+          "dueDate": "2026-10-21",
+          "desc": "Penyusunan arsitektur data & scope deliverables disetujui bersama klien.",
+          "deliverables": [
+            "Dokumen FSD v1.0",
+            "Diagram ERD Database",
+            "Wireframe Flow"
+          ],
+          "approvedByClient": true
+        },
+        {
+          "id": "PRJ-2026-20-M2",
+          "title": "UI/UX Design System & Prototype Interaktif",
+          "phase": 2,
+          "status": "Menunggu",
+          "dueDate": "2026-11-01",
+          "desc": "Penyusunan desain UI/UX interaktif Figma untuk desktop dan mobile.",
+          "deliverables": [
+            "Design System",
+            "Figma Prototype Siap Uji"
+          ]
+        },
+        {
+          "id": "PRJ-2026-20-M3",
+          "title": "Core Development & Integrasi Gateway Payment",
+          "phase": 3,
+          "status": "Menunggu",
+          "dueDate": "2026-11-18",
+          "desc": "Pengerjaan kode modul inti, autentikasi, database, dan webhook payment gateway.",
+          "deliverables": [
+            "Backend API Endpoint",
+            "Frontend Interactive",
+            "Integrasi Gateway"
+          ]
+        },
+        {
+          "id": "PRJ-2026-20-M4",
+          "title": "Quality Assurance, Load Test & Serah Terima Final",
+          "phase": 4,
+          "status": "Menunggu",
+          "dueDate": "2026-11-28",
+          "desc": "Audit performa Core Web Vitals, pengujian keamanan, dan serah terima 100% hak milik kode.",
+          "deliverables": [
+            "Laporan Uji QA",
+            "Akses Repo Git Penuh",
+            "Deployment Cloud Berjalan"
+          ]
+        }
+      ],
+      "tasks": [
+        {
+          "id": "TSK-1",
+          "milestoneId": "PRJ-2026-20-M1",
+          "title": "Kickoff Meeting Teknis",
+          "assignee": "Aditya Pratama",
+          "status": "Done",
+          "priority": "Tinggi",
+          "dueDate": "2026-10-14"
+        },
+        {
+          "id": "TSK-2",
+          "milestoneId": "PRJ-2026-20-M1",
+          "title": "Finalisasi FSD & Scope Deliverables",
+          "assignee": "Aditya Pratama",
+          "status": "In Progress",
+          "priority": "Tinggi",
+          "dueDate": "2026-10-17"
+        },
+        {
+          "id": "TSK-3",
+          "milestoneId": "PRJ-2026-20-M2",
+          "title": "Penyusunan Desain UI/UX Figma",
+          "assignee": "Sarah Lestari",
+          "status": "To Do",
+          "priority": "Sedang",
+          "dueDate": "2026-10-28"
+        }
+      ],
+      "revisions": [],
+      "files": [
+        {
+          "id": "FIL-01",
+          "name": "FSD_Hospital_Information_&_Telemedicine_Platform_v1.0.pdf",
+          "category": "FSD / Spec",
+          "size": "1.8 MB",
+          "url": "/public/images/smart-tech-logo.png",
+          "uploadedAt": "2026-10-14",
+          "allowedForClient": true
+        }
+      ],
+      "activityLog": [
+        {
+          "date": "2026-10-14T11:58:45.515Z",
+          "user": "Admin",
+          "action": "Perubahan Status Proyek",
+          "note": "Status proyek diubah dari \"Pengerjaan\" menjadi \"Selesai\"."
+        },
+        {
+          "date": "2026-10-14T11:58:45.489Z",
+          "user": "Admin",
+          "action": "Proyek Resmi Dimulai",
+          "note": "Dikonversi dari proposal PROP-2026-022 yang telah disetujui."
+        }
+      ],
+      "createdAt": "2026-10-14T11:58:45.489Z",
+      "updatedAt": "2026-10-14T11:58:45.515Z"
+    },
     {
       "id": "PRJ-2026-19",
       "name": "Hospital Information & Telemedicine Platform",
@@ -5137,6 +5661,80 @@
   ],
   "invoices": [
     {
+      "id": "INV-2026-042",
+      "invoiceNumber": "INV-2026-042",
+      "projectId": "PRJ-2026-21",
+      "projectName": "Hospital Information & Telemedicine Platform",
+      "clientId": "CLI-022",
+      "clientName": "Dr. Hendra Gunawan",
+      "clientEmail": "hendra@meditech.id",
+      "title": "Pelunasan Akhir (50%) & BAST Serah Terima",
+      "type": "Pelunasan Akhir",
+      "amount": 25000000,
+      "dueDate": "2026-11-28",
+      "status": "Lunas",
+      "paymentMethod": "Transfer Bank Manual",
+      "notes": "",
+      "createdAt": "2026-10-14T12:12:12.084Z",
+      "updatedAt": "2026-10-14T12:12:12.094Z",
+      "paidAt": "2026-10-14T12:12:12.094Z"
+    },
+    {
+      "id": "INV-2026-041",
+      "invoiceNumber": "INV-2026-041",
+      "projectId": "PRJ-2026-21",
+      "projectName": "Hospital Information & Telemedicine Platform",
+      "clientId": "CLI-022",
+      "clientName": "Dr. Hendra Gunawan",
+      "clientEmail": "hendra@meditech.id",
+      "title": "DP 50% - Kickoff Proyek Hospital Information & Telemedicine Platform",
+      "type": "DP (Uang Muka)",
+      "amount": 25000000,
+      "dueDate": "2026-10-21",
+      "status": "Menunggu Pembayaran",
+      "paymentMethod": "Transfer Bank Manual / Termin Kontrak",
+      "createdAt": "2026-10-14T12:12:12.074Z",
+      "updatedAt": "2026-10-14T12:12:12.074Z",
+      "notes": "Invoice pembayaran tahap 1 uang muka (DP) sesuai kontrak proposal PROP-2026-023."
+    },
+    {
+      "id": "INV-2026-040",
+      "invoiceNumber": "INV-2026-040",
+      "projectId": "PRJ-2026-20",
+      "projectName": "Hospital Information & Telemedicine Platform",
+      "clientId": "CLI-021",
+      "clientName": "Dr. Hendra Gunawan",
+      "clientEmail": "hendra@meditech.id",
+      "title": "Pelunasan Akhir (50%) & BAST Serah Terima",
+      "type": "Pelunasan Akhir",
+      "amount": 25000000,
+      "dueDate": "2026-11-28",
+      "status": "Lunas",
+      "paymentMethod": "Transfer Bank Manual",
+      "notes": "",
+      "createdAt": "2026-10-14T11:58:45.501Z",
+      "updatedAt": "2026-10-14T11:58:45.511Z",
+      "paidAt": "2026-10-14T11:58:45.511Z"
+    },
+    {
+      "id": "INV-2026-039",
+      "invoiceNumber": "INV-2026-039",
+      "projectId": "PRJ-2026-20",
+      "projectName": "Hospital Information & Telemedicine Platform",
+      "clientId": "CLI-021",
+      "clientName": "Dr. Hendra Gunawan",
+      "clientEmail": "hendra@meditech.id",
+      "title": "DP 50% - Kickoff Proyek Hospital Information & Telemedicine Platform",
+      "type": "DP (Uang Muka)",
+      "amount": 25000000,
+      "dueDate": "2026-10-21",
+      "status": "Menunggu Pembayaran",
+      "paymentMethod": "Transfer Bank Manual / Termin Kontrak",
+      "createdAt": "2026-10-14T11:58:45.489Z",
+      "updatedAt": "2026-10-14T11:58:45.489Z",
+      "notes": "Invoice pembayaran tahap 1 uang muka (DP) sesuai kontrak proposal PROP-2026-022."
+    },
+    {
       "id": "INV-2026-038",
       "invoiceNumber": "INV-2026-038",
       "projectId": "PRJ-2026-19",
@@ -5939,6 +6537,246 @@
     }
   ],
   "activityLogs": [
+    {
+      "id": "LOG-mv82l2dl-4sck",
+      "timestamp": "2026-10-14T12:12:14.025Z",
+      "user": "Website Form",
+      "module": "Lead",
+      "action": "Lead Baru Masuk",
+      "details": "Smoke Test Client (+628902669103) - Sumber: Website"
+    },
+    {
+      "id": "LOG-mv82l0zp-wtrh",
+      "timestamp": "2026-10-14T12:12:12.229Z",
+      "user": "Sarah Wijaya",
+      "module": "Lead",
+      "action": "Konversi Lead ke Konsultasi",
+      "details": "Ir. Rahmat Hidayat diteruskan ke Konsultasi CNS-2026-037"
+    },
+    {
+      "id": "LOG-mv82l0zi-fh0k",
+      "timestamp": "2026-10-14T12:12:12.222Z",
+      "user": "Sarah Wijaya",
+      "module": "Consultation",
+      "action": "Buat Konsultasi Baru",
+      "details": "CNS-2026-037: Ir. Rahmat Hidayat (Aplikasi Bisnis & Rekayasa Sistem)"
+    },
+    {
+      "id": "LOG-mv82l0zf-9gf5",
+      "timestamp": "2026-10-14T12:12:12.219Z",
+      "user": "Sarah Wijaya",
+      "module": "Lead",
+      "action": "Follow-up WhatsApp",
+      "details": "Ir. Rahmat Hidayat: Calon pelanggan berminat membuat sistem logistik terpadu dan"
+    },
+    {
+      "id": "LOG-mv82l0z7-ph8l",
+      "timestamp": "2026-10-14T12:12:12.211Z",
+      "user": "Sarah Wijaya",
+      "module": "Lead",
+      "action": "Penugasan Marketing",
+      "details": "Ir. Rahmat Hidayat: Ditugaskan ke Sarah Wijaya"
+    },
+    {
+      "id": "LOG-mv82l0z5-pwus",
+      "timestamp": "2026-10-14T12:12:12.209Z",
+      "user": "Sarah Wijaya",
+      "module": "Lead",
+      "action": "Perubahan Status Lead",
+      "details": "Ir. Rahmat Hidayat: Baru -> Sudah Dihubungi"
+    },
+    {
+      "id": "LOG-mv82l0z2-a959",
+      "timestamp": "2026-10-14T12:12:12.206Z",
+      "user": "Website Form",
+      "module": "Lead",
+      "action": "Lead Baru Masuk",
+      "details": "Ir. Rahmat Hidayat (+6281311223344) - Sumber: Website"
+    },
+    {
+      "id": "LOG-mv82l0w3-wgiw",
+      "timestamp": "2026-10-14T12:12:12.099Z",
+      "user": "Admin",
+      "module": "Project",
+      "action": "Update Proyek",
+      "details": "PRJ-2026-21: Hospital Information & Telemedicine Platform (Selesai)"
+    },
+    {
+      "id": "LOG-mv82l0vy-zm13",
+      "timestamp": "2026-10-14T12:12:12.094Z",
+      "user": "Admin",
+      "module": "Invoice",
+      "action": "Update Tagihan",
+      "details": "INV-2026-042: Status Lunas"
+    },
+    {
+      "id": "LOG-mv82l0vo-nkss",
+      "timestamp": "2026-10-14T12:12:12.084Z",
+      "user": "Admin",
+      "module": "Invoice",
+      "action": "Buat Tagihan Baru",
+      "details": "INV-2026-042: Pelunasan Akhir (50%) & BAST Serah Terima (Rp 25.000.000)"
+    },
+    {
+      "id": "LOG-mv82l0vj-7eqg",
+      "timestamp": "2026-10-14T12:12:12.079Z",
+      "user": "Admin",
+      "module": "Project",
+      "action": "Update Proyek",
+      "details": "PRJ-2026-21: Hospital Information & Telemedicine Platform (Pengerjaan)"
+    },
+    {
+      "id": "LOG-mv82l0ve-8ves",
+      "timestamp": "2026-10-14T12:12:12.074Z",
+      "user": "Admin",
+      "module": "Project",
+      "action": "Proyek Dibuat dari Proposal",
+      "details": "Proposal PROP-2026-023 -> Proyek PRJ-2026-21 & Invoice INV-2026-041"
+    },
+    {
+      "id": "LOG-mv82l0v5-wzqn",
+      "timestamp": "2026-10-14T12:12:12.065Z",
+      "user": "Admin",
+      "module": "Proposal",
+      "action": "Buat Proposal Baru",
+      "details": "PROP-2026-023: Hospital Information & Telemedicine Platform (Rp 50.000.000)"
+    },
+    {
+      "id": "LOG-mv82l0ui-3b5g",
+      "timestamp": "2026-10-14T12:12:12.042Z",
+      "user": "Admin",
+      "module": "Client",
+      "action": "Tambah Klien Baru",
+      "details": "CLI-022: Dr. Hendra Gunawan (PT Medika Inovasi Digital)"
+    },
+    {
+      "id": "LOG-mv82l0ud-17sb",
+      "timestamp": "2026-10-14T12:12:12.037Z",
+      "user": "Website Visitor",
+      "module": "Consultation",
+      "action": "Buat Konsultasi Baru",
+      "details": "CNS-2026-036: Dr. Hendra Gunawan (Aplikasi Bisnis / Internal Tool)"
+    },
+    {
+      "id": "LOG-mv823s7u-bmkl",
+      "timestamp": "2026-10-14T11:58:47.706Z",
+      "user": "Website Form",
+      "module": "Lead",
+      "action": "Lead Baru Masuk",
+      "details": "Smoke Test Client (+628499022658) - Sumber: Website"
+    },
+    {
+      "id": "LOG-mv823qn4-l665",
+      "timestamp": "2026-10-14T11:58:45.664Z",
+      "user": "Sarah Wijaya",
+      "module": "Lead",
+      "action": "Konversi Lead ke Konsultasi",
+      "details": "Ir. Rahmat Hidayat diteruskan ke Konsultasi CNS-2026-035"
+    },
+    {
+      "id": "LOG-mv823qmy-50s4",
+      "timestamp": "2026-10-14T11:58:45.658Z",
+      "user": "Sarah Wijaya",
+      "module": "Consultation",
+      "action": "Buat Konsultasi Baru",
+      "details": "CNS-2026-035: Ir. Rahmat Hidayat (Aplikasi Bisnis & Rekayasa Sistem)"
+    },
+    {
+      "id": "LOG-mv823qmt-5ujy",
+      "timestamp": "2026-10-14T11:58:45.653Z",
+      "user": "Sarah Wijaya",
+      "module": "Lead",
+      "action": "Follow-up WhatsApp",
+      "details": "Ir. Rahmat Hidayat: Calon pelanggan berminat membuat sistem logistik terpadu dan"
+    },
+    {
+      "id": "LOG-mv823qml-lg79",
+      "timestamp": "2026-10-14T11:58:45.645Z",
+      "user": "Sarah Wijaya",
+      "module": "Lead",
+      "action": "Penugasan Marketing",
+      "details": "Ir. Rahmat Hidayat: Ditugaskan ke Sarah Wijaya"
+    },
+    {
+      "id": "LOG-mv823qmi-cj6l",
+      "timestamp": "2026-10-14T11:58:45.642Z",
+      "user": "Sarah Wijaya",
+      "module": "Lead",
+      "action": "Perubahan Status Lead",
+      "details": "Ir. Rahmat Hidayat: Baru -> Sudah Dihubungi"
+    },
+    {
+      "id": "LOG-mv823qme-ffjp",
+      "timestamp": "2026-10-14T11:58:45.638Z",
+      "user": "Website Form",
+      "module": "Lead",
+      "action": "Lead Baru Masuk",
+      "details": "Ir. Rahmat Hidayat (+6281311223344) - Sumber: Website"
+    },
+    {
+      "id": "LOG-mv823qiz-6af2",
+      "timestamp": "2026-10-14T11:58:45.515Z",
+      "user": "Admin",
+      "module": "Project",
+      "action": "Update Proyek",
+      "details": "PRJ-2026-20: Hospital Information & Telemedicine Platform (Selesai)"
+    },
+    {
+      "id": "LOG-mv823qiv-664i",
+      "timestamp": "2026-10-14T11:58:45.511Z",
+      "user": "Admin",
+      "module": "Invoice",
+      "action": "Update Tagihan",
+      "details": "INV-2026-040: Status Lunas"
+    },
+    {
+      "id": "LOG-mv823qil-sccs",
+      "timestamp": "2026-10-14T11:58:45.501Z",
+      "user": "Admin",
+      "module": "Invoice",
+      "action": "Buat Tagihan Baru",
+      "details": "INV-2026-040: Pelunasan Akhir (50%) & BAST Serah Terima (Rp 25.000.000)"
+    },
+    {
+      "id": "LOG-mv823qig-ojbz",
+      "timestamp": "2026-10-14T11:58:45.496Z",
+      "user": "Admin",
+      "module": "Project",
+      "action": "Update Proyek",
+      "details": "PRJ-2026-20: Hospital Information & Telemedicine Platform (Pengerjaan)"
+    },
+    {
+      "id": "LOG-mv823qi9-bcxn",
+      "timestamp": "2026-10-14T11:58:45.489Z",
+      "user": "Admin",
+      "module": "Project",
+      "action": "Proyek Dibuat dari Proposal",
+      "details": "Proposal PROP-2026-022 -> Proyek PRJ-2026-20 & Invoice INV-2026-039"
+    },
+    {
+      "id": "LOG-mv823qhz-z92o",
+      "timestamp": "2026-10-14T11:58:45.479Z",
+      "user": "Admin",
+      "module": "Proposal",
+      "action": "Buat Proposal Baru",
+      "details": "PROP-2026-022: Hospital Information & Telemedicine Platform (Rp 50.000.000)"
+    },
+    {
+      "id": "LOG-mv823qgd-d9xl",
+      "timestamp": "2026-10-14T11:58:45.421Z",
+      "user": "Admin",
+      "module": "Client",
+      "action": "Tambah Klien Baru",
+      "details": "CLI-021: Dr. Hendra Gunawan (PT Medika Inovasi Digital)"
+    },
+    {
+      "id": "LOG-mv823qg7-gpn2",
+      "timestamp": "2026-10-14T11:58:45.415Z",
+      "user": "Website Visitor",
+      "module": "Consultation",
+      "action": "Buat Konsultasi Baru",
+      "details": "CNS-2026-034: Dr. Hendra Gunawan (Aplikasi Bisnis / Internal Tool)"
+    },
     {
       "id": "LOG-mv7y187k-wikg",
       "timestamp": "2026-10-14T10:04:50.000Z",
@@ -7298,246 +8136,6 @@
       "module": "Proposal",
       "action": "Buat Proposal Baru",
       "details": "PROP-2026-008: Hospital Information & Telemedicine Platform (Rp 50.000.000)"
-    },
-    {
-      "id": "LOG-mv7tn0n3-hjxy",
-      "timestamp": "2026-10-14T08:01:48.543Z",
-      "user": "Admin",
-      "module": "Client",
-      "action": "Tambah Klien Baru",
-      "details": "CLI-007: Dr. Hendra Gunawan (PT Medika Inovasi Digital)"
-    },
-    {
-      "id": "LOG-mv7tn0n1-k1yj",
-      "timestamp": "2026-10-14T08:01:48.541Z",
-      "user": "Website Visitor",
-      "module": "Consultation",
-      "action": "Buat Konsultasi Baru",
-      "details": "CNS-2026-010: Dr. Hendra Gunawan (Aplikasi Bisnis / Internal Tool)"
-    },
-    {
-      "id": "LOG-mv7tlwjs-ke1r",
-      "timestamp": "2026-10-14T08:00:56.584Z",
-      "user": "Admin",
-      "module": "Project",
-      "action": "Update Proyek",
-      "details": "PRJ-2026-05: Hospital Information & Telemedicine Platform (Selesai)"
-    },
-    {
-      "id": "LOG-mv7tlwjq-bkpx",
-      "timestamp": "2026-10-14T08:00:56.582Z",
-      "user": "Admin",
-      "module": "Invoice",
-      "action": "Update Tagihan",
-      "details": "INV-2026-010: Status Lunas"
-    },
-    {
-      "id": "LOG-mv7tlwjo-v93u",
-      "timestamp": "2026-10-14T08:00:56.580Z",
-      "user": "Admin",
-      "module": "Invoice",
-      "action": "Buat Tagihan Baru",
-      "details": "INV-2026-010: Pelunasan Akhir (50%) & BAST Serah Terima (Rp 25.000.000)"
-    },
-    {
-      "id": "LOG-mv7tlwjl-dv02",
-      "timestamp": "2026-10-14T08:00:56.578Z",
-      "user": "Admin",
-      "module": "Project",
-      "action": "Update Proyek",
-      "details": "PRJ-2026-05: Hospital Information & Telemedicine Platform (Pengerjaan)"
-    },
-    {
-      "id": "LOG-mv7tlwjj-y3yb",
-      "timestamp": "2026-10-14T08:00:56.575Z",
-      "user": "Admin",
-      "module": "Project",
-      "action": "Proyek Dibuat dari Proposal",
-      "details": "Proposal PROP-2026-007 -> Proyek PRJ-2026-05 & Invoice INV-2026-009"
-    },
-    {
-      "id": "LOG-mv7tlwjg-43fj",
-      "timestamp": "2026-10-14T08:00:56.572Z",
-      "user": "Admin",
-      "module": "Proposal",
-      "action": "Buat Proposal Baru",
-      "details": "PROP-2026-007: Hospital Information & Telemedicine Platform (Rp 50.000.000)"
-    },
-    {
-      "id": "LOG-mv7tlwi7-eaje",
-      "timestamp": "2026-10-14T08:00:56.527Z",
-      "user": "Admin",
-      "module": "Client",
-      "action": "Tambah Klien Baru",
-      "details": "CLI-006: Dr. Hendra Gunawan (PT Medika Inovasi Digital)"
-    },
-    {
-      "id": "LOG-mv7tlwi5-wxlg",
-      "timestamp": "2026-10-14T08:00:56.525Z",
-      "user": "Website Visitor",
-      "module": "Consultation",
-      "action": "Buat Konsultasi Baru",
-      "details": "CNS-2026-009: Dr. Hendra Gunawan (Aplikasi Bisnis / Internal Tool)"
-    },
-    {
-      "id": "LOG-mv6oqb49-mdve",
-      "timestamp": "2026-10-13T12:56:37.833Z",
-      "user": "Admin",
-      "module": "Project",
-      "action": "Update Proyek",
-      "details": "PRJ-2026-04: Hospital Information & Telemedicine Platform (Selesai)"
-    },
-    {
-      "id": "LOG-mv6oqb48-hbyc",
-      "timestamp": "2026-10-13T12:56:37.832Z",
-      "user": "Admin",
-      "module": "Invoice",
-      "action": "Update Tagihan",
-      "details": "INV-2026-008: Status Lunas"
-    },
-    {
-      "id": "LOG-mv6oqb47-6r7t",
-      "timestamp": "2026-10-13T12:56:37.831Z",
-      "user": "Admin",
-      "module": "Invoice",
-      "action": "Buat Tagihan Baru",
-      "details": "INV-2026-008: Pelunasan Akhir (50%) & BAST Serah Terima (Rp 25.000.000)"
-    },
-    {
-      "id": "LOG-mv6oqb45-4hlb",
-      "timestamp": "2026-10-13T12:56:37.829Z",
-      "user": "Admin",
-      "module": "Project",
-      "action": "Update Proyek",
-      "details": "PRJ-2026-04: Hospital Information & Telemedicine Platform (Pengerjaan)"
-    },
-    {
-      "id": "LOG-mv6oqb44-l682",
-      "timestamp": "2026-10-13T12:56:37.828Z",
-      "user": "Admin",
-      "module": "Project",
-      "action": "Proyek Dibuat dari Proposal",
-      "details": "Proposal PROP-2026-006 -> Proyek PRJ-2026-04 & Invoice INV-2026-007"
-    },
-    {
-      "id": "LOG-mv6oqb42-gavi",
-      "timestamp": "2026-10-13T12:56:37.827Z",
-      "user": "Admin",
-      "module": "Proposal",
-      "action": "Buat Proposal Baru",
-      "details": "PROP-2026-006: Hospital Information & Telemedicine Platform (Rp 50.000.000)"
-    },
-    {
-      "id": "LOG-mv6oqb3e-4ebv",
-      "timestamp": "2026-10-13T12:56:37.802Z",
-      "user": "Admin",
-      "module": "Client",
-      "action": "Tambah Klien Baru",
-      "details": "CLI-005: Dr. Hendra Gunawan (PT Medika Inovasi Digital)"
-    },
-    {
-      "id": "LOG-mv6oqb3d-wx0x",
-      "timestamp": "2026-10-13T12:56:37.801Z",
-      "user": "Website Visitor",
-      "module": "Consultation",
-      "action": "Buat Konsultasi Baru",
-      "details": "CNS-2026-008: Dr. Hendra Gunawan (Aplikasi Bisnis / Internal Tool)"
-    },
-    {
-      "id": "LOG-mv6opvym-qd3i",
-      "timestamp": "2026-10-13T12:56:18.190Z",
-      "user": "Admin",
-      "module": "Project",
-      "action": "Update Proyek",
-      "details": "PRJ-2026-03: Hospital Information & Telemedicine Platform (Selesai)"
-    },
-    {
-      "id": "LOG-mv6opvyl-hk2e",
-      "timestamp": "2026-10-13T12:56:18.189Z",
-      "user": "Admin",
-      "module": "Invoice",
-      "action": "Update Tagihan",
-      "details": "INV-2026-006: Status Lunas"
-    },
-    {
-      "id": "LOG-mv6opvyk-89ul",
-      "timestamp": "2026-10-13T12:56:18.188Z",
-      "user": "Admin",
-      "module": "Invoice",
-      "action": "Buat Tagihan Baru",
-      "details": "INV-2026-006: Pelunasan Akhir (50%) & BAST Serah Terima (Rp 25.000.000)"
-    },
-    {
-      "id": "LOG-mv6opvyj-172n",
-      "timestamp": "2026-10-13T12:56:18.187Z",
-      "user": "Admin",
-      "module": "Project",
-      "action": "Update Proyek",
-      "details": "PRJ-2026-03: Hospital Information & Telemedicine Platform (Pengerjaan)"
-    },
-    {
-      "id": "LOG-mv6opvyi-o6eb",
-      "timestamp": "2026-10-13T12:56:18.186Z",
-      "user": "Admin",
-      "module": "Project",
-      "action": "Proyek Dibuat dari Proposal",
-      "details": "Proposal PROP-2026-005 -> Proyek PRJ-2026-03 & Invoice INV-2026-005"
-    },
-    {
-      "id": "LOG-mv6opvyg-0bmb",
-      "timestamp": "2026-10-13T12:56:18.184Z",
-      "user": "Admin",
-      "module": "Proposal",
-      "action": "Buat Proposal Baru",
-      "details": "PROP-2026-005: Hospital Information & Telemedicine Platform (Rp 50.000.000)"
-    },
-    {
-      "id": "LOG-mv6opvxy-grm9",
-      "timestamp": "2026-10-13T12:56:18.166Z",
-      "user": "Admin",
-      "module": "Client",
-      "action": "Tambah Klien Baru",
-      "details": "CLI-004: Dr. Hendra Gunawan (PT Medika Inovasi Digital)"
-    },
-    {
-      "id": "LOG-mv6opvxx-nbxp",
-      "timestamp": "2026-10-13T12:56:18.165Z",
-      "user": "Website Visitor",
-      "module": "Consultation",
-      "action": "Buat Konsultasi Baru",
-      "details": "CNS-2026-007: Dr. Hendra Gunawan (Aplikasi Bisnis / Internal Tool)"
-    },
-    {
-      "id": "LOG-mv6omz2a-i6f5",
-      "timestamp": "2026-10-13T12:54:02.242Z",
-      "user": "Admin",
-      "module": "Proposal",
-      "action": "Buat Proposal Baru",
-      "details": "PROP-2026-004: Hospital Information & Telemedicine Platform (Rp 50.000.000)"
-    },
-    {
-      "id": "LOG-mv6omz00-0usk",
-      "timestamp": "2026-10-13T12:54:02.160Z",
-      "user": "Admin",
-      "module": "Client",
-      "action": "Tambah Klien Baru",
-      "details": "CLI-003: Dr. Hendra Gunawan (PT Medika Inovasi Digital)"
-    },
-    {
-      "id": "LOG-mv6omyzy-wmoy",
-      "timestamp": "2026-10-13T12:54:02.158Z",
-      "user": "Website Visitor",
-      "module": "Consultation",
-      "action": "Buat Konsultasi Baru",
-      "details": "CNS-2026-006: Dr. Hendra Gunawan (Aplikasi Bisnis / Internal Tool)"
-    },
-    {
-      "id": "LOG-mv6ocm60-4f8n",
-      "timestamp": "2026-10-13T12:45:58.968Z",
-      "user": "Dewi Lestari (Klien)",
-      "module": "Project",
-      "action": "Pengajuan Revisi",
-      "details": "PRJ-2026-02: Penyesuaian visual status pengiriman"
     }
   ],
   "settings": {
@@ -7577,6 +8175,184 @@
     ]
   },
   "leads": [
+    {
+      "id": "LEAD-2026-016",
+      "name": "Smoke Test Client",
+      "email": "smoke@test.id",
+      "whatsapp": "+628902669103",
+      "phone": "",
+      "address": "",
+      "source": "Website",
+      "status": "Baru",
+      "assignedMarketing": "Belum Ditugaskan",
+      "nextFollowUpDate": "",
+      "notes": [
+        {
+          "id": "NOTE-1791979934022",
+          "date": "2026-10-14T12:12:14.022Z",
+          "author": "Website Form",
+          "type": "Catatan",
+          "content": "Minat Solusi Demo: Website Fashion E-Commerce"
+        }
+      ],
+      "activities": [
+        {
+          "date": "2026-10-14T12:12:14.022Z",
+          "user": "Website Form",
+          "action": "Pendaftaran Lead",
+          "note": "Lead baru diterima dari formulir Website"
+        }
+      ],
+      "consentGiven": true,
+      "createdAt": "2026-10-14T12:12:14.022Z",
+      "updatedAt": "2026-10-14T12:12:14.022Z"
+    },
+    {
+      "id": "LEAD-2026-015",
+      "name": "Ir. Rahmat Hidayat",
+      "email": "rahmat@inovasimaju.id",
+      "whatsapp": "+6281311223344",
+      "phone": "031-778899",
+      "address": "Jl. Pemuda No. 88, Surabaya, Jawa Timur",
+      "source": "Website",
+      "status": "Tertarik",
+      "assignedMarketing": "Sarah Wijaya",
+      "nextFollowUpDate": "2026-10-25",
+      "notes": [
+        {
+          "id": "NOTE-mv82l0zd-kfiu",
+          "date": "2026-10-14T12:12:12.217Z",
+          "author": "Sarah Wijaya",
+          "type": "WhatsApp",
+          "content": "Calon pelanggan berminat membuat sistem logistik terpadu dan meminta estimasi jadwal."
+        }
+      ],
+      "activities": [
+        {
+          "date": "2026-10-14T12:12:12.227Z",
+          "user": "Sarah Wijaya",
+          "action": "Konversi ke Konsultasi",
+          "note": "Berhasil diteruskan ke alur konsultasi resmi: CNS-2026-037"
+        },
+        {
+          "date": "2026-10-14T12:12:12.217Z",
+          "user": "Sarah Wijaya",
+          "action": "Catatan Follow-up (WhatsApp)",
+          "note": "Calon pelanggan berminat membuat sistem logistik terpadu dan meminta estimasi jadwal."
+        },
+        {
+          "date": "2026-10-14T12:12:12.209Z",
+          "user": "Sarah Wijaya",
+          "action": "Penugasan Marketing",
+          "note": "PIC dialihkan ke Sarah Wijaya"
+        },
+        {
+          "date": "2026-10-14T12:12:12.209Z",
+          "user": "Sarah Wijaya",
+          "action": "Perubahan Status",
+          "note": "Status diubah dari \"Baru\" menjadi \"Sudah Dihubungi\""
+        },
+        {
+          "date": "2026-10-14T12:12:12.204Z",
+          "user": "Website Form",
+          "action": "Pendaftaran Lead",
+          "note": "Lead baru diterima dari formulir Website"
+        }
+      ],
+      "consentGiven": true,
+      "consultationId": "CNS-2026-037",
+      "createdAt": "2026-10-14T12:12:12.204Z",
+      "updatedAt": "2026-10-14T12:12:12.227Z"
+    },
+    {
+      "id": "LEAD-2026-014",
+      "name": "Smoke Test Client",
+      "email": "smoke@test.id",
+      "whatsapp": "+628499022658",
+      "phone": "",
+      "address": "",
+      "source": "Website",
+      "status": "Baru",
+      "assignedMarketing": "Belum Ditugaskan",
+      "nextFollowUpDate": "",
+      "notes": [
+        {
+          "id": "NOTE-1791979127703",
+          "date": "2026-10-14T11:58:47.703Z",
+          "author": "Website Form",
+          "type": "Catatan",
+          "content": "Minat Solusi Demo: Website Fashion E-Commerce"
+        }
+      ],
+      "activities": [
+        {
+          "date": "2026-10-14T11:58:47.703Z",
+          "user": "Website Form",
+          "action": "Pendaftaran Lead",
+          "note": "Lead baru diterima dari formulir Website"
+        }
+      ],
+      "consentGiven": true,
+      "createdAt": "2026-10-14T11:58:47.703Z",
+      "updatedAt": "2026-10-14T11:58:47.703Z"
+    },
+    {
+      "id": "LEAD-2026-013",
+      "name": "Ir. Rahmat Hidayat",
+      "email": "rahmat@inovasimaju.id",
+      "whatsapp": "+6281311223344",
+      "phone": "031-778899",
+      "address": "Jl. Pemuda No. 88, Surabaya, Jawa Timur",
+      "source": "Website",
+      "status": "Tertarik",
+      "assignedMarketing": "Sarah Wijaya",
+      "nextFollowUpDate": "2026-10-25",
+      "notes": [
+        {
+          "id": "NOTE-mv823qmr-tsym",
+          "date": "2026-10-14T11:58:45.651Z",
+          "author": "Sarah Wijaya",
+          "type": "WhatsApp",
+          "content": "Calon pelanggan berminat membuat sistem logistik terpadu dan meminta estimasi jadwal."
+        }
+      ],
+      "activities": [
+        {
+          "date": "2026-10-14T11:58:45.662Z",
+          "user": "Sarah Wijaya",
+          "action": "Konversi ke Konsultasi",
+          "note": "Berhasil diteruskan ke alur konsultasi resmi: CNS-2026-035"
+        },
+        {
+          "date": "2026-10-14T11:58:45.651Z",
+          "user": "Sarah Wijaya",
+          "action": "Catatan Follow-up (WhatsApp)",
+          "note": "Calon pelanggan berminat membuat sistem logistik terpadu dan meminta estimasi jadwal."
+        },
+        {
+          "date": "2026-10-14T11:58:45.642Z",
+          "user": "Sarah Wijaya",
+          "action": "Penugasan Marketing",
+          "note": "PIC dialihkan ke Sarah Wijaya"
+        },
+        {
+          "date": "2026-10-14T11:58:45.642Z",
+          "user": "Sarah Wijaya",
+          "action": "Perubahan Status",
+          "note": "Status diubah dari \"Baru\" menjadi \"Sudah Dihubungi\""
+        },
+        {
+          "date": "2026-10-14T11:58:45.635Z",
+          "user": "Website Form",
+          "action": "Pendaftaran Lead",
+          "note": "Lead baru diterima dari formulir Website"
+        }
+      ],
+      "consentGiven": true,
+      "consultationId": "CNS-2026-035",
+      "createdAt": "2026-10-14T11:58:45.635Z",
+      "updatedAt": "2026-10-14T11:58:45.662Z"
+    },
     {
       "id": "LEAD-2026-012",
       "name": "Ir. Rahmat Hidayat",

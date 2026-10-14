@@ -3,14 +3,28 @@ import { type Language, translations } from '../../i18n';
 
 interface HeroProps {
   currentLang: Language;
+  onNavigate?: (path: string) => void;
 }
 
-export const Hero: React.FC<HeroProps> = ({ currentLang }) => {
+export const Hero: React.FC<HeroProps> = ({ currentLang, onNavigate }) => {
   const t = translations[currentLang];
 
-  const handleScrollTo = (id: string) => {
-    const el = document.querySelector(id);
-    if (el) el.scrollIntoView({ behavior: 'smooth' });
+  const handleConsultClick = () => {
+    if (onNavigate) {
+      onNavigate('/konsultasi');
+    } else {
+      const el = document.querySelector('#kontak');
+      if (el) el.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
+  const handlePortfolioClick = () => {
+    if (onNavigate) {
+      onNavigate('/portfolio');
+    } else {
+      const el = document.querySelector('#portfolio');
+      if (el) el.scrollIntoView({ behavior: 'smooth' });
+    }
   };
 
   return (
@@ -38,14 +52,14 @@ export const Hero: React.FC<HeroProps> = ({ currentLang }) => {
             {/* Dual Clear CTAs */}
             <div className="flex flex-wrap items-center gap-4 pt-2">
               <button
-                onClick={() => handleScrollTo('#kontak')}
+                onClick={handleConsultClick}
                 className="inline-flex items-center justify-center gap-2 bg-blue hover:bg-blue-hover text-white font-semibold text-base px-6 py-3.5 rounded-lg shadow-sm hover:shadow transition-all active:scale-[0.98] cursor-pointer"
               >
                 <span>{t.hero_cta_primary}</span>
                 <span className="material-symbols-outlined text-lg">arrow_forward</span>
               </button>
               <button
-                onClick={() => handleScrollTo('#portfolio')}
+                onClick={handlePortfolioClick}
                 className="inline-flex items-center justify-center gap-2 bg-white hover:bg-neutral-subtle text-navy font-semibold text-base px-6 py-3.5 rounded-lg border border-neutral-border shadow-xs transition-all cursor-pointer"
               >
                 <span className="material-symbols-outlined text-blue text-lg">grid_view</span>
@@ -136,7 +150,7 @@ export const Hero: React.FC<HeroProps> = ({ currentLang }) => {
                   <span className="material-symbols-outlined text-sm">lock_open</span>
                   <span>Bebas Vendor Lock-in</span>
                 </div>
-                <span>Jakarta &amp; Global Remote</span>
+                <span>Malang, Jawa Timur, Indonesia</span>
               </div>
             </div>
           </div>

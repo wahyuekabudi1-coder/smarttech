@@ -37,7 +37,7 @@ export const EngineeringBanner: React.FC = () => {
               Dukungan
             </span>
             <span className="font-heading font-bold text-2xl sm:text-3xl text-white">
-              SLA Terjamin
+              Sah Terjamin
             </span>
             <span className="text-xs text-neutral-muted">Garansi perbaikan bug berkala</span>
           </div>
