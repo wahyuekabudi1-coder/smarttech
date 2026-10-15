@@ -23,7 +23,7 @@ function isValidPostgresUrl(urlStr: string): boolean {
   }
 }
 
-export const databaseUrl = process.env.DATABASE_URL || process.env.POSTGRES_URL || process.env.SUPABASE_DB_URL || '';
+export const databaseUrl = process.env.DATABASE_URL || '';
 
 export const isPostgresConfigured = isValidPostgresUrl(databaseUrl);
 

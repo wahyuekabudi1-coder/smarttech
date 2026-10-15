@@ -36,9 +36,15 @@ app.use('/api', async (_req, _res, next) => {
   next();
 });
 
-// Serve static assets from project root and /public directory
-app.use(express.static(__dirname));
+// Serve static assets from /public and root-level image/favicon files without intercepting src/ or index.html
 app.use('/public', express.static(path.join(__dirname, 'public')));
+app.get(['/favicon*', '/smart-tech-logo*', '/screen.png'], (req, res, next) => {
+  const filePath = path.join(__dirname, req.path);
+  if (fs.existsSync(filePath) && fs.statSync(filePath).isFile()) {
+    return res.sendFile(filePath);
+  }
+  next();
+});
 
 // Existing Smart Tech In-memory Store (preserves 100% existing data & functionality)
 const leads = [

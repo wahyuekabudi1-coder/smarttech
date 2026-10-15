@@ -70,8 +70,8 @@ export class ArtopayAdapter {
     const envVal = (process.env.ARTOPAY_ENV || '').trim().toLowerCase();
     const isSandboxEnv = envVal === 'sandbox' || (envVal !== 'production' && process.env.ARTOPAY_SANDBOX !== 'false' && process.env.NODE_ENV !== 'production');
     this.isSandbox = config?.sandbox !== undefined ? config.sandbox : isSandboxEnv;
-    this.apiKey = config?.apiKey || process.env.ARTOPAY_API_KEY || process.env.ARTOPAY_BUSINESS_UNIT_ID || (this.isSandbox ? 'sandbox_api_smarttech_test' : '');
-    this.secretKey = config?.secretKey || process.env.ARTOPAY_SECRET_KEY || process.env.ARTOPAY_PRIVATE_KEY || (this.isSandbox ? 'sandbox_sec_smarttech_test' : '');
+    this.apiKey = config?.apiKey || process.env.ARTOPAY_API_KEY || (this.isSandbox ? 'sandbox_api_smarttech_test' : '');
+    this.secretKey = config?.secretKey || process.env.ARTOPAY_SECRET_KEY || (this.isSandbox ? 'sandbox_sec_smarttech_test' : '');
     
     const defaultUrl = this.isSandbox
       ? (process.env.ARTOPAY_SANDBOX_BASE_URL || 'https://api-sandbox.artopay.id/v1')
